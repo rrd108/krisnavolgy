@@ -19,15 +19,16 @@
     --light: #decf9b;
     --dark: #493e26;
   }
-
-  body {
-    font-family: 'Quicksand', sans-serif;
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+  body {
+    font-family: 'Quicksand', sans-serif;
+  }
   section {
-    padding: 0.5em;
+    padding: 1em;
   }
   ul {
     list-style: none;

@@ -43,31 +43,37 @@
 <style scoped>
   section {
     background-color: #aef;
+    background-image: url('http://127.0.0.1:1337/uploads/small_holi_b8a383ce2d.jpg'); /* TODO */
+    background-size: cover;
+    padding-bottom: 2em;
   }
   h2 {
     font-size: 1.5rem;
-    background-color: #fff5;
+    background-color: #fff8;
     border-radius: 0.5em;
     width: fit-content;
     padding: 0.5em 1em;
-    margin: 2em auto 1em;
+    margin: 1em auto;
   }
   .grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
   }
   ul {
-    margin-left: -0.5em;
+    margin-left: -1em;
   }
   li {
     font-family: 'Robot', sans-serif;
     display: flex;
-    margin-bottom: 1em;
-    background-color: #fff5;
+    margin-bottom: 0.5em;
+    background-color: #fff8;
     border-top-right-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
     align-items: center;
     border: 0.1em solid var(--light);
     border-left: none;
+  }
+  li:last-child {
+    margin-bottom: 0;
   }
   span {
     display: block;

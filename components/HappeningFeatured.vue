@@ -25,7 +25,7 @@
 
 <template>
   <div>
-    <h3>Kiemelt esemény</h3>
+    <h3>Kiemelt</h3>
     <div class="box">
       <picture>
         <source
@@ -46,7 +46,13 @@
       </picture>
       <h4>{{ featured.data[0].attributes.name }}</h4>
       <small>
-        {{ featured.data[0].attributes.date }}
+        <span><font-awesome-icon icon="fa-solid fa-calendar-days" /></span>
+        {{
+          new Date(featured.data[0].attributes.date).toLocaleDateString(
+            'default',
+            { dateStyle: 'long' }
+          )
+        }}
       </small>
       <small v-show="false">{{
         featured.data[0].attributes.description
@@ -58,20 +64,22 @@
 <style scoped>
   div {
     background-color: var(--light);
-    padding: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
   }
   h3,
   h4 {
+    text-align: center;
     margin: 0.25em;
   }
   .box {
     background-color: #fff;
     text-align: center;
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 0.5em;
   }
   img {
-    width: 8rem;
+    width: 100%;
   }
   small {
     display: block;

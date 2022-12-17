@@ -13,9 +13,37 @@
 </template>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap&family=Roboto&display=swap');
+
+  :root {
+    --light: #decf9b;
+    --dark: #493e26;
+  }
 
   body {
     font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  section {
+    padding: 0.5em;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  small {
+    font-size: 0.75rem;
+  }
+
+  .df {
+    display: flex;
+    gap: 1em;
+  }
+  .grid {
+    display: grid;
+    gap: 1em;
   }
 </style>

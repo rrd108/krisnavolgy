@@ -1,9 +1,19 @@
 type Happening = {
   id: number
-  attributes: {
-    date: Date
-    shortName: string
-    name: string
+  date: string
+  shortName: string
+  name: string
+  description: string
+  image: {
+    data: {
+      attributes: {
+        formats: {
+          thumbnail: { url: string }
+          small: { url: string }
+          medium: { url: string }
+        }
+      }
+    }
   }
 }
 

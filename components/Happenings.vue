@@ -56,7 +56,7 @@
     margin: 1em auto;
   }
   .grid {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
   }
   ul {
     margin-left: -1em;

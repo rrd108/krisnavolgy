@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_counter_counters",
+  "info": {
+    "displayName": "Counter",
+    "icon": "arrow-alt-circle-up"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Number": {
+      "type": "biginteger"
+    }
+  }
+}

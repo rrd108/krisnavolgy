@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "counter_sections",
+  "info": {
+    "singularName": "counter-section",
+    "pluralName": "counter-sections",
+    "displayName": "Counter section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Counter": {
+      "type": "component",
+      "repeatable": true,
+      "component": "counter.counter"
+    }
+  }
+}

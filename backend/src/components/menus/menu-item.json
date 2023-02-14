@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_menu_item_menu_items",
+  "info": {
+    "displayName": "Menu item",
+    "icon": "angry",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Menu_item_name": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

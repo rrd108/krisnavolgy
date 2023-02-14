@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_buttons_simple_buttons",
+  "info": {
+    "displayName": "Simple button"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

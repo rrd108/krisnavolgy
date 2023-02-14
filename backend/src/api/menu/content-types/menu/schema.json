@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "singularName": "menu",
+    "pluralName": "menus",
+    "displayName": "Menu",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Menu_group": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menus.manu-group"
+    },
+    "search_field": {
+      "type": "string"
+    },
+    "Social_media_bar": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menus.social-media-bar"
+    }
+  }
+}

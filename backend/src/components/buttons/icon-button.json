@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_buttons_icon_buttons",
+  "info": {
+    "displayName": "Icon button",
+    "icon": "adjust"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    },
+    "Icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

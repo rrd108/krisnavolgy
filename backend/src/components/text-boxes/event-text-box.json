@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_text_boxes_event_text_boxes",
+  "info": {
+    "displayName": "Service_category_box",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.simple-button"
+    },
+    "Prices": {
+      "type": "string"
+    }
+  }
+}

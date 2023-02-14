@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_text_boxes_event_text_and_image_boxes",
+  "info": {
+    "displayName": "Event_text_&_image_box"
+  },
+  "options": {},
+  "attributes": {
+    "Event_name": {
+      "type": "string"
+    },
+    "Event_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Event_short_description": {
+      "type": "text"
+    },
+    "Event_date": {
+      "type": "date"
+    },
+    "Event_button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.simple-button"
+    }
+  }
+}

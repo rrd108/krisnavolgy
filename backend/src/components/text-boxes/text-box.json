@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_text_box_text_boxes",
+  "info": {
+    "displayName": "Simple text box",
+    "icon": "text-height",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "text"
+    }
+  }
+}

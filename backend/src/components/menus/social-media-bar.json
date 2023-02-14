@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_social_media_bar_social_media_bars",
+  "info": {
+    "displayName": "Social media bar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

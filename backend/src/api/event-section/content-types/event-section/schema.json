@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "event_sections",
+  "info": {
+    "singularName": "event-section",
+    "pluralName": "event-sections",
+    "displayName": "Event section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Event_display": {
+      "type": "component",
+      "repeatable": false,
+      "component": "text-boxes.event-text-and-image-box"
+    },
+    "Event_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-boxes.event-small-display"
+    }
+  }
+}

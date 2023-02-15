@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "mobile_menus",
+  "info": {
+    "singularName": "mobile-menu",
+    "pluralName": "mobile-menus",
+    "displayName": "Mobile menu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Menu_item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.icon-button"
+    }
+  }
+}

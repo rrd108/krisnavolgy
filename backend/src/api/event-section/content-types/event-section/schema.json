@@ -4,7 +4,8 @@
   "info": {
     "singularName": "event-section",
     "pluralName": "event-sections",
-    "displayName": "Event section"
+    "displayName": "Event section",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,13 +17,8 @@
     },
     "Event_display": {
       "type": "component",
-      "repeatable": false,
-      "component": "text-boxes.event-text-and-image-box"
-    },
-    "Event_list": {
-      "type": "component",
       "repeatable": true,
-      "component": "text-boxes.event-small-display"
+      "component": "text-boxes.event-text-and-image-box"
     }
   }
 }

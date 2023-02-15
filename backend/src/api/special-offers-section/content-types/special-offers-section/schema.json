@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "special_offers_sections",
+  "info": {
+    "singularName": "special-offers-section",
+    "pluralName": "special-offers-sections",
+    "displayName": "Special offers section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Offer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-boxes.text-and-image-box"
+    }
+  }
+}

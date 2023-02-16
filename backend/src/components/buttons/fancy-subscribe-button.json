@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_buttons_fancy_subscribe_buttons",
+  "info": {
+    "displayName": "Fancy subscribe button"
+  },
+  "options": {},
+  "attributes": {
+    "Subscribe_field": {
+      "type": "string"
+    },
+    "Subscribe_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.simple-button"
+    }
+  }
+}

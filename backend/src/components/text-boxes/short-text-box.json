@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_text_boxes_short_text_boxes",
+  "info": {
+    "displayName": "Short text box",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "string"
+    }
+  }
+}

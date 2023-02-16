@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_text_boxes_opening_hours",
+  "info": {
+    "displayName": "Opening hours"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Opening_hours": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_text_boxes_review_text_boxes",
+  "info": {
+    "displayName": "Review text box"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Review": {
+      "type": "text"
+    },
+    "Reviewer_name": {
+      "type": "string"
+    }
+  }
+}

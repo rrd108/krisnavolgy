@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_text_boxes_availabilities",
+  "info": {
+    "displayName": "Availability"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Address": {
+      "type": "string"
+    },
+    "Number": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    }
+  }
+}

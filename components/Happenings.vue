@@ -12,12 +12,12 @@
     date: { $gte: today.toISOString().substring(0, 10) },
   }
 
-  const happenings = await find<Happening>('happenings', {
+  /*const happenings = await find<Happening>('happenings', {
     fields,
     sort,
     pagination,
     filters,
-  })
+  })*/
 </script>
 
 <template>

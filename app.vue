@@ -1,11 +1,11 @@
 <template>
   <div>
-    <nav>
+    <!--nav>
       <ul>
         <li><NuxtLink to="/">Főoldal</NuxtLink></li>
         <li><NuxtLink to="/about">About</NuxtLink></li>
       </ul>
-    </nav>
+    </!--nav-->
     <main>
       <NuxtPage />
     </main>
@@ -13,7 +13,7 @@
 </template>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap&family=Roboto&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap&family=Open+sans&display=swap');
 
   :root {
     --light: #decf9b;
@@ -25,7 +25,7 @@
     box-sizing: border-box;
   }
   body {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Open sans', sans-serif;
   }
   section {
     padding: 1em;
@@ -46,5 +46,16 @@
   .grid {
     display: grid;
     gap: 1em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+  h1 {
+    margin: 1em 0;
   }
 </style>

@@ -1,11 +1,15 @@
 <script setup lang="ts">
   import Hero from '../types/Hero'
+  import StrapiResponse from '../types/StrapiResponse'
   import { useWindowScroll } from '@vueuse/core'
 
   const { x, y } = useWindowScroll()
-  const { find } = useStrapi()
+  const client = useStrapiClient()
   const config = useRuntimeConfig()
-  const hero = await find<Hero>('hero-section', { populate: '*' })
+  const hero = await client<StrapiResponse<Hero>>('/hero-section', {
+    params: { populate: '*' },
+  })
+
   const urlBg = `url("${config.public.strapi.url}/uploads/bg.png")`
   const urlCloudBig = `url("${config.public.strapi.url}/uploads/cloud-big.png")`
   const urlCloudSmall = `url("${config.public.strapi.url}/uploads/cloud-small.png")`

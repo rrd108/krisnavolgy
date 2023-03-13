@@ -8,8 +8,10 @@
   })
 
   const serviceSectionsElement = ref(null as unknown as HTMLElement)
+  const serviceSectionsViews = ref([true])
   const visibilityChanged = (value: [number, boolean]) => {
-    console.log(value)
+    const [num, isVisible] = value
+    serviceSectionsViews.value[num] = isVisible
   }
 </script>
 
@@ -21,6 +23,7 @@
           .service_category_box"
       >
         <ServiceSectionBox
+          v-if="serviceSectionsElement"
           :service="service"
           :num="i"
           :scrollElement="serviceSectionsElement"
@@ -33,6 +36,7 @@
       <li
         v-for="i in serviceSections.data[0].attributes.service_category_box
           .length"
+        :class="{ active: serviceSectionsViews[i - 1] }"
       ></li>
     </ul>
   </div>
@@ -78,8 +82,9 @@
     width: 1em;
     height: 1em;
     border-radius: 50%;
+    transition: background-color 350ms ease-in-out;
   }
-  #pager li:active {
+  #pager li.active {
     background-color: #fff;
   }
 </style>

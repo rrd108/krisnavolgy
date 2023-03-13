@@ -35,7 +35,6 @@
 
 <template>
   <div ref="target">
-    {{ targetIsVisible }} {{ num }}
     <h3>{{ service.Title }}</h3>
     <p>{{ service.Description }}</p>
     <h6>{{ service.Prices }}</h6>

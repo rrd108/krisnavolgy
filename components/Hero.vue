@@ -22,6 +22,7 @@
   <section>
     <h1>{{ hero.data.attributes.Hero_text.Title }}</h1>
     <p>{{ hero.data.attributes.Hero_text.Content }}</p>
+    <ServiceSections />
   </section>
   <span id="cloudBig"></span>
   <span id="cloudSmall"></span>

@@ -17,6 +17,7 @@
     --header-height: 7vh;
     --main-dynamic-height: calc(100dvh - var(--header-dynamic-height));
     --main-height: calc(100vh - var(--header-height));
+    --hero-padding-right: 1em;
   }
   * {
     margin: 0;
@@ -28,9 +29,6 @@
   }
   #app {
     overflow-x: hidden;
-  }
-  section {
-    padding: 1em;
   }
   ul {
     list-style: none;

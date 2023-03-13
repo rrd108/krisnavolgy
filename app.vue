@@ -1,11 +1,6 @@
 <template>
-  <div>
-    <!--nav>
-      <ul>
-        <li><NuxtLink to="/">Főoldal</NuxtLink></li>
-        <li><NuxtLink to="/about">About</NuxtLink></li>
-      </ul>
-    </!--nav-->
+  <div id="app">
+    <AppHeader />
     <main>
       <NuxtPage />
     </main>
@@ -18,6 +13,10 @@
   :root {
     --light: #decf9b;
     --dark: #493e26;
+    --header-dynamic-height: 7dvh;
+    --header-height: 7vh;
+    --main-dynamic-height: calc(100dvh - var(--header-dynamic-height));
+    --main-height: calc(100vh - var(--header-height));
   }
   * {
     margin: 0;
@@ -26,6 +25,9 @@
   }
   body {
     font-family: 'Open sans', sans-serif;
+  }
+  #app {
+    overflow-x: hidden;
   }
   section {
     padding: 1em;

@@ -30,7 +30,8 @@
 
 <style scoped>
   section {
-    height: 100vh;
+    height: var(--main-height);
+    height: var(--main-dynamic-height);
     background-image: v-bind(urlBg);
     background-size: cover;
     text-align: center;

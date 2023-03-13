@@ -1,24 +1,39 @@
 <script setup lang="ts">
+  import { ref } from 'vue'
   import ServiceSection from '../types/ServiceSection'
 
   const { find } = useStrapi()
-
   const serviceSections = await find<ServiceSection>('service-sections', {
     populate: '*',
   })
+
+  const serviceSectionsElement = ref(null as unknown as HTMLElement)
+  const visibilityChanged = (value: [number, boolean]) => {
+    console.log(value)
+  }
 </script>
 
 <template>
   <div>
-    <ul>
+    <ul id="serviceSections" ref="serviceSectionsElement">
       <li
-        v-for="service in serviceSections.data[0].attributes
+        v-for="(service, i) in serviceSections.data[0].attributes
           .service_category_box"
       >
-        <h3>{{ service.Title }}</h3>
-        <p>{{ service.Description }}</p>
-        <h6>{{ service.Prices }}</h6>
+        <ServiceSectionBox
+          :service="service"
+          :num="i"
+          :scrollElement="serviceSectionsElement"
+          @visibility="visibilityChanged"
+        />
       </li>
+    </ul>
+
+    <ul id="pager">
+      <li
+        v-for="i in serviceSections.data[0].attributes.service_category_box
+          .length"
+      ></li>
     </ul>
   </div>
 </template>
@@ -30,15 +45,19 @@
     margin-right: -1em;
   }
   ul {
-    margin-top: 2em;
     display: flex;
+  }
+  #serviceSections {
     gap: 1em;
+    margin-top: 2em;
     overflow-x: scroll;
     scroll-snap-type: inline mandatory;
     scroll-padding: var(--hero-padding-right);
   }
   li {
     background-color: #fff6;
+  }
+  #serviceSections li {
     border-radius: 0.5em;
     padding: 0 0 1em 1em;
     width: 80vw;
@@ -46,13 +65,21 @@
     text-align: left;
     scroll-snap-align: start;
   }
-  li:last-child {
+  #serviceSections li:last-child {
     margin-right: var(--hero-padding-right);
   }
-  h3 {
-    margin: 1em 0 2em 0;
+
+  #pager {
+    margin: 1em 1em 1em 0;
+    gap: 0.5em;
+    justify-content: center;
   }
-  p {
-    margin: 1em 0;
+  #pager li {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+  }
+  #pager li:active {
+    background-color: #fff;
   }
 </style>

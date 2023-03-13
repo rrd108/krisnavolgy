@@ -1,5 +1,8 @@
 <script setup lang="ts">
   const isOpen = ref(false)
+  const { find } = useStrapi()
+
+  const menus = await find('menus', { populate: '*' })
 </script>
 
 <template>
@@ -10,8 +13,15 @@
         <font-awesome-icon icon="fa-solid fa-bars" @click="isOpen = !isOpen" />
       </ClientOnly>
       <ul :class="{ open: isOpen }">
-        <li><NuxtLink to="/">Főoldal</NuxtLink></li>
-        <li>Programok</li>
+        <li v-for="item in menus.data[0].attributes.Menu_group">
+          <NuxtLink :to="item.Link">{{ item.Menu_name }}</NuxtLink>
+        </li>
+        <hr />
+        <li>{{ menus.data[0].attributes.search_field }}</li>
+        <hr />
+        <li v-for="item in menus.data[0].attributes.Social_media_bar">
+          {{ item.Link }}
+        </li>
       </ul>
     </nav>
   </header>
@@ -37,13 +47,13 @@
   }
   ul {
     position: absolute;
-    right: -50vw;
-    z-index: 1;
+    right: -100vw;
+    z-index: 2;
     background-color: #fff;
     padding: 0.5em;
     transition: transform 350ms ease-in-out;
   }
   ul.open {
-    transform: translateX(-50vw);
+    transform: translateX(-100vw);
   }
 </style>

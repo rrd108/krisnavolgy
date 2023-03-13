@@ -37,6 +37,7 @@
     background-size: cover;
     text-align: center;
     position: relative;
+    padding: var(--hero-padding-right);
   }
   #cloudBig,
   #cloudSmall {

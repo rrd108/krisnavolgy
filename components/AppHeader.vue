@@ -1,8 +1,10 @@
 <script setup lang="ts">
+  import Menu from '../types/Menu'
+
   const isOpen = ref(false)
   const { find } = useStrapi()
 
-  const menus = await find('menus', { populate: '*' })
+  const menus = await find<Menu>('menus', { populate: '*' })
 </script>
 
 <template>

@@ -2,7 +2,8 @@
   "collectionName": "components_buttons_icon_buttons",
   "info": {
     "displayName": "Icon button",
-    "icon": "adjust"
+    "icon": "adjust",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,17 +11,11 @@
       "type": "string"
     },
     "Link": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "Icon": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+    "fontawsome_link": {
+      "type": "string"
     }
   }
 }

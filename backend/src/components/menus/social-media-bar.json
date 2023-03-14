@@ -6,18 +6,11 @@
   },
   "options": {},
   "attributes": {
-    "Icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "Link": {
+      "type": "string",
+      "required": true
+    },
+    "fontawsome_link": {
       "type": "string"
     }
   }

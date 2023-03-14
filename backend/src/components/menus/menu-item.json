@@ -11,7 +11,8 @@
       "type": "string"
     },
     "Link": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

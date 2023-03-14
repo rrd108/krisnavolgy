@@ -1,11 +1,15 @@
 <script setup lang="ts">
   import { ref } from 'vue'
+  import StrapiResponse from '../types/StrapiResponse'
   import ServiceSection from '../types/ServiceSection'
 
-  const { find } = useStrapi()
-  const serviceSections = await find<ServiceSection>('service-sections', {
-    populate: '*',
-  })
+  const client = useStrapiClient()
+  const serviceSection = await client<StrapiResponse<ServiceSection>>(
+    '/service-section-single',
+    {
+      params: { populate: '*' },
+    }
+  )
 
   const serviceSectionsElement = ref(null as unknown as HTMLElement)
   const serviceSectionsViews = ref([true])
@@ -19,7 +23,7 @@
   <div>
     <ul id="serviceSections" ref="serviceSectionsElement">
       <li
-        v-for="(service, i) in serviceSections.data[0].attributes
+        v-for="(service, i) in serviceSection.data.attributes
           .service_category_box"
       >
         <ServiceSectionBox
@@ -34,8 +38,7 @@
 
     <ul id="pager">
       <li
-        v-for="i in serviceSections.data[0].attributes.service_category_box
-          .length"
+        v-for="i in serviceSection.data.attributes.service_category_box.length"
         :class="{ active: serviceSectionsViews[i - 1] }"
       ></li>
     </ul>

@@ -5,11 +5,11 @@
 
   const { x, y } = useWindowScroll()
   const client = useStrapiClient()
-  const config = useRuntimeConfig()
   const hero = await client<StrapiResponse<Hero>>('/hero-section', {
     params: { populate: '*' },
   })
 
+  const config = useRuntimeConfig()
   const urlBg = `url("${config.public.strapi.url}/uploads/bg.png")`
   const urlCloudBig = `url("${config.public.strapi.url}/uploads/cloud-big.png")`
   const urlCloudSmall = `url("${config.public.strapi.url}/uploads/cloud-small.png")`

@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/strapi', '@vueuse/nuxt'],
   strapi: {
-    url: process.env.STRAPI_URL || 'http://localhost:1337',
+    url: process.env.STRAPI_URL || 'http://127.0.0.1:1337',
   },
   css: ['@fortawesome/fontawesome-svg-core/styles.css'],
 })

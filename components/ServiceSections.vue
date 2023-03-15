@@ -5,7 +5,7 @@
 
   const client = useStrapiClient()
   const serviceSection = await client<StrapiResponse<ServiceSection>>(
-    '/service-section-single',
+    '/service-section',
     {
       params: { populate: '*' },
     }

@@ -5,9 +5,14 @@
   const isOpen = ref(false)
 
   const client = useStrapiClient()
-  const menu = await client<StrapiResponse<Menu>>('/main-menu', {
-    params: { populate: '*' },
-  })
+  let menu = {} as StrapiResponse<Menu>
+  try {
+    menu = await client<StrapiResponse<Menu>>('/main-menu', {
+      params: { populate: '*' },
+    })
+  } catch (error) {
+    console.error(error)
+  }
 </script>
 
 <template>
@@ -18,13 +23,13 @@
         <font-awesome-icon icon="fa-solid fa-bars" @click="isOpen = !isOpen" />
       </ClientOnly>
       <ul :class="{ open: isOpen }">
-        <li v-for="item in menu.data.attributes.Menu_group">
+        <li v-for="item in menu.data?.attributes.Menu_group">
           <NuxtLink :to="item.Link">{{ item.Menu_name }}</NuxtLink>
         </li>
         <hr />
-        <li>{{ menu.data.attributes.search_field }}</li>
+        <li>{{ menu.data?.attributes.search_field }}</li>
         <hr />
-        <li v-for="item in menu.data.attributes.Social_media_bar">
+        <li v-for="item in menu.data?.attributes.Social_media_bar">
           {{ item.Link }}
         </li>
       </ul>

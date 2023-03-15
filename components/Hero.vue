@@ -5,9 +5,17 @@
 
   const { x, y } = useWindowScroll()
   const client = useStrapiClient()
-  const hero = await client<StrapiResponse<Hero>>('/hero-section', {
-    params: { populate: '*' },
-  })
+
+  const hasBackendFetchError = ref(false)
+  let hero = {} as StrapiResponse<Hero>
+  try {
+    hero = await client<StrapiResponse<Hero>>('/hero-section', {
+      params: { populate: '*' },
+    })
+  } catch (error) {
+    console.error(error)
+    hasBackendFetchError.value = true
+  }
 
   const cloudBigPos = computed(() => `${y.value / 20}%`)
   const cloudSmallPos = computed(() => `${y.value / 20}%`)
@@ -15,8 +23,11 @@
 
 <template>
   <section>
-    <h1>{{ hero.data.attributes.Hero_text.Title }}</h1>
-    <p>{{ hero.data.attributes.Hero_text.Content }}</p>
+    <h1 v-if="hasBackendFetchError">
+      Váratlan hiba történt az adatok lekérése során. Kérjük gyere vissza később
+    </h1>
+    <h1>{{ hero.data?.attributes.Hero_text.Title }}</h1>
+    <p>{{ hero.data?.attributes.Hero_text.Content }}</p>
     <ServiceSections />
   </section>
   <span id="cloudBig"></span>

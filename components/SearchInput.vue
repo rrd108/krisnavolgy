@@ -6,7 +6,10 @@
 
 <template>
   <div>
-    <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+    <ClientOnly>
+      <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+    </ClientOnly>
+
     <input type="search" :placeholder="placeholder" />
   </div>
 </template>

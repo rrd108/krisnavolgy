@@ -10,7 +10,7 @@
   })
 
   const config = useRuntimeConfig()
-  const urlBg = `url("${config.public.strapi.url}/uploads/bg.png")`
+  const urlBg = `url("${config.public.strapi.url}/uploads/bg_gradient.png")`
   const urlCloudBig = `url("${config.public.strapi.url}/uploads/cloud-big.png")`
   const urlCloudSmall = `url("${config.public.strapi.url}/uploads/cloud-small.png")`
 

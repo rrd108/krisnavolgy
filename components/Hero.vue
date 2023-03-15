@@ -51,7 +51,7 @@
   #cloudBig {
     top: 27%;
     left: calc(60% - v-bind(cloudBigPos));
-    width: 27%;
+    width: 35%;
     height: 10%;
     background-image: v-bind(urlCloudBig);
   }

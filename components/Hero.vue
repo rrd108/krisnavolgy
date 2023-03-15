@@ -9,11 +9,6 @@
     params: { populate: '*' },
   })
 
-  const config = useRuntimeConfig()
-  const urlBg = `url("${config.public.strapi.url}/uploads/bg_gradient_cut.png")`
-  const urlCloudBig = `url("${config.public.strapi.url}/uploads/cloud-big.png")`
-  const urlCloudSmall = `url("${config.public.strapi.url}/uploads/cloud-small.png")`
-
   const cloudBigPos = computed(() => `${y.value / 20}%`)
   const cloudSmallPos = computed(() => `${y.value / 20}%`)
 </script>
@@ -32,7 +27,7 @@
   section {
     height: var(--main-height);
     height: var(--main-dynamic-height);
-    background-image: v-bind(urlBg);
+    background-image: url('/images/bg_gradient_cut.png');
     background-size: cover;
     text-align: center;
     position: relative;
@@ -53,13 +48,13 @@
     left: calc(60% - v-bind(cloudBigPos));
     width: 35%;
     height: 10%;
-    background-image: v-bind(urlCloudBig);
+    background-image: url('/images/cloud-big.png');
   }
   #cloudSmall {
     top: 30%;
     left: calc(10% + v-bind(cloudSmallPos));
     width: 17.5%;
     height: 2.5%;
-    background-image: v-bind(urlCloudSmall);
+    background-image: url('/images/cloud-small.png');
   }
 </style>

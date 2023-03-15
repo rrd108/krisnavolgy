@@ -24,7 +24,8 @@
     padding: 0;
     box-sizing: border-box;
   }
-  body {
+  body,
+  input {
     font-family: 'Open sans', sans-serif;
   }
   #app {

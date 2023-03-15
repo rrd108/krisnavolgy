@@ -37,9 +37,9 @@
             </li>
           </ul>
         </li>
-        <hr />
-        <li>{{ menu.data?.attributes.search_field }}</li>
-        <hr />
+        <li>
+          <SearchInput :placeholder="menu.data?.attributes.search_field" />
+        </li>
         <li v-for="item in menu.data?.attributes.Social_media_bar">
           {{ item.Link }}
         </li>

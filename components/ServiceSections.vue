@@ -54,7 +54,7 @@
   }
   #serviceSections {
     gap: 1em;
-    margin-top: 11em;
+    margin-top: 35vh;
     overflow-x: scroll;
     scroll-snap-type: inline mandatory;
     scroll-padding: var(--hero-padding-right);
@@ -80,8 +80,8 @@
     justify-content: center;
   }
   #pager li {
-    width: 1em;
-    height: 1em;
+    width: 0.5em;
+    height: 0.5em;
     border-radius: 50%;
     transition: background-color 350ms ease-in-out;
   }

@@ -51,5 +51,6 @@
   }
   p {
     margin: 0.5em 2em 2.5em 0;
+    font-size: 0.8rem;
   }
 </style>

@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "service_section_singles",
+  "collectionName": "service_sections",
   "info": {
-    "singularName": "service-section-single",
-    "pluralName": "service-section-singles",
-    "displayName": "Service section",
-    "description": ""
+    "singularName": "service-section",
+    "pluralName": "service-sections",
+    "displayName": "Service section"
   },
   "options": {
     "draftAndPublish": true

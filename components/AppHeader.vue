@@ -8,7 +8,7 @@
   let menu = {} as StrapiResponse<Menu>
   try {
     menu = await client<StrapiResponse<Menu>>('/main-menu', {
-      params: { populate: '*' },
+      params: { populate: 'Menu_group.Menu_item,Social_media_bar' },
     })
   } catch (error) {
     console.error(error)
@@ -25,6 +25,13 @@
       <ul :class="{ open: isOpen }">
         <li v-for="item in menu.data?.attributes.Menu_group">
           <NuxtLink :to="item.Link">{{ item.Menu_name }}</NuxtLink>
+          <ul>
+            <li v-for="subItem in item.Menu_item">
+              <NuxtLink :to="subItem.Link">{{
+                subItem.Menu_item_name
+              }}</NuxtLink>
+            </li>
+          </ul>
         </li>
         <hr />
         <li>{{ menu.data?.attributes.search_field }}</li>
@@ -55,13 +62,25 @@
   nav {
     position: relative;
   }
-  ul {
+  nav > ul {
     position: absolute;
     right: -100vw;
     z-index: 3;
     background-color: #fff;
     padding: 0.5em;
     transition: transform 350ms ease-in-out;
+    line-height: 1.25em;
+    font-size: 1.5rem;
+    width: 75vw;
+    font-family: 'Playfair Display', serif;
+  }
+  nav a {
+    text-decoration: none;
+  }
+  ul ul {
+    margin-left: 1em;
+    font-size: 1rem;
+    font-family: 'Open Sans', serif;
   }
   ul.open {
     transform: translateX(-100vw);

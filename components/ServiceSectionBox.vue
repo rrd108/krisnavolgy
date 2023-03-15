@@ -44,8 +44,10 @@
 <style scoped>
   h3 {
     margin: 1em 0 2em 0;
+    z-index: 1;
   }
   p {
     margin: 1em 2em 1em 0;
+    z-index: 1;
   }
 </style>

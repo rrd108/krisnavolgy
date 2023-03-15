@@ -41,19 +41,20 @@
   }
   #cloudBig,
   #cloudSmall {
-    position: absolute;
+    
     background-size: cover;
     z-index: 1;
+    position: relative; 
   }
   #cloudBig {
-    top: 40%;
+    top: 18%;
     left: calc(60% - v-bind(cloudBigPos));
     width: 35%;
     height: 10%;
     background-image: v-bind(urlCloudBig);
   }
   #cloudSmall {
-    top: 45%;
+    top: 25%;
     left: calc(10% + v-bind(cloudSmallPos));
     width: 17.5%;
     height: 2.5%;

@@ -47,8 +47,6 @@
 
 <style scoped>
   div {
-    position: relative;
-    z-index: 2;
     margin-right: -1em;
   }
   ul {
@@ -62,12 +60,12 @@
     scroll-padding: var(--hero-padding-right);
   }
   li {
-    background-color: #fff6;
+    background-color: #fffc;
   }
   #serviceSections li {
     border-radius: 0.5em;
     padding: 0 0 1em 1em;
-    width: 80vw;
+    width: 72vw;
     flex-shrink: 0;
     text-align: left;
     scroll-snap-align: start;

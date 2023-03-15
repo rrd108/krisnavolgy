@@ -53,7 +53,7 @@
   ul {
     position: absolute;
     right: -100vw;
-    z-index: 2;
+    z-index: 3;
     background-color: #fff;
     padding: 0.5em;
     transition: transform 350ms ease-in-out;

@@ -26,7 +26,6 @@
   </section>
   <span id="cloudBig"></span>
   <span id="cloudSmall"></span>
-  <span id="sky"></span>
 </template>
 
 <style scoped>
@@ -39,22 +38,25 @@
     position: relative;
     padding: var(--hero-padding-right);
   }
+  p {
+    position: relative;
+    z-index: 2;
+  }
   #cloudBig,
   #cloudSmall {
-    
     background-size: cover;
     z-index: 1;
-    position: relative; 
+    position: absolute;
   }
   #cloudBig {
-    top: 18%;
+    top: 27%;
     left: calc(60% - v-bind(cloudBigPos));
-    width: 35%;
+    width: 27%;
     height: 10%;
     background-image: v-bind(urlCloudBig);
   }
   #cloudSmall {
-    top: 25%;
+    top: 30%;
     left: calc(10% + v-bind(cloudSmallPos));
     width: 17.5%;
     height: 2.5%;

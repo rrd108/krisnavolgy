@@ -42,12 +42,14 @@
 </template>
 
 <style scoped>
+  div {
+    height: 100%;
+    display: grid;
+  }
   h3 {
-    margin: 1em 0 2em 0;
-    z-index: 1;
+    margin: 1em 2em 0 0;
   }
   p {
-    margin: 1em 2em 1em 0;
-    z-index: 1;
+    margin: 0.5em 2em 2.5em 0;
   }
 </style>

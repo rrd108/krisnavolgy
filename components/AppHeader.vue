@@ -20,7 +20,11 @@
     <img src="/images/logo.png" alt="logo" />
     <nav>
       <ClientOnly>
-        <font-awesome-icon icon="fa-solid fa-bars" @click="isOpen = !isOpen" />
+        <font-awesome-icon
+          :icon="isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"
+          @click="isOpen = !isOpen"
+          id="menu-remote"
+        />
       </ClientOnly>
       <ul :class="{ open: isOpen }">
         <li v-for="item in menu.data?.attributes.Menu_group">
@@ -52,6 +56,10 @@
     justify-content: space-between;
     background-color: #d9d8c5;
   }
+  #menu-remote {
+    z-index: 4;
+    position: relative;
+  }
   img {
     height: calc(100% - 2 * 0.5em);
     margin: 0.5em;
@@ -64,6 +72,7 @@
   }
   nav > ul {
     position: absolute;
+    top: 0;
     right: -100vw;
     z-index: 3;
     background-color: #fff;

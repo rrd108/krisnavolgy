@@ -13,5 +13,6 @@ export default interface Menu {
   Social_media_bar: {
     id: number
     Link: string
+    fontawsome_icon: string
   }[]
 }

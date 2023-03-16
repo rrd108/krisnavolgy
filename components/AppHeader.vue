@@ -40,8 +40,14 @@
         <li>
           <SearchInput :placeholder="menu.data?.attributes.search_field" />
         </li>
-        <li v-for="item in menu.data?.attributes.Social_media_bar">
-          {{ item.Link }}
+        <li>
+          <span v-for="item in menu.data?.attributes.Social_media_bar">
+            <ClientOnly>
+              <NuxtLink :to="item.Link">
+                <font-awesome-icon :icon="item.fontawsome_icon" />
+              </NuxtLink>
+            </ClientOnly>
+          </span>
         </li>
       </ul>
     </nav>

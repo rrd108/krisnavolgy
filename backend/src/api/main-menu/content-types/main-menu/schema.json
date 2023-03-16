@@ -4,7 +4,8 @@
   "info": {
     "singularName": "main-menu",
     "pluralName": "main-menus",
-    "displayName": "Main menu"
+    "displayName": "Main menu",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

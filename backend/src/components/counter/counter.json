@@ -2,25 +2,19 @@
   "collectionName": "components_counter_counters",
   "info": {
     "displayName": "Counter",
-    "icon": "arrow-alt-circle-up"
+    "icon": "arrow-alt-circle-up",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Icon": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
     "Title": {
       "type": "string"
     },
     "Number": {
       "type": "biginteger"
+    },
+    "fontawsome_icon": {
+      "type": "string"
     }
   }
 }

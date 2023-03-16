@@ -14,7 +14,7 @@
       "type": "string",
       "required": true
     },
-    "fontawsome_link": {
+    "fontawsome_icon": {
       "type": "string"
     }
   }

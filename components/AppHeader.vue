@@ -44,7 +44,7 @@
           <span v-for="item in menu.data?.attributes.Social_media_bar">
             <ClientOnly>
               <NuxtLink :to="item.Link">
-                <font-awesome-icon :icon="item.fontawsome_icon" />
+                <font-awesome-icon :icon="item.Fontawesome_icon" />
               </NuxtLink>
             </ClientOnly>
           </span>

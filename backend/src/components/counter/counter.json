@@ -13,7 +13,7 @@
     "Number": {
       "type": "biginteger"
     },
-    "fontawsome_icon": {
+    "Fontawesome_icon": {
       "type": "string"
     }
   }

@@ -14,7 +14,7 @@
       "type": "string",
       "required": true
     },
-    "fontawsome_icon": {
+    "Fontawesome_icon": {
       "type": "string"
     }
   }

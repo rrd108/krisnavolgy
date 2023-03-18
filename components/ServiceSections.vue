@@ -59,7 +59,7 @@
   }
   #serviceSections {
     gap: 1em;
-    margin-top: 35vh;
+    margin-top: 25vh;
     overflow-x: scroll;
     scroll-snap-type: inline mandatory;
     scroll-padding: var(--hero-padding-right);

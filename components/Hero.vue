@@ -23,6 +23,7 @@
 
 <template>
   <section>
+    <img src="/images/divider.png" />
     <h1 v-if="hasBackendFetchError">
       Váratlan hiba történt az adatok lekérése során. Kérjük gyere vissza később
     </h1>

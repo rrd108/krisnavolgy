@@ -25,7 +25,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="touch-right">
     <ul id="serviceSections" ref="serviceSectionsElement">
       <li
         v-for="(service, i) in serviceSection.data?.attributes
@@ -40,20 +40,14 @@
         />
       </li>
     </ul>
-
-    <ul id="pager">
-      <li
-        v-for="i in serviceSection.data?.attributes.service_category_box.length"
-        :class="{ active: serviceSectionsViews[i - 1] }"
-      ></li>
-    </ul>
+    <Pager
+      :length="serviceSection.data?.attributes.service_category_box.length"
+      :visible="serviceSectionsViews"
+    />
   </div>
 </template>
 
 <style scoped>
-  div {
-    margin-right: -1em;
-  }
   ul {
     display: flex;
   }
@@ -77,20 +71,5 @@
   }
   #serviceSections li:last-child {
     margin-right: var(--hero-padding-right);
-  }
-
-  #pager {
-    margin: 1em 1em 1em 0;
-    gap: 0.5em;
-    justify-content: center;
-  }
-  #pager li {
-    width: 0.5em;
-    height: 0.5em;
-    border-radius: 50%;
-    transition: background-color 350ms ease-in-out;
-  }
-  #pager li.active {
-    background-color: #fff;
   }
 </style>

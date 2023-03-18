@@ -70,4 +70,7 @@
   h1 {
     margin: 1em 0;
   }
+  .touch-right {
+    margin-right: -1em;
+  }
 </style>

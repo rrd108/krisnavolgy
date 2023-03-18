@@ -4,6 +4,7 @@
   <div>
     <Hero />
     <Newsletter />
+    <Counters />
   </div>
 </template>
 

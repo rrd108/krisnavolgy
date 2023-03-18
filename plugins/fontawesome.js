@@ -3,7 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {
   fas,
   faBars,
+  faBed,
+  faChildReaching,
   faMagnifyingGlass,
+  faUtensils,
+  faPeopleGroup,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -22,10 +26,14 @@ config.autoAddCss = false
 library.add(
   fas,
   faBars,
+  faBed,
+  faChildReaching,
   faFacebookF,
   faInstagram,
   faMagnifyingGlass,
   faMailchimp,
+  faUtensils,
+  faPeopleGroup,
   faTiktok,
   faXmark
 )

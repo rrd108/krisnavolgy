@@ -3,6 +3,8 @@
   const subscribe = () => {
     console.log(email.value)
   }
+
+  // TODO fetch strapi
 </script>
 
 <template>

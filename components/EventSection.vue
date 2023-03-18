@@ -49,7 +49,7 @@
 
       <Pager
         :color="'#000'"
-        :length="eventSection.data.attributes.Event_display.length"
+        :length="eventSection.data?.attributes.Event_display.length"
         :visible="eventSectionsViews"
       />
     </div>

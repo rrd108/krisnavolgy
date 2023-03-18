@@ -11,7 +11,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap&family=Open+sans&display=swap');
 
   :root {
-    --light: #d9d8c4;
+    --light: #f1efe8;
     --dark: #123a2c;
     --header-dynamic-height: 7dvh;
     --header-height: 7vh;

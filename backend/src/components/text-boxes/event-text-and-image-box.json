@@ -36,7 +36,7 @@
       "required": true,
       "maxLength": 15
     },
-    "Event_beginning_date": {
+    "event_beginning_date": {
       "type": "date",
       "required": true
     },

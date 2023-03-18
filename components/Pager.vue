@@ -19,7 +19,7 @@
 
 <template>
   <ul>
-    <li v-for="i in length" :class="{ active: visible[i] }"></li>
+    <li v-for="i in length - 1" :class="{ active: visible[i] }"></li>
   </ul>
 </template>
 

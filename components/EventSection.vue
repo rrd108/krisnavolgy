@@ -2,8 +2,6 @@
   import StrapiResponse from '../types/StrapiResponse'
   import EventSection from '../types/EventSection'
 
-  const config = useRuntimeConfig()
-
   const client = useStrapiClient()
   let eventSection = {} as StrapiResponse<EventSection>
   try {
@@ -18,39 +16,71 @@
   } catch (error) {
     console.error(error)
   }
+
+  const eventSectionElement = ref(null as unknown as HTMLElement)
+  const eventSectionsViews = ref([true])
+  const visibilityChanged = (value: [number, boolean]) => {
+    const [num, isVisible] = value
+    eventSectionsViews.value[num] = isVisible
+  }
 </script>
 
 <template>
   <section>
+    <picture>
+      <source media="(max-width: 800px)" srcset="/images/divider.png" />
+      <source srcset="/images/divider-desktop.png" />
+      <img src="/images/divider.png" />
+    </picture>
+
     <h2>{{ eventSection.data.attributes.title }}</h2>
-    <ul>
-      <li v-for="event in eventSection.data.attributes.Event_display">
-        <h4>{{ event.event_beginning_date }} {{ event.event_end_date }}</h4>
-        <h3>{{ event.Event_name }}</h3>
-        <p>{{ event.Event_short_description }}</p>
-        <picture>
-          <source
-            media="(max-width: 800px)"
-            :srcset="`${config.public.strapi.url}${event.Event_image.data.attributes.formats.thumbnail.url}`"
+    <div class="touch-right">
+      <ul ref="eventSectionElement">
+        <li v-for="(evt, i) in eventSection.data.attributes.Event_display">
+          <EventSectionBox
+            v-if="eventSectionElement"
+            :evt="evt"
+            :num="i"
+            :scrollElement="eventSectionElement"
+            @visibility="visibilityChanged"
           />
-          <source
-            :srcset="`${config.public.strapi.url}${event.Event_image.data.attributes.formats.small.url}`"
-          />
-          <img
-            :src="`${config.public.strapi.url}${event.Event_image.data.attributes.formats.small.url}`"
-          />
-        </picture>
-      </li>
-    </ul>
+        </li>
+      </ul>
+
+      <Pager
+        :color="'#000'"
+        :length="eventSection.data.attributes.Event_display.length"
+        :visible="eventSectionsViews"
+      />
+    </div>
   </section>
 </template>
 
 <style scoped>
   section {
-    margin-top: 2em;
+    margin: 2em 0 0 var(--hero-padding-right);
     text-align: center;
   }
   h2 {
     margin-bottom: 1em;
+  }
+  ul {
+    display: flex;
+    gap: 1em;
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
+    scroll-padding: var(--hero-padding-right);
+  }
+  li {
+    border-radius: 0.5em;
+    padding: 0 0 1em 1em;
+    width: 85vw;
+    flex-shrink: 0;
+    text-align: left;
+    scroll-snap-align: start;
+    background-color: var(--light);
+  }
+  li:last-child {
+    margin-right: calc(1em + var(--hero-padding-right));
   }
 </style>

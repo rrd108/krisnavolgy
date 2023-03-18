@@ -1,6 +1,10 @@
 <script setup lang="ts">
   import StrapiResponse from '../types/StrapiResponse'
   import Counters from '../types/CountersSection'
+  import { useIntervalFn, useElementVisibility } from '@vueuse/core'
+
+  const target = ref(null)
+  const targetIsVisible = useElementVisibility(target)
 
   const client = useStrapiClient()
   let counters = {} as StrapiResponse<Counters>
@@ -11,10 +15,18 @@
   } catch (error) {
     console.error(error)
   }
+
+  const countUp = ref(1)
+  useIntervalFn(() => {
+    if (countUp.value > 100) return
+    if (targetIsVisible.value) {
+      countUp.value++
+    }
+  }, 20)
 </script>
 
 <template>
-  <ul>
+  <ul ref="target">
     <li
       v-for="counter in counters.data.attributes.Counter.sort((a, b) =>
         a.Number > b.Number ? 1 : -1
@@ -30,7 +42,7 @@
             Intl.NumberFormat('hu-HU', {
               style: 'decimal',
               maximumFractionDigits: 0,
-            }).format(counter.Number)
+            }).format(counter.Number * (countUp / 100))
           }}
         </h3>
         <small>{{ counter.Title }}</small>

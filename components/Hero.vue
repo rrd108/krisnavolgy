@@ -23,7 +23,11 @@
 
 <template>
   <section>
-    <img src="/images/divider.png" />
+    <picture>
+      <source media="(max-width: 800px)" srcset="/images/divider.png" />
+      <source srcset="/images/divider-desktop.png" />
+      <img src="/images/divider.png" />
+    </picture>
     <h1 v-if="hasBackendFetchError">
       Váratlan hiba történt az adatok lekérése során. Kérjük gyere vissza később
     </h1>

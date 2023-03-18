@@ -24,7 +24,6 @@
     margin: 0.5em 0;
   }
   input {
-    padding: 0.5em;
     border: none;
   }
   input:focus-visible {

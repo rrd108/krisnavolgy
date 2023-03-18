@@ -3,14 +3,8 @@
 <template>
   <div>
     <Hero />
-    <hr />
-    <h1>Next part</h1>
-    <p>Jaya Radhe</p>
+    <Newsletter />
   </div>
 </template>
 
-<style scoped>
-  p {
-    margin: 40vh 0;
-  }
-</style>
+<style scoped></style>

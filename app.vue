@@ -12,7 +12,7 @@
 
   :root {
     --light: #decf9b;
-    --dark: #493e26;
+    --dark: #123a2c;
     --header-dynamic-height: 7dvh;
     --header-height: 7vh;
     --main-dynamic-height: calc(100dvh - var(--header-dynamic-height));
@@ -25,8 +25,19 @@
     box-sizing: border-box;
   }
   body,
-  input {
+  input,
+  button {
     font-family: 'Open sans', sans-serif;
+  }
+  button {
+    font-size: 0.9rem;
+  }
+  input {
+    font-size: 1rem;
+  }
+  input,
+  button {
+    padding: 0.5em;
   }
   #app {
     overflow-x: hidden;

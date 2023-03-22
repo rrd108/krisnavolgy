@@ -31,8 +31,8 @@
     <h1 v-if="hasBackendFetchError">
       Váratlan hiba történt az adatok lekérése során. Kérjük gyere vissza később
     </h1>
-    <h1>{{ hero.data?.attributes.Hero_text.Title }}</h1>
-    <p>{{ hero.data?.attributes.Hero_text.Content }}</p>
+    <h1>{{ hero.data?.attributes.Hero_text.title }}</h1>
+    <p>{{ hero.data?.attributes.Hero_text.content }}</p>
     <ServiceSections />
   </section>
   <span id="cloudBig"></span>

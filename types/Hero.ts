@@ -1,8 +1,8 @@
 export default interface Hero {
   Hero_text: {
     id: number
-    Title: string
-    Content: string
+    title: string
+    content: string
   }
   Hero_button: {
     id: number

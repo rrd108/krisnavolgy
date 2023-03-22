@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_text_boxes_descriptive_text_box_with_images",
+  "info": {
+    "displayName": "Descriptive text box with image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.simple-button"
+    }
+  }
+}

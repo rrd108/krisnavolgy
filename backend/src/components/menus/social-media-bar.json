@@ -10,7 +10,7 @@
       "type": "string",
       "required": true
     },
-    "Fontawesome_icon": {
+    "fontawesome_icon": {
       "type": "string"
     }
   }

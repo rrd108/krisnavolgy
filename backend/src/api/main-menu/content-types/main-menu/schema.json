@@ -19,11 +19,6 @@
     },
     "search_field": {
       "type": "string"
-    },
-    "Social_media_bar": {
-      "type": "component",
-      "repeatable": true,
-      "component": "menus.social-media-bar"
     }
   }
 }

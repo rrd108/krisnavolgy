@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "social_media_bars",
+  "info": {
+    "singularName": "social-media-bar",
+    "pluralName": "social-media-bars",
+    "displayName": "Social media bar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Social_media_bar": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menus.social-media-bar"
+    }
+  }
+}

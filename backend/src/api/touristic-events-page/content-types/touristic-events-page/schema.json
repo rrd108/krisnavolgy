@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "touristic_events_pages",
+  "info": {
+    "singularName": "touristic-events-page",
+    "pluralName": "touristic-events-pages",
+    "displayName": "touristic events page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "descriptive_text_box_with_image": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-boxes.descriptive-text-box-with-image"
+    },
+    "page_title": {
+      "type": "string"
+    }
+  }
+}

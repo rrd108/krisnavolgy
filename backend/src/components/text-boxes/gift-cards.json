@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_text_boxes_gift_cards",
+  "info": {
+    "displayName": "gift cards"
+  },
+  "options": {},
+  "attributes": {
+    "gift_card_name": {
+      "type": "string"
+    },
+    "package": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-boxes.package"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.simple-button"
+    }
+  }
+}

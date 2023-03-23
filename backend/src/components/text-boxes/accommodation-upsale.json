@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_text_boxes_accommodation_upsales",
+  "info": {
+    "displayName": "accommodation upsale",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.simple-button"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

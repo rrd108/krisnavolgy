@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_text_boxes_group_order_forms",
+  "info": {
+    "displayName": "group order form",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "form_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "group_program_list": {
+      "displayName": "group program list",
+      "type": "component",
+      "repeatable": true,
+      "component": "text-boxes.group-program-list"
+    },
+    "package_description": {
+      "type": "string"
+    },
+    "package": {
+      "displayName": "package",
+      "type": "component",
+      "repeatable": true,
+      "component": "text-boxes.package"
+    },
+    "group_contact_form": {
+      "displayName": "group contact form",
+      "type": "component",
+      "repeatable": false,
+      "component": "text-boxes.group-contact-form"
+    },
+    "gdpr_field": {
+      "displayName": "GDPR field",
+      "type": "component",
+      "repeatable": false,
+      "component": "text-boxes.gdpr-field"
+    }
+  }
+}

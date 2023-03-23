@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_text_boxes_group_program_lists",
+  "info": {
+    "displayName": "group program list"
+  },
+  "options": {},
+  "attributes": {
+    "program_name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_text_boxes_gdpr_fields",
+  "info": {
+    "displayName": "GDPR field"
+  },
+  "options": {},
+  "attributes": {
+    "instructions": {
+      "type": "text"
+    },
+    "consent_text": {
+      "type": "text"
+    }
+  }
+}

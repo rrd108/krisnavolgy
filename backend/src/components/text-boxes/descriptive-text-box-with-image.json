@@ -23,9 +23,6 @@
     "title": {
       "type": "string"
     },
-    "content": {
-      "type": "string"
-    },
     "date": {
       "type": "date"
     },
@@ -33,6 +30,9 @@
       "type": "component",
       "repeatable": true,
       "component": "buttons.simple-button"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

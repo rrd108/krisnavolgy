@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_text_boxes_group_contact_forms",
+  "info": {
+    "displayName": "group contact form"
+  },
+  "options": {},
+  "attributes": {
+    "form_description": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "telephone_number": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "group_name": {
+      "type": "string"
+    }
+  }
+}

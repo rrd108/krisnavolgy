@@ -41,12 +41,6 @@
       "repeatable": true,
       "component": "text-boxes.upsale"
     },
-    "gift_card_section": {
-      "displayName": "gift card",
-      "type": "component",
-      "repeatable": false,
-      "component": "text-boxes.gift-card"
-    },
     "term_and_conditions": {
       "displayName": "terms and conditions",
       "type": "component",

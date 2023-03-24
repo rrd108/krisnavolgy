@@ -46,6 +46,11 @@
       "type": "component",
       "repeatable": false,
       "component": "text-boxes.terms-and-conditions"
+    },
+    "gift_card_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "text-boxes.gift-card-section"
     }
   }
 }

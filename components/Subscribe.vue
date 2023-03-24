@@ -1,21 +1,24 @@
 <script setup lang="ts">
+  const props = defineProps({
+    button_text: { type: String, required: true },
+    content: { type: String, required: true },
+    placeholder: { type: String, required: true },
+    title: { type: String, required: true },
+  })
+
   const email = ref('')
   const subscribe = () => {
+    // TODO
     console.log(email.value)
   }
-
-  // TODO fetch strapi
 </script>
 
 <template>
   <section>
-    <h2>Ne hagyd ki</h2>
-    <p>
-      Legyél az első, aki értesül az eseményekről, különleges promóciókról és
-      sok más nagyszerű dologról.
-    </p>
-    <input type="email" v-model="email" placeholder="Email" />
-    <button @click="subscribe">Iratkozz fel</button>
+    <h2>{{ title }}</h2>
+    <p>{{ content }}</p>
+    <input type="email" v-model="email" :placeholder="placeholder" />
+    <button @click="subscribe">{{ button_text }}</button>
   </section>
 </template>
 

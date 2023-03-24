@@ -15,7 +15,12 @@
 
 <template>
   <footer>
-    <Newsletter />
+    <Subscribe
+      :title="footer.data.attributes.Subscribe.Title"
+      :content="footer.data.attributes.Subscribe.Text"
+      :placeholder="footer.data.attributes.Subscribe_button.Subscribe_field"
+      button_text="TODO"
+    />
   </footer>
 </template>
 

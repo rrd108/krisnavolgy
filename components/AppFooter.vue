@@ -22,6 +22,7 @@
       button_text="TODO"
     />
     <OpeningHours :data="footer.data.attributes.Opening_hours" />
+    <Contact :data="footer.data.attributes.Availability" />
   </footer>
 </template>
 
@@ -31,6 +32,9 @@
     padding: 1em;
   }
 
+  :deep(h3) {
+    margin-top: 2em;
+  }
   :deep(hr) {
     border-bottom: thin solid var(--light);
     width: 50vw;

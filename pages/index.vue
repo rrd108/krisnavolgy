@@ -28,7 +28,12 @@
     <Counters />
     <EventSection />
     <OnSaleSection />
-    <br /><br />
+    <br />
+    Mi Krisna-völgy
+    <br />
+    Rólunk mondták
+    <br />
+    Térkép
   </div>
 </template>
 

@@ -18,7 +18,7 @@
     --header-height: 7vh;
     --main-dynamic-height: calc(100dvh - var(--header-dynamic-height));
     --main-height: calc(100vh - var(--header-height));
-    --hero-padding-right: 1em;
+    --horizontal-scroll-padding-right: 1em;
   }
   * {
     margin: 0;
@@ -73,5 +73,33 @@
   }
   .touch-right {
     margin-right: -1em;
+  }
+
+  .horizontal-scroll {
+    display: flex;
+    gap: 1em;
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
+    scroll-padding: var(--horizontal-scroll-padding-right);
+  }
+  .horizontal-scroll li {
+    border-radius: 0.5em;
+    padding: 0 0 1em 1em;
+    width: 72vw;
+    flex-shrink: 0;
+    text-align: left;
+    scroll-snap-align: start;
+  }
+  .horizontal-scroll li:last-child {
+    margin-right: var(--horizontal-scroll-padding-right);
+  }
+  .button {
+    background-color: var(--dark);
+    color: var(--light);
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    text-align: center;
   }
 </style>

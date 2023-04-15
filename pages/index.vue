@@ -27,7 +27,7 @@
     />
     <Counters />
     <EventSection />
-    <OnSale />
+    <OnSaleSection />
     <br /><br />
   </div>
 </template>

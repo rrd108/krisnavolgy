@@ -47,7 +47,7 @@
     background-size: cover;
     text-align: center;
     position: relative;
-    padding: var(--hero-padding-right);
+    padding: var(--horizontal-scroll-padding-right);
   }
   p {
     position: relative;

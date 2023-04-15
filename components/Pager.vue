@@ -11,7 +11,7 @@
       required: true,
     },
     visible: {
-      type: [] as PropType<boolean[]>,
+      type: Array as PropType<boolean[]>,
       required: true,
     },
   })
@@ -25,6 +25,7 @@
 
 <style scoped>
   ul {
+    display: flex;
     margin: 1em 1em 1em 0;
     gap: 0.5em;
     justify-content: center;

@@ -35,7 +35,7 @@
 
     <h2>{{ eventSection.data.attributes.title }}</h2>
     <div class="touch-right">
-      <ul ref="eventSectionElement">
+      <ul ref="eventSectionElement" class="horizontal-scroll">
         <li v-for="(evt, i) in eventSection.data.attributes.Event_display">
           <EventSectionBox
             v-if="eventSectionElement"
@@ -58,29 +58,18 @@
 
 <style scoped>
   section {
-    margin: 2em 0 0 var(--hero-padding-right);
+    margin: 2em 0 0 var(--horizontal-scroll-padding-right);
     text-align: center;
   }
   h2 {
     margin-bottom: 1em;
   }
-  ul {
-    display: flex;
-    gap: 1em;
-    overflow-x: scroll;
-    scroll-snap-type: inline mandatory;
-    scroll-padding: var(--hero-padding-right);
-  }
+
   li {
-    border-radius: 0.5em;
-    padding: 0 0 1em 1em;
     width: 85vw;
-    flex-shrink: 0;
-    text-align: left;
-    scroll-snap-align: start;
     background-color: var(--light);
   }
   li:last-child {
-    margin-right: calc(1em + var(--hero-padding-right));
+    margin-right: calc(1em + var(--horizontal-scroll-padding-right));
   }
 </style>

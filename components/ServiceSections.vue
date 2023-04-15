@@ -26,7 +26,7 @@
 
 <template>
   <div class="touch-right">
-    <ul id="serviceSections" ref="serviceSectionsElement">
+    <ul ref="serviceSectionsElement" class="horizontal-scroll">
       <li
         v-for="(service, i) in serviceSection.data?.attributes
           .service_category_box"
@@ -49,27 +49,9 @@
 
 <style scoped>
   ul {
-    display: flex;
-  }
-  #serviceSections {
-    gap: 1em;
     margin-top: 25vh;
-    overflow-x: scroll;
-    scroll-snap-type: inline mandatory;
-    scroll-padding: var(--hero-padding-right);
   }
   li {
     background-color: #fffc;
-  }
-  #serviceSections li {
-    border-radius: 0.5em;
-    padding: 0 0 1em 1em;
-    width: 72vw;
-    flex-shrink: 0;
-    text-align: left;
-    scroll-snap-align: start;
-  }
-  #serviceSections li:last-child {
-    margin-right: var(--hero-padding-right);
   }
 </style>

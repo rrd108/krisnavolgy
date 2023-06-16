@@ -1,21 +1,23 @@
 {
   "collectionName": "components_buttons_icon_buttons",
   "info": {
-    "displayName": "Icon button",
-    "icon": "adjust",
-    "description": ""
+    "displayName": "icon button",
+    "icon": "arrow-alt-circle-right"
   },
   "options": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "button_text": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
     },
-    "Link": {
+    "url": {
       "type": "string",
       "required": true
     },
-    "Fontawesome_icon": {
-      "type": "string"
+    "icon": {
+      "type": "string",
+      "required": true
     }
   }
 }

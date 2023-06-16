@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_text_box_simply_text_boxes",
+  "info": {
+    "displayName": "simply text box",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 60
+    },
+    "content": {
+      "type": "text",
+      "required": true,
+      "maxLength": 160
+    }
+  }
+}

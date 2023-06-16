@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_buttons_simple_buttons",
+  "info": {
+    "displayName": "simple button",
+    "icon": "angle-right"
+  },
+  "options": {},
+  "attributes": {
+    "button_text": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

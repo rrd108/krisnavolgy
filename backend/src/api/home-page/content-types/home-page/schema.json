@@ -18,14 +18,13 @@
       "component": "hero.hero-section",
       "required": true
     },
-    "subscribe_section": {
-      "type": "component",
-      "repeatable": false,
-      "component": "subscribe.subscribe-section",
-      "required": false
-    },
     "slug": {
       "type": "uid"
+    },
+    "subscribe": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::subscribe.subscribe"
     }
   }
 }

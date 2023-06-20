@@ -19,6 +19,15 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::subscribe.subscribe"
+    },
+    "special_offers": {
+      "type": "boolean"
+    },
+    "title": {
+      "type": "string"
+    },
+    "number_of_items": {
+      "type": "integer"
     }
   }
 }

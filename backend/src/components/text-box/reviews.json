@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_text_box_reviews",
+  "info": {
+    "displayName": "reviews",
+    "icon": "grin-alt"
+  },
+  "options": {},
+  "attributes": {
+    "review_content": {
+      "type": "richtext",
+      "required": true
+    },
+    "reviewer_name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 90
+    }
+  }
+}

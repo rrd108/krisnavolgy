@@ -1,8 +1,9 @@
 {
   "collectionName": "components_upsale_szallas_upsales",
   "info": {
-    "displayName": "szallas upsale",
-    "icon": "arrow-alt-circle-up"
+    "displayName": "guesthouse",
+    "icon": "arrow-alt-circle-up",
+    "description": ""
   },
   "options": {},
   "attributes": {

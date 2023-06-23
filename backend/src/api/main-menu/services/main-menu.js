@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * dummy service
+ * main-menu service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::dummy.dummy');
+module.exports = createCoreService('api::main-menu.main-menu');

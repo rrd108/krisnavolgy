@@ -54,4 +54,10 @@
   h2 {
     margin-bottom: 1em;
   }
+
+  @media screen and (min-width: 64rem) {
+    li {
+      width: 25%;
+    }
+  }
 </style>

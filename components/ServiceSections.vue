@@ -27,10 +27,7 @@
         />
       </li>
     </ul>
-    <!--Pager
-      :length="serviceSection.data?.attributes.service_category_box.length"
-      :visible="serviceSectionsViews"
-    /-->
+    <Pager :length="services.length" :visible="serviceSectionsViews" />
   </div>
 </template>
 

@@ -39,7 +39,7 @@
     background-color: #fffc;
   }
 
-  @media (min-width: 64em) {
+  @media (min-width: 64rem) {
     li {
       width: 25%;
     }

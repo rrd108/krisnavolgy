@@ -8,7 +8,7 @@
   let menu = {} as StrapiResponse<Menu>
   try {
     menu = await client<StrapiResponse<Menu>>('/main-menu', {
-      params: { populate: 'Menu_group.Menu_item,Social_media_bar' },
+      params: { populate: 'deep' },
     })
   } catch (error) {
     console.error(error)

@@ -1,22 +1,12 @@
 <script setup lang="ts">
-  import Hero from '../types/Hero'
-  import StrapiResponse from '../types/StrapiResponse'
   import { useWindowScroll } from '@vueuse/core'
+  import HeroSection from '~~/types/HeroSection'
+
+  const props = defineProps<{
+    data: HeroSection
+  }>()
 
   const { x, y } = useWindowScroll()
-  const client = useStrapiClient()
-
-  const hasBackendFetchError = ref(false)
-  let hero = {} as StrapiResponse<Hero>
-  try {
-    hero = await client<StrapiResponse<Hero>>('/hero-section', {
-      params: { populate: '*' },
-    })
-  } catch (error) {
-    console.error(error)
-    hasBackendFetchError.value = true
-  }
-
   const cloudBigPos = computed(() => `${y.value / 20}%`)
   const cloudSmallPos = computed(() => `${y.value / 20}%`)
 </script>
@@ -31,8 +21,8 @@
     <h1 v-if="hasBackendFetchError">
       Váratlan hiba történt az adatok lekérése során. Kérjük gyere vissza később
     </h1>
-    <h1>{{ hero.data?.attributes.Hero_text.title }}</h1>
-    <p>{{ hero.data?.attributes.Hero_text.content }}</p>
+    <h1>{{ props.data.hero_text.title }}</h1>
+    <p>{{ props.data.hero_text.content }}</p>
     <ServiceSections />
   </section>
   <span id="cloudBig"></span>

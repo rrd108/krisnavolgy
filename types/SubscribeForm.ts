@@ -1,11 +1,7 @@
 export default interface SubscribeForm {
-  Subscribe_field: string
-  Text_box: {
-    title: string
-    content: string
-  }
-  Subscribe_button: {
-    Title: string
-    Link: string
-  }
+  id: number
+  title: string
+  call_to_action: string
+  email_entry_field: string
+  subscribe_button: { button_text: string; url: string }
 }

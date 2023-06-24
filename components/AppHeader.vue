@@ -7,7 +7,7 @@
   const client = useStrapiClient()
   let menu = {} as StrapiResponse<Menu>
   try {
-    menu = await client<StrapiResponse<Menu>>('/main-menu', {
+    menu = await client<StrapiResponse<Menu>>('/main-menus', {
       params: { populate: 'deep' },
     })
   } catch (error) {

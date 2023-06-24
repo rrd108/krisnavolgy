@@ -18,9 +18,7 @@
       <source srcset="/images/divider-desktop.png" />
       <img src="/images/divider.png" />
     </picture>
-    <h1 v-if="hasBackendFetchError">
-      Váratlan hiba történt az adatok lekérése során. Kérjük gyere vissza később
-    </h1>
+
     <h1>{{ props.data.hero_text.title }}</h1>
     <p>{{ props.data.hero_text.content }}</p>
     <ServiceSections />

@@ -1,21 +1,9 @@
 <script setup lang="ts">
-  import StrapiResponse from '../types/StrapiResponse'
-  import EventSection from '../types/EventSection'
+  import Happening from '~~/types/Happening'
 
-  const client = useStrapiClient()
-  let eventSection = {} as StrapiResponse<EventSection>
-  try {
-    eventSection = await client<StrapiResponse<EventSection>>(
-      '/event-section',
-      {
-        params: {
-          populate: 'Event_display.Event_button,Event_display.Event_image',
-        },
-      }
-    )
-  } catch (error) {
-    console.error(error)
-  }
+  const props = defineProps<{
+    happenings: Happening[]
+  }>()
 
   const eventSectionElement = ref(null as unknown as HTMLElement)
   const eventSectionsViews = ref([true])
@@ -33,10 +21,10 @@
       <img src="/images/divider.png" />
     </picture>
 
-    <h2>{{ eventSection.data.attributes.title }}</h2>
+    <h2>Események TODO</h2>
     <div class="touch-right">
       <ul ref="eventSectionElement" class="horizontal-scroll">
-        <li v-for="(evt, i) in eventSection.data.attributes.Event_display">
+        <li v-for="(happening, i) in happenings">
           <EventSectionBox
             v-if="eventSectionElement"
             :evt="evt"

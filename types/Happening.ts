@@ -1,20 +1,13 @@
+import StrapiButton from './StrapiButton'
+
 type Happening = {
   id: number
+  title: string
+  short_name: string
   date: string
-  shortName: string
-  name: string
-  description: string
-  image: {
-    data: {
-      attributes: {
-        formats: {
-          thumbnail: { url: string }
-          small: { url: string }
-          medium: { url: string }
-        }
-      }
-    }
-  }
+  event_description: string
+  button: StrapiButton
+  image: StrapiImage
 }
 
 export default Happening

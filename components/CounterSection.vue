@@ -1,20 +1,13 @@
 <script setup lang="ts">
-  import StrapiResponse from '../types/StrapiResponse'
-  import Counters from '../types/CountersSection'
   import { useIntervalFn, useElementVisibility } from '@vueuse/core'
+  import Counter from '~~/types/Counter'
+
+  const props = defineProps<{
+    counters: Counter[]
+  }>()
 
   const target = ref(null)
   const targetIsVisible = useElementVisibility(target)
-
-  const client = useStrapiClient()
-  let counters = {} as StrapiResponse<Counters>
-  try {
-    counters = await client<StrapiResponse<Counters>>('/counter-section', {
-      params: { populate: '*' },
-    })
-  } catch (error) {
-    console.error(error)
-  }
 
   const countUp = ref(1)
   useIntervalFn(() => {
@@ -28,13 +21,13 @@
 <template>
   <ul ref="target">
     <li
-      v-for="counter in counters.data.attributes.Counter.sort((a, b) =>
-        a.Number > b.Number ? 1 : -1
+      v-for="counter in props.counters.sort((a, b) =>
+        a.number > b.number ? 1 : -1
       )"
       :key="counter.id"
     >
       <ClientOnly>
-        <font-awesome-icon :icon="counter.Fontawesome_icon" />
+        <font-awesome-icon :icon="counter.fontawesome_icon" />
       </ClientOnly>
       <div>
         <h3>
@@ -42,10 +35,10 @@
             Intl.NumberFormat('hu-HU', {
               style: 'decimal',
               maximumFractionDigits: 0,
-            }).format(counter.Number * (countUp / 100))
+            }).format(counter.number * (countUp / 100))
           }}
         </h3>
-        <small>{{ counter.Title }}</small>
+        <small>{{ counter.title }}</small>
       </div>
     </li>
   </ul>

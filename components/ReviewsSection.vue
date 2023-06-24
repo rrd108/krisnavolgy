@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { ref } from 'vue'
   import Review from '~~/types/Review'
 
   const props = defineProps<{
@@ -14,12 +15,14 @@
 </script>
 
 <template>
-  <section>
+  <div class="touch-right">
     <h2>Rólunk mondták TODO</h2>
     <ul ref="reviewElement" class="horizontal-scroll">
-      <li v-for="review in props.reviews">
+      <li v-for="(review, i) in props.reviews">
         <ReviewBox
+          v-if="reviewElement"
           :review="review"
+          :num="i"
           :scrollElement="reviewElement"
           @visibility="visibilityChanged"
         />
@@ -28,10 +31,14 @@
 
     <Pager
       :color="'#000'"
-      :length="props.reviews?.length || 1"
+      :length="reviews.length || 1"
       :visible="reviewsViews"
     />
-  </section>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  h2 {
+    margin-bottom: 1em;
+  }
+</style>

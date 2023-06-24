@@ -1,17 +1,37 @@
 <script setup lang="ts">
-  import { PropType } from 'vue'
+  import { PropType, ref } from 'vue'
+  import { useElementVisibility } from '@vueuse/core'
   import Review from '~~/types/Review'
 
-  defineProps({
+  const props = defineProps({
+    num: {
+      type: Number,
+      required: true,
+    },
     review: {
       type: Object as PropType<Review>,
       required: true,
     },
+    scrollElement: {
+      type: Object as PropType<HTMLElement>,
+      required: true,
+    },
   })
+
+  const emit = defineEmits<{
+    (e: 'visibility', value: [number, boolean]): void
+  }>()
+
+  const target = ref(null)
+  const targetIsVisible = useElementVisibility(target, {
+    scrollTarget: props.scrollElement,
+  })
+
+  watch(targetIsVisible, value => emit('visibility', [props.num, value]))
 </script>
 
 <template>
-  <div>
+  <div ref="target">
     <p>{{ review.review_content }}</p>
     <small>{{ review.reviewer_name }}</small>
   </div>

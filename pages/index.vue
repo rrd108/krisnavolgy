@@ -27,8 +27,7 @@
     <br />
     Mi Krisna-völgy
     <br />
-    Rólunk mondták
-    <br />
+    <ReviewsSection :reviews="homePage.reviews" />
     Térkép
   </div>
 </template>

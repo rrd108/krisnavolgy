@@ -2,6 +2,7 @@ import HeroSection from './HeroSection'
 import ServiceSection from './Service'
 import Counter from './Counter'
 import Happening from './Happening'
+import Review from './Review'
 
 export default interface HomePage {
   slug: string
@@ -10,4 +11,5 @@ export default interface HomePage {
   services_section: ServiceSection[]
   counter_section: Counter[]
   events: Happening[]
+  reviews: Review[]
 }

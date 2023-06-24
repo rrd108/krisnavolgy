@@ -4,5 +4,5 @@ export default defineNuxtConfig({
   strapi: {
     url: process.env.STRAPI_URL || 'http://127.0.0.1:1337',
   },
-  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
+  css: ['@fortawesome/fontawesome-svg-core/styles.css', '~/style.css'],
 })

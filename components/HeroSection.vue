@@ -1,9 +1,11 @@
 <script setup lang="ts">
   import { useWindowScroll } from '@vueuse/core'
   import HeroSection from '~~/types/HeroSection'
+  import ServiceSection from '~~/types/ServiceSection'
 
   const props = defineProps<{
-    data: HeroSection
+    hero: HeroSection
+    services: ServiceSection[]
   }>()
 
   const { x, y } = useWindowScroll()
@@ -19,9 +21,9 @@
       <img src="/images/divider.png" />
     </picture>
 
-    <h1>{{ props.data.hero_text.title }}</h1>
-    <p>{{ props.data.hero_text.content }}</p>
-    <ServiceSections />
+    <h1>{{ props.hero.hero_text.title }}</h1>
+    <p>{{ props.hero.hero_text.content }}</p>
+    <ServiceSections :services="services" />
   </section>
   <span id="cloudBig"></span>
   <span id="cloudSmall"></span>

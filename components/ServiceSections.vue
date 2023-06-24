@@ -1,20 +1,10 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import StrapiResponse from '../types/StrapiResponse'
-  import ServiceSection from '../types/ServiceSection'
+  import ServiceSection from '~~/types/ServiceSection'
 
-  const client = useStrapiClient()
-  let serviceSection = {} as StrapiResponse<ServiceSection>
-  try {
-    serviceSection = await client<StrapiResponse<ServiceSection>>(
-      '/service-section',
-      {
-        params: { populate: '*' },
-      }
-    )
-  } catch (error) {
-    console.error(error)
-  }
+  const props = defineProps<{
+    services: ServiceSection[]
+  }>()
 
   const serviceSectionsElement = ref(null as unknown as HTMLElement)
   const serviceSectionsViews = ref([true])
@@ -27,10 +17,7 @@
 <template>
   <div class="touch-right">
     <ul ref="serviceSectionsElement" class="horizontal-scroll">
-      <li
-        v-for="(service, i) in serviceSection.data?.attributes
-          .service_category_box"
-      >
+      <li v-for="(service, i) in props.services">
         <ServiceSectionBox
           v-if="serviceSectionsElement"
           :service="service"
@@ -40,10 +27,10 @@
         />
       </li>
     </ul>
-    <Pager
+    <!--Pager
       :length="serviceSection.data?.attributes.service_category_box.length"
       :visible="serviceSectionsViews"
-    />
+    /-->
   </div>
 </template>
 

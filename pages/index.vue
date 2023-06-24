@@ -17,7 +17,10 @@
 
 <template>
   <div>
-    <HeroSection :data="homePage.hero_section" />
+    <HeroSection
+      :hero="homePage.hero_section"
+      :services="homePage.services_section"
+    />
   </div>
 </template>
 

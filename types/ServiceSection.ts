@@ -1,8 +1,11 @@
+import StrapiButton from './StrapiButton'
+
 export default interface ServiceSection {
-  service_category_box: {
-    id: number
-    Title: string
-    Description: string
-    Prices: string
-  }[]
+  id: number
+  title: string
+  sub_title: string
+  content: string
+  price: string
+  image: StrapiImage
+  button: StrapiButton
 }

@@ -16,6 +16,8 @@
       countUp.value++
     }
   }, 20)
+
+  const counterLength = computed(() => props.counters.length)
 </script>
 
 <template>
@@ -56,5 +58,12 @@
     display: flex;
     align-items: center;
     gap: 1em;
+  }
+
+  @media screen and (min-width: 64rem) {
+    ul {
+      grid-template-columns: repeat(v-bind(counterLength), 1fr);
+      justify-items: center;
+    }
   }
 </style>

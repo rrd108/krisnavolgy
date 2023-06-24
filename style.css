@@ -31,6 +31,8 @@ button {
 }
 #app {
   overflow-x: hidden;
+  max-width: 64rem;
+  margin: 0 auto;
 }
 ul {
   list-style: none;
@@ -92,7 +94,7 @@ h1 {
   text-align: center;
 }
 
-@media screen and (min-width: 64em) {
+@media screen and (min-width: 64rem) ) {
   :root {
     --horizontal-scroll-padding-right: 5em;
   }

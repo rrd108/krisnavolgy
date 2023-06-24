@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_text_box_event_text_boxes",
+  "info": {
+    "displayName": "event text box",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 15
+    },
+    "short_name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 8
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "event_description": {
+      "type": "richtext",
+      "required": true
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.simple-button"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * dummy router
+ * event router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::dummy.dummy');
+module.exports = createCoreRouter('api::event.event');

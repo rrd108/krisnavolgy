@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_packages_packages",
+  "info": {
+    "displayName": "packages",
+    "icon": "gift"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 60
+    },
+    "price": {
+      "type": "string",
+      "required": true,
+      "maxLength": 60
+    },
+    "package_content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

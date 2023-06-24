@@ -25,6 +25,40 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::subscribe.subscribe"
+    },
+    "counter_section": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-box.counter"
+    },
+    "services_section": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-box.detailed-text-box"
+    },
+    "review_section_title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 90
+    },
+    "reviews": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-box.reviews",
+      "required": true
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event"
     }
   }
 }

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * dummy controller
+ * main-menu controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::dummy.dummy');
+module.exports = createCoreController('api::main-menu.main-menu');

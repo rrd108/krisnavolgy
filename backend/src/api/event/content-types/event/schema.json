@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "event_text_box": {
+      "displayName": "event text box",
+      "type": "component",
+      "repeatable": true,
+      "component": "text-box.event-text-box"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import StrapiButton from './StrapiButton'
 
-export default interface ServiceSection {
+export default interface Service {
   id: number
   title: string
   sub_title: string

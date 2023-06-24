@@ -1,11 +1,11 @@
 <script setup lang="ts">
   import { useWindowScroll } from '@vueuse/core'
   import HeroSection from '~~/types/HeroSection'
-  import ServiceSection from '~~/types/ServiceSection'
+  import Service from '~~/types/Service'
 
   const props = defineProps<{
     hero: HeroSection
-    services: ServiceSection[]
+    services: Service[]
   }>()
 
   const { x, y } = useWindowScroll()

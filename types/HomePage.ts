@@ -1,5 +1,5 @@
 import HeroSection from './HeroSection'
-import ServiceSection from './ServiceSection'
+import ServiceSection from './Service'
 import Counter from './Counter'
 
 export default interface HomePage {

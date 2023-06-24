@@ -1,9 +1,9 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import ServiceSection from '~~/types/ServiceSection'
+  import Service from '~~/types/Service'
 
   const props = defineProps<{
-    services: ServiceSection[]
+    services: Service[]
   }>()
 
   const serviceSectionsElement = ref(null as unknown as HTMLElement)

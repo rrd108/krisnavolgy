@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { PropType, ref } from 'vue'
   import { useElementVisibility } from '@vueuse/core'
-  import ServiceSection from '~~/types/ServiceSection'
+  import Service from '~~/types/Service'
 
   const props = defineProps({
     num: {
@@ -9,7 +9,7 @@
       required: true,
     },
     service: {
-      type: Object as PropType<ServiceSection>,
+      type: Object as PropType<Service>,
       required: true,
     },
     scrollElement: {

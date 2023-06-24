@@ -41,7 +41,7 @@
 
   @media (min-width: 64rem) {
     li {
-      width: 25%;
+      width: 20%;
     }
   }
 </style>

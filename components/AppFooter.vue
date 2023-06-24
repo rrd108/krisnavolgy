@@ -6,7 +6,7 @@
   let footer = {} as StrapiResponse<Footer>
   try {
     footer = await client<StrapiResponse<Footer>>('/footer', {
-      params: { populate: '*' },
+      params: { populate: 'deep' },
     })
   } catch (error) {
     console.error(error)

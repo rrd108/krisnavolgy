@@ -22,6 +22,14 @@
       :services="homePage.services_section"
     />
     <CounterSection :counters="homePage.counter_section" />
+    <!--EventSection :happenings="homePage.events" /-->
+    <OnSaleSection />
+    <br />
+    Mi Krisna-völgy
+    <br />
+    Rólunk mondták
+    <br />
+    Térkép
   </div>
 </template>
 

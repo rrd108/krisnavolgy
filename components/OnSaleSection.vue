@@ -24,7 +24,7 @@
 
 <template>
   <div class="touch-right">
-    <h2>Akciók</h2>
+    <h2>Akciók TODO</h2>
     <ul ref="onSaleSectionElement" class="horizontal-scroll">
       <li v-for="(product, i) in data">
         <OnSaleSectionBox

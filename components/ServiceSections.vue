@@ -38,4 +38,10 @@
   li {
     background-color: #fffc;
   }
+
+  @media (min-width: 64em) {
+    li {
+      width: 25%;
+    }
+  }
 </style>

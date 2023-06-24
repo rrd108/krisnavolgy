@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { ref } from 'vue'
   import WoocommerceProduct from '../types/WoocommerceProduct'
 
   const { data } = await useFetch<WoocommerceProduct[]>(
@@ -22,12 +23,14 @@
 </script>
 
 <template>
-  <section>
+  <div class="touch-right">
     <h2>Akciók</h2>
     <ul ref="onSaleSectionElement" class="horizontal-scroll">
-      <li v-for="product in data">
+      <li v-for="(product, i) in data">
         <OnSaleSectionBox
+          v-if="onSaleSectionElement"
           :product="product"
+          :num="i"
           :scrollElement="onSaleSectionElement"
           @visibility="visibilityChanged"
         />
@@ -39,13 +42,13 @@
       :length="data?.length || 1"
       :visible="onSaleSectionsViews"
     />
-  </section>
+  </div>
 </template>
 
 <style scoped>
-  section {
+  div {
     background-color: var(--light);
-    padding: 1em 0 1em 1em;
+    padding: 1em 0;
     text-align: center;
   }
   h2 {

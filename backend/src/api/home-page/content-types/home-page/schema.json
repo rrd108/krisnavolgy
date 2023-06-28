@@ -55,10 +55,10 @@
         "videos"
       ]
     },
-    "events": {
+    "happenings": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::event.event"
+      "target": "api::happening.happening"
     }
   }
 }

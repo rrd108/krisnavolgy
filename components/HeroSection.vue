@@ -69,6 +69,9 @@
   @media screen and (min-width: 64rem) {
     section {
       background-image: url('/images/background-desktop.png');
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     /* TODO */

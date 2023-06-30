@@ -597,6 +597,11 @@
   resolved "https://registry.npmjs.org/@ioredis/commands/-/commands-1.2.0.tgz"
   integrity sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==
 
+"@jambonn/vue-concise-carousel@^2.1.29":
+  version "2.1.29"
+  resolved "https://registry.yarnpkg.com/@jambonn/vue-concise-carousel/-/vue-concise-carousel-2.1.29.tgz#2c8c97e5785dcd4d7b524a678aa6844421049b01"
+  integrity sha512-FmbR/EHnS1Kkwh04odpMuiwQQ//GHM+jwqnQ3Mya/AYFN0KbRsxFxf46FNuQWo2Z+ciTIGnXMXH8swGBQBPS3w==
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz"

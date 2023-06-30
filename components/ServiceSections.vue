@@ -15,7 +15,7 @@
 </script>
 
 <template>
-  <div class="touch-right">
+  <div class="touch-right" v-if="!$device.isDesktop">
     <ul ref="serviceSectionsElement" class="horizontal-scroll">
       <li v-for="(service, i) in props.services">
         <ServiceSectionBox
@@ -29,10 +29,30 @@
     </ul>
     <Pager :length="services.length" :visible="serviceSectionsViews" />
   </div>
+
+  <div v-if="$device.isDesktop">
+    <Carousel
+      :scrollPerPage="false"
+      :perPage="4"
+      :autoplay="true"
+      :loop="true"
+      :speed="750"
+      :paginationActiveColor="'#ffffff'"
+      :paginationColor="'#bfbfbf'"
+    >
+      <ul class="horizontal-scroll">
+        <li v-for="(service, i) in props.services">
+          <Slide>
+            <ServiceSectionBoxCard :service="service" />
+          </Slide>
+        </li>
+      </ul>
+    </Carousel>
+  </div>
 </template>
 
 <style scoped>
-  ul {
+  ul.horizontal-scroll {
     margin-top: 25vh;
   }
   li {
@@ -42,11 +62,9 @@
 
 <style scoped>
   @media screen and (min-width: 64rem) {
-    ul {
-      margin-top: 40vh;
-    }
     li {
-      width: 20%;
+      width: 23%;
+      margin-inline: 0.5em;
     }
   }
 </style>

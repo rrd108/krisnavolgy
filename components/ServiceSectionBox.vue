@@ -32,9 +32,7 @@
 
 <template>
   <div ref="target">
-    <h3>{{ service.title }}</h3>
-    <p>{{ service.content }}</p>
-    <h6>{{ service.price }}</h6>
+    <ServiceSectionBoxCard :service="props.service" />
   </div>
 </template>
 
@@ -42,12 +40,5 @@
   div {
     height: 100%;
     display: grid;
-  }
-  h3 {
-    margin: 1em 2em 0 0;
-  }
-  p {
-    margin: 0.5em 2em 2.5em 0;
-    font-size: 0.8rem;
   }
 </style>

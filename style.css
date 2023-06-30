@@ -108,4 +108,17 @@ h1 {
   .horizontal-scroll::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
   }
+
+  .horizontal-scroll {
+    overflow-x: unset;
+    scroll-snap-type: none;
+    scroll-padding: auto;
+  }
+  .horizontal-scroll li {
+    flex-shrink: 0;
+    scroll-snap-align: unset;
+  }
+  .horizontal-scroll li:last-child {
+    margin-right: 0;
+  }
 }

@@ -40,16 +40,10 @@
       :paginationActiveColor="'#ffffff'"
       :paginationColor="'#bfbfbf'"
     >
-      <ul ref="serviceSectionsElement" class="horizontal-scroll">
+      <ul class="horizontal-scroll">
         <li v-for="(service, i) in props.services">
           <Slide>
-            <ServiceSectionBox
-              v-if="serviceSectionsElement"
-              :service="service"
-              :num="i"
-              :scrollElement="serviceSectionsElement"
-              @visibility="visibilityChanged"
-            />
+            <ServiceSectionBoxCard :service="service" />
           </Slide>
         </li>
       </ul>
@@ -68,9 +62,6 @@
 
 <style scoped>
   @media screen and (min-width: 64rem) {
-    ul.horizontal-scroll {
-      margin-top: calc(var(--main-dynamic-height)-4em);
-    }
     li {
       width: 23%;
       margin-inline: 0.5em;

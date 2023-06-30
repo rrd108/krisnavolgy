@@ -64,3 +64,17 @@
     background-image: url('/images/cloud-small.png');
   }
 </style>
+
+<style scoped>
+  @media screen and (min-width: 64rem) {
+    section {
+      background-image: url('/images/background-desktop.png');
+    }
+
+    /* TODO */
+    #cloudBig,
+    #cloudSmall {
+      display: none;
+    }
+  }
+</style>

@@ -38,8 +38,13 @@
   li {
     background-color: #fffc;
   }
+</style>
 
-  @media (min-width: 64rem) {
+<style scoped>
+  @media screen and (min-width: 64rem) {
+    ul {
+      margin-top: 40vh;
+    }
     li {
       width: 20%;
     }

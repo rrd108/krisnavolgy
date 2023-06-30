@@ -94,7 +94,7 @@ h1 {
   text-align: center;
 }
 
-@media screen and (min-width: 64rem) ) {
+@media screen and (min-width: 64rem) {
   :root {
     --horizontal-scroll-padding-right: 5em;
   }

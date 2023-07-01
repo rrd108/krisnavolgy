@@ -1,16 +1,13 @@
 <script setup lang="ts">
-  import StrapiResponse from '../types/StrapiResponse'
-  import Menu from '../types/Menu'
-  import MainMenu from 'types/MainMenu'
+  import StrapiCollectionResponse from '~~/types/StrapiCollectionResponse'
+  import Menu from '~~/types/Menu'
 
   const { isDesktop } = useDevice()
 
-  const isOpen = isDesktop ? ref(true) : ref(false)
-
   const client = useStrapiClient()
-  let response = {} as StrapiResponse<MainMenu[]>
+  let response = {} as StrapiCollectionResponse<Menu>
   try {
-    response = await client<StrapiResponse<MainMenu[]>>('/main-menus', {
+    response = await client<StrapiCollectionResponse<Menu>>('/main-menus', {
       params: { populate: 'deep' },
     })
   } catch (error) {
@@ -22,38 +19,8 @@
 <template>
   <header>
     <img src="/images/logo.png" alt="logo" />
-    <nav>
-      <ClientOnly v-if="!isDesktop">
-        <font-awesome-icon
-          :icon="isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"
-          @click="isOpen = !isOpen"
-          todo="no click handler for desktop"
-          id="menu-remote"
-        />
-      </ClientOnly>
-      <ul :class="{ open: isOpen }">
-        <li v-for="item in menus">
-          <NuxtLink :to="item.link">{{ item.menu_item }}</NuxtLink>
-          <ul>
-            <li v-for="subItem in item.sub_menu">
-              <NuxtLink :to="subItem.link">{{ subItem.menu_item }}</NuxtLink>
-            </li>
-          </ul>
-        </li>
-        <!--li>
-          <SearchInput :placeholder="menu.data?.attributes.search_field" />
-        </!--li-->
-        <!--li>
-          <span v-for="item in menu.data?.attributes.Social_media_bar">
-            <ClientOnly>
-              <NuxtLink :to="item.Link">
-                <font-awesome-icon :icon="item.Fontawesome_icon" />
-              </NuxtLink>
-            </ClientOnly>
-          </span>
-        </!--li-->
-      </ul>
-    </nav>
+    <AppHeaderMobile v-if="!isDesktop" :menus="menus" />
+    <AppHeaderDesktop v-if="isDesktop" :menus="menus" />
   </header>
 </template>
 
@@ -107,19 +74,12 @@
 
 <style scoped>
   @media screen and (min-width: 64rem) {
-    nav > ul {
-      position: relative;
-      right: auto;
-      display: flex;
-      justify-content: flex-end;
-      background-color: var(--bg-light);
-      font-size: 1em;
+    header {
+      padding: 1em;
     }
-    ul.open {
-      transform: none;
-    }
-    li {
-      width: 6em;
+    img {
+      height: 2rem;
     }
   }
 </style>
+types/StrapiSingleResponse

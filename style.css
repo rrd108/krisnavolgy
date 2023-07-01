@@ -15,6 +15,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+#app {
+  overflow-x: hidden;
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
 body,
 input,
 button {
@@ -29,11 +35,6 @@ input {
 input,
 button {
   padding: 0.5em;
-}
-#app {
-  overflow-x: hidden;
-  max-width: 90rem;
-  margin: 0 auto;
 }
 ul {
   list-style: none;
@@ -63,6 +64,12 @@ h6 {
 h1 {
   margin: 1em 0;
 }
+
+a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
 .touch-right {
   margin-right: -1em;
 }

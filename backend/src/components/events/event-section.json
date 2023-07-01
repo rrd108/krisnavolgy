@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_events_event_sections",
+  "info": {
+    "displayName": "event section",
+    "icon": "anchor"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 90
+    },
+    "happenings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::happening.happening"
+    }
+  }
+}

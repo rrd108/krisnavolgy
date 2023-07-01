@@ -2,7 +2,8 @@
   "collectionName": "components_packages_packages",
   "info": {
     "displayName": "packages",
-    "icon": "gift"
+    "icon": "gift",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -18,7 +19,8 @@
     },
     "package_content": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "maxLength": 550
     }
   }
 }

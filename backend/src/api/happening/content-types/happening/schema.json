@@ -4,17 +4,27 @@
   "info": {
     "singularName": "happening",
     "pluralName": "happenings",
-    "displayName": "happening"
+    "displayName": "happening",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "event_text_box": {
       "type": "component",
       "repeatable": false,
-      "component": "text-box.event-text-box"
+      "component": "text-box.event-text-box",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

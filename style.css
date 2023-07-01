@@ -3,6 +3,7 @@
 :root {
   --light: #f1efe8;
   --dark: #123a2c;
+  --bh-light: #d9d8c5;
   --header-dynamic-height: 7dvh;
   --header-height: 7vh;
   --main-dynamic-height: calc(100dvh - var(--header-dynamic-height));

@@ -110,9 +110,16 @@
     nav > ul {
       position: relative;
       right: auto;
+      display: flex;
+      justify-content: flex-end;
+      background-color: var(--bg-light);
+      font-size: 1em;
     }
     ul.open {
       transform: none;
+    }
+    li {
+      width: 6em;
     }
   }
 </style>

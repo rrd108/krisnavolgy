@@ -96,6 +96,8 @@ h1 {
 
 @media screen and (min-width: 64rem) {
   :root {
+    --header-dynamic-height: 15dvh;
+    --header-height: 15vh;
     --horizontal-scroll-padding-right: 5em;
   }
 

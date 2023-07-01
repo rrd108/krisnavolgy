@@ -63,7 +63,7 @@
 <style scoped>
   @media screen and (min-width: 64rem) {
     li {
-      width: 23%;
+      width: 21%;
       margin-inline: 0.5em;
     }
   }

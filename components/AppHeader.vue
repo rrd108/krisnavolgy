@@ -1,46 +1,49 @@
 <script setup lang="ts">
   import StrapiResponse from '../types/StrapiResponse'
   import Menu from '../types/Menu'
+  import MainMenu from 'types/MainMenu'
 
-  const isOpen = ref(false)
+  const { isDesktop } = useDevice()
+
+  const isOpen = isDesktop ? ref(true) : ref(false)
 
   const client = useStrapiClient()
-  let menu = {} as StrapiResponse<Menu>
+  let response = {} as StrapiResponse<MainMenu[]>
   try {
-    menu = await client<StrapiResponse<Menu>>('/main-menus', {
+    response = await client<StrapiResponse<MainMenu[]>>('/main-menus', {
       params: { populate: 'deep' },
     })
   } catch (error) {
     console.error(error)
   }
+  const menus = response.data[0].attributes.menu as Menu[]
 </script>
 
 <template>
   <header>
     <img src="/images/logo.png" alt="logo" />
     <nav>
-      <ClientOnly>
+      <ClientOnly v-if="!isDesktop">
         <font-awesome-icon
           :icon="isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"
           @click="isOpen = !isOpen"
+          todo="no click handler for desktop"
           id="menu-remote"
         />
       </ClientOnly>
       <ul :class="{ open: isOpen }">
-        <li v-for="item in menu.data?.attributes.Menu_group">
-          <NuxtLink :to="item.Link">{{ item.Menu_name }}</NuxtLink>
+        <li v-for="item in menus">
+          <NuxtLink :to="item.link">{{ item.menu_item }}</NuxtLink>
           <ul>
-            <li v-for="subItem in item.Menu_item">
-              <NuxtLink :to="subItem.Link">{{
-                subItem.Menu_item_name
-              }}</NuxtLink>
+            <li v-for="subItem in item.sub_menu">
+              <NuxtLink :to="subItem.link">{{ subItem.menu_item }}</NuxtLink>
             </li>
           </ul>
         </li>
-        <li>
+        <!--li>
           <SearchInput :placeholder="menu.data?.attributes.search_field" />
-        </li>
-        <li>
+        </!--li-->
+        <!--li>
           <span v-for="item in menu.data?.attributes.Social_media_bar">
             <ClientOnly>
               <NuxtLink :to="item.Link">
@@ -48,7 +51,7 @@
               </NuxtLink>
             </ClientOnly>
           </span>
-        </li>
+        </!--li-->
       </ul>
     </nav>
   </header>
@@ -99,5 +102,17 @@
   }
   ul.open {
     transform: translateX(-100vw);
+  }
+</style>
+
+<style scoped>
+  @media screen and (min-width: 64rem) {
+    nav > ul {
+      position: relative;
+      right: auto;
+    }
+    ul.open {
+      transform: none;
+    }
   }
 </style>

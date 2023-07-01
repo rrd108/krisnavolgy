@@ -1,13 +1,16 @@
 <script setup lang="ts">
-  import StrapiResponse from '~~/types/StrapiResponse'
+  import StrapiSingleResponse from '~~/types/StrapiSingleResponse'
   import SubscribeForm from '~~/types/SubscribeForm'
 
   const client = useStrapiClient()
-  let response = {} as StrapiResponse<SubscribeForm>
+  let response = {} as StrapiSingleResponse<SubscribeForm>
   try {
-    response = await client<StrapiResponse<SubscribeForm>>('/subsribes/1', {
-      params: { populate: 'deep' },
-    })
+    response = await client<StrapiSingleResponse<SubscribeForm>>(
+      '/subsribes/1',
+      {
+        params: { populate: 'deep' },
+      }
+    )
   } catch (error) {
     console.error(error)
   }

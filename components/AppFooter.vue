@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import StrapiResponse from '../types/StrapiResponse'
+  import StrapiSingleResponse from '../types/StrapiSingleResponse'
   import Footer from '../types/Footer'
 
   const client = useStrapiClient()
-  let footer = {} as StrapiResponse<Footer>
+  let footer = {} as StrapiSingleResponse<Footer>
   try {
-    footer = await client<StrapiResponse<Footer>>('/footer', {
+    footer = await client<StrapiSingleResponse<Footer>>('/footer', {
       params: { populate: 'deep' },
     })
   } catch (error) {

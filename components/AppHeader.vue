@@ -43,33 +43,6 @@
   svg {
     margin: 0.75rem;
   }
-  nav {
-    position: relative;
-  }
-  nav > ul {
-    position: absolute;
-    top: 0;
-    right: -100vw;
-    z-index: 3;
-    background-color: #fff;
-    padding: 0.5em;
-    transition: transform 350ms ease-in-out;
-    line-height: 1.25em;
-    font-size: 1.5rem;
-    width: 75vw;
-    font-family: 'Playfair Display', serif;
-  }
-  nav a {
-    text-decoration: none;
-  }
-  ul ul {
-    margin-left: 1em;
-    font-size: 1rem;
-    font-family: 'Open Sans', serif;
-  }
-  ul.open {
-    transform: translateX(-100vw);
-  }
 </style>
 
 <style scoped>

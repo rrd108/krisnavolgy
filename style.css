@@ -4,6 +4,7 @@
   --light: #f1efe8;
   --dark: #123a2c;
   --bh-light: #d9d8c5;
+  --link-color: #6d6c62;
   --header-dynamic-height: 7dvh;
   --header-height: 7vh;
   --main-dynamic-height: calc(100dvh - var(--header-dynamic-height));
@@ -67,7 +68,7 @@ h1 {
 
 a {
   text-decoration: none;
-  color: var(--dark);
+  color: var(--link-color);
 }
 
 .touch-right {

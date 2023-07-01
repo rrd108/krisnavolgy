@@ -1,6 +1,10 @@
 import StrapiButton from './StrapiButton'
 
-export default interface SubscribeForm {
+export interface SubscribeForm {
+  subscribe: Subscribe
+}
+
+export interface Subscribe {
   id: number
   title: string
   call_to_action: string

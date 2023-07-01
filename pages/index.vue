@@ -21,6 +21,7 @@
       :hero="homePage.hero_section"
       :services="homePage.services_section"
     />
+    <SubscribeForm />
     <CounterSection :counters="homePage.counter_section" />
     <!--EventSection :happenings="homePage.events" /-->
     <OnSaleSection />

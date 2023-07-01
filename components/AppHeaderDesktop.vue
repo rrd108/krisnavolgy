@@ -57,6 +57,7 @@
     }
     nav a {
       text-decoration: none;
+      display: inline-block;
     }
     ul {
       font-family: 'Open Sans', serif;
@@ -65,9 +66,19 @@
     li {
       text-align: center;
       padding-inline: 0.5em;
+      width: 5rem;
+    }
+    li a {
+      padding: 0.5em;
+      white-space: nowrap;
+    }
+    li a:hover {
+      background-color: var(--dark);
+      color: var(--light);
     }
     ul ul li {
       text-align: left;
+      margin: 0.5em;
     }
   }
 </style>

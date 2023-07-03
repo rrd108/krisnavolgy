@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import HomePage from '~~/types/HomePage'
-  import StrapiSingleResponse from '~~/types/StrapiSingleResponse'
+  import HomePage from 'types/HomePage'
+  import StrapiSingleResponse from 'types/StrapiSingleResponse'
 
   const client = useStrapiClient()
   let response = {} as StrapiSingleResponse<HomePage>
@@ -21,9 +21,9 @@
       :hero="homePage.hero_section"
       :services="homePage.services_section"
     />
-    <SubscribeForm />
+    <SubscribeForm :subscribe="homePage.subscribe.data.attributes.subscribe" />
     <CounterSection :counters="homePage.counter_section" />
-    <!--EventSection :happenings="homePage.events" /-->
+    <!--HappeningsSection :happenings="homePage.event_section" /-->
     <OnSaleSection />
     <br />
     Mi Krisna-völgy

@@ -1,27 +1,14 @@
 <script setup lang="ts">
-  import StrapiSingleResponse from '~~/types/StrapiSingleResponse'
-  import { Subscribe, SubscribeForm } from '~~/types/SubscribeForm'
+  import { Subscribe } from 'types/SubscribeForm'
 
-  const client = useStrapiClient()
-  let response = {} as StrapiSingleResponse<SubscribeForm>
-  try {
-    response = await client<StrapiSingleResponse<SubscribeForm>>(
-      '/subscribes/1',
-      {
-        params: { populate: 'deep' },
-      }
-    )
-  } catch (error) {
-    console.error(error)
-  }
+  const props = defineProps<{
+    subscribe: Subscribe
+  }>()
 
   const email = ref('')
   const addUser = () => {
     alert('TODO')
   }
-
-  const subscribe = response.data.attributes.subscribe as Subscribe
-  console.log(subscribe)
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 import HeroSection from './HeroSection'
 import ServiceSection from './Service'
 import Counter from './Counter'
-import Happening from './Happening'
+import { HappeningsSection } from './Happening'
 import Review from './Review'
 import { SubscribeForm } from './SubscribeForm'
 
@@ -14,8 +14,5 @@ export default interface HomePage {
   services_section: ServiceSection[]
   reviews: Review[]
   video: unknown // TODO
-  event_section: {
-    title: string
-    happenings: { data: Happening[] }
-  }
+  event_section: HappeningsSection
 }

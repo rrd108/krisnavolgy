@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { PropType } from 'nuxt/dist/app/compat/capi'
-  import Service from '~~/types/Service'
+  import Service from 'types/Service'
 
   const props = defineProps({
     service: {

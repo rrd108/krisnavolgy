@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { PropType, ref } from 'vue'
   import { useElementVisibility } from '@vueuse/core'
-  import Service from '~~/types/Service'
+  import Service from 'types/Service'
 
   const props = defineProps({
     num: {

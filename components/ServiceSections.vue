@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import Service from '~~/types/Service'
+  import Service from 'types/Service'
 
   const props = defineProps<{
     services: Service[]

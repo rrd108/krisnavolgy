@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import Review from '~~/types/Review'
+  import Review from 'types/Review'
 
   const props = defineProps<{
     reviews: Review[]

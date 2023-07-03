@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { PropType, ref } from 'vue'
   import { useElementVisibility } from '@vueuse/core'
-  import Review from '~~/types/Review'
+  import Review from 'types/Review'
 
   const props = defineProps({
     num: {

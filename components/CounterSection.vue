@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { useIntervalFn, useElementVisibility } from '@vueuse/core'
-  import Counter from '~~/types/Counter'
+  import Counter from 'types/Counter'
 
   const props = defineProps<{
     counters: Counter[]

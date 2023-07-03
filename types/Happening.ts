@@ -1,6 +1,14 @@
 import StrapiButton from './StrapiButton'
 
-type Happening = {
+export interface HappeningsSection {
+  id: number
+  title: string
+  happenings: {
+    data: Happening[]
+  }
+}
+
+export interface Happening {
   id: number
   attributes: {
     event_text_box: {
@@ -10,9 +18,7 @@ type Happening = {
       date: string
       event_description: string
       button: StrapiButton
-      image: StrapiImage
+      image: { data: { attributes: StrapiImage } }
     }
   }
 }
-
-export default Happening

@@ -1,19 +1,19 @@
 <script setup lang="ts">
-  import StrapiCollectionResponse from '~~/types/StrapiCollectionResponse'
-  import Menu from '~~/types/Menu'
+  import StrapiSingleResponse from 'types/StrapiSingleResponse'
+  import { MainMenu, Menu } from 'types/MainMenu'
 
   const { isDesktop } = useDevice()
 
   const client = useStrapiClient()
-  let response = {} as StrapiCollectionResponse<Menu>
+  let response = {} as StrapiSingleResponse<MainMenu>
   try {
-    response = await client<StrapiCollectionResponse<Menu>>('/main-menus', {
+    response = await client<StrapiSingleResponse<MainMenu>>('/main-menus/1', {
       params: { populate: 'deep' },
     })
   } catch (error) {
     console.error(error)
   }
-  const menus = response.data[0].attributes.menu as Menu[]
+  const menus = response.data.attributes.menu as Menu[]
 </script>
 
 <template>
@@ -55,4 +55,3 @@
     }
   }
 </style>
-types/StrapiSingleResponse

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import Menu from '~~/types/Menu'
+  import Menu from 'types/Menu'
 
   const props = defineProps({
     menus: {

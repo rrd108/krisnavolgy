@@ -2,11 +2,12 @@
   "collectionName": "components_buttons_simple_buttons",
   "info": {
     "displayName": "simple button",
-    "icon": "angle-right"
+    "icon": "angle-right",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "button_text": {
+    "text": {
       "type": "string",
       "required": true,
       "maxLength": 20

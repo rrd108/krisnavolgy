@@ -2,11 +2,12 @@
   "collectionName": "components_buttons_icon_buttons",
   "info": {
     "displayName": "icon button",
-    "icon": "arrow-alt-circle-right"
+    "icon": "arrow-alt-circle-right",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "button_text": {
+    "text": {
       "type": "string",
       "required": true,
       "maxLength": 20

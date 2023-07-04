@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "event_text_box": {
+    "happening": {
       "type": "component",
       "repeatable": false,
       "component": "text-box.event-text-box",

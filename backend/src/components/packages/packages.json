@@ -17,7 +17,7 @@
       "required": true,
       "maxLength": 60
     },
-    "package_content": {
+    "content": {
       "type": "richtext",
       "required": true,
       "maxLength": 550

@@ -1,8 +1,9 @@
 {
   "collectionName": "components_events_event_sections",
   "info": {
-    "displayName": "event section",
-    "icon": "anchor"
+    "displayName": "happenings section",
+    "icon": "anchor",
+    "description": ""
   },
   "options": {},
   "attributes": {

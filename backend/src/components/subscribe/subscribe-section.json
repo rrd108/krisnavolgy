@@ -12,7 +12,7 @@
       "required": true,
       "maxLength": 60
     },
-    "call_to_action": {
+    "cta": {
       "type": "text",
       "required": true,
       "maxLength": 150

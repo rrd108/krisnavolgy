@@ -20,7 +20,7 @@
       "type": "date",
       "required": true
     },
-    "event_description": {
+    "description": {
       "type": "richtext",
       "required": true
     },
@@ -30,14 +30,15 @@
       "component": "buttons.simple-button"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

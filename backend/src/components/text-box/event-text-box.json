@@ -1,7 +1,7 @@
 {
   "collectionName": "components_text_box_event_text_boxes",
   "info": {
-    "displayName": "event text box",
+    "displayName": "happening text box",
     "description": ""
   },
   "options": {},
@@ -16,7 +16,7 @@
       "required": true,
       "maxLength": 8
     },
-    "date": {
+    "start_date": {
       "type": "date",
       "required": true
     },
@@ -39,6 +39,9 @@
         "videos",
         "audios"
       ]
+    },
+    "end_date": {
+      "type": "date"
     }
   }
 }

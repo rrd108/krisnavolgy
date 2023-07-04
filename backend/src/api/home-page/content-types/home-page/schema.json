@@ -55,11 +55,10 @@
         "videos"
       ]
     },
-    "event_section": {
-      "displayName": "event section",
+    "happenings_section": {
       "type": "component",
-      "repeatable": false,
-      "component": "events.event-section"
+      "repeatable": true,
+      "component": "happenings.event-section"
     }
   }
 }

@@ -9,12 +9,12 @@
     "title": {
       "type": "string",
       "required": true,
-      "maxLength": 15
+      "maxLength": 30
     },
     "short_name": {
       "type": "string",
       "required": true,
-      "maxLength": 8
+      "maxLength": 10
     },
     "start_date": {
       "type": "date",

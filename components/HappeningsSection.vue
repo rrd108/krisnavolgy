@@ -43,7 +43,7 @@
               </h3>
               <p>{{ happening.attributes.happening.description }}</p>
               <button>
-                {{ happening.attributes.happening.button.button_text }}
+                {{ happening.attributes.happening.button.text }}
               </button>
 
               <img

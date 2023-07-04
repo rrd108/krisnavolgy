@@ -1,4 +1,4 @@
 export default interface StrapiButton {
-  button_text: string
+  text: string
   url: string
 }

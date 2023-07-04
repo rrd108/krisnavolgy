@@ -2,15 +2,15 @@
   import { HappeningsSection } from 'types/Happening'
 
   const props = defineProps<{
-    happenings_section: HappeningsSection
+    happenings_section: HappeningsSection[]
   }>()
 
-  const happeningSectionElement = ref(null as unknown as HTMLElement)
+  /*const happeningSectionElement = ref(null as unknown as HTMLElement)
   const happeningSectionsViews = ref([true])
   const visibilityChanged = (value: [number, boolean]) => {
     const [num, isVisible] = value
     happeningSectionsViews.value[num] = isVisible
-  }
+  }*/
 
   const config = useRuntimeConfig()
 </script>
@@ -23,34 +23,38 @@
       <img src="/images/divider.png" />
     </picture>
 
-    <h2>{{ happenings_section.title }}</h2>
+    <h2>{{ happenings_section[0].title }}</h2>
 
-    <div class="grid">
-      <ul>
-        <li v-for="happening in happenings_section.happenings.data">
-          <div>
-            <span>
-              {{ happening.attributes.event_text_box.date.substring(0, 8) }}
-            </span>
-            <span>
-              {{ happening.attributes.event_text_box.date.substring(8, 16) }}
-            </span>
-          </div>
-          <h3>
-            {{ happening.attributes.event_text_box.title }}
-          </h3>
-          <p>{{ happening.attributes.event_text_box.event_description }}</p>
-          <button>
-            {{ happening.attributes.event_text_box.button.button_text }}
-          </button>
+    <section>
+      <Carousel>
+        <ul class="horizontal-scroll">
+          <li v-for="happening in happenings_section[0].happenings.data">
+            <Slide>
+              <div>
+                <span>
+                  {{ happening.attributes.happening.start_date }}
+                </span>
+                <span>
+                  {{ happening.attributes.happening.end_date }}
+                </span>
+              </div>
+              <h3>
+                {{ happening.attributes.happening.title }}
+              </h3>
+              <p>{{ happening.attributes.happening.description }}</p>
+              <button>
+                {{ happening.attributes.happening.button.button_text }}
+              </button>
 
-          <img
-            :src="`${config.public.strapi.url}${happening.attributes.event_text_box.image.data.attributes.formats.thumbnail.url}`"
-          />
-        </li>
-      </ul>
+              <img
+                :src="`${config.public.strapi.url}${happening.attributes.happening.image.data.attributes.formats.thumbnail.url}`"
+              />
+            </Slide>
+          </li>
+        </ul>
+      </Carousel>
       <!--HappeningFeatured /-->
-    </div>
+    </section>
   </section>
 </template>
 
@@ -64,7 +68,7 @@
   }
 
   li {
-    width: 85vw;
+    width: 25vw;
   }
   li:last-child {
     margin-right: calc(1em + var(--horizontal-scroll-padding-right));

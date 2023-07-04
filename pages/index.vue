@@ -23,7 +23,7 @@
     />
     <SubscribeForm :subscribe="homePage.subscribe.data.attributes.subscribe" />
     <CounterSection :counters="homePage.counter_section" />
-    <HappeningsSection :happenings_section="homePage.event_section" />
+    <HappeningsSection :happenings_section="homePage.happenings_section" />
     <OnSaleSection />
     <br />
     Mi Krisna-völgy

@@ -11,12 +11,13 @@ export interface HappeningsSection {
 export interface Happening {
   id: number
   attributes: {
-    event_text_box: {
+    happening: {
       id: number
       title: string
       short_name: string
-      date: string
-      event_description: string
+      start_date: string
+      end_date: string
+      description: string
       button: StrapiButton
       image: { data: { attributes: StrapiImage } }
     }

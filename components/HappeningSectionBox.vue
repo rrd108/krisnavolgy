@@ -1,84 +1,52 @@
 <script setup lang="ts">
-  import { PropType, ref } from 'vue'
-  import { useElementVisibility } from '@vueuse/core'
+  import { HappeningData } from 'types/Happening'
 
   const props = defineProps({
-    num: {
-      type: Number,
-      required: true,
-    },
-    evt: {
-      type: Object as PropType<{
-        event_beginning_date: string
-        event_end_date: string
-        Event_name: string
-        Event_short_description: string
-        Event_image: {
-          data: {
-            attributes: {
-              formats: {
-                small: {
-                  url: string
-                }
-                thumbnail: {
-                  url: string
-                }
-              }
-            }
-          }
-        }
-      }>,
-      required: true,
-    },
-    scrollElement: {
-      type: Object as PropType<HTMLElement>,
+    happening: {
+      type: Object as PropType<HappeningData>,
       required: true,
     },
   })
-
-  const emit = defineEmits<{
-    (e: 'visibility', value: [number, boolean]): void
-  }>()
 
   const config = useRuntimeConfig()
-  const target = ref(null)
-  const targetIsVisible = useElementVisibility(target, {
-    scrollTarget: props.scrollElement,
-  })
-
-  watch(targetIsVisible, value => emit('visibility', [props.num, value]))
 </script>
 
 <template>
-  <div ref="target" class="event">
+  <section>
     <div>
-      <h4>{{ evt.event_beginning_date }} {{ evt.event_end_date }}</h4>
-      <h3>{{ evt.Event_name }}</h3>
-      <small>{{ evt.Event_short_description }}</small>
+      <h6>
+        <span>
+          {{ happening.start_date }}
+        </span>
+        <span>
+          {{ happening.end_date }}
+        </span>
+      </h6>
+
+      <h3>
+        {{ happening.title }}
+      </h3>
+
+      <p>{{ happening.description }}</p>
+
+      <button>
+        {{ happening.button.text }}
+      </button>
     </div>
-    <picture>
-      <source
-        media="(max-width: 800px)"
-        :srcset="`${config.public.strapi.url}${evt.Event_image.data.attributes.formats.thumbnail.url}`"
-      />
-      <source
-        :srcset="`${config.public.strapi.url}${evt.Event_image.data.attributes.formats.small.url}`"
-      />
-      <img
-        :src="`${config.public.strapi.url}${evt.Event_image.data.attributes.formats.small.url}`"
-      />
-    </picture>
-  </div>
+
+    <img
+      :src="`${config.public.strapi.url}${happening.image.data.attributes.formats.thumbnail.url}`"
+    />
+  </section>
 </template>
 
 <style scoped>
-  .event {
+  section {
+    background-color: var(--light);
+    padding: 1em;
+    border-radius: 0.5em;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0.5em;
-  }
-  h3 {
-    margin-bottom: 1em;
   }
   img {
     width: 100%;

@@ -2,15 +2,16 @@
   "collectionName": "components_text_box_reviews",
   "info": {
     "displayName": "reviews",
-    "icon": "grin-alt"
+    "icon": "grin-alt",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "review_content": {
+    "content": {
       "type": "richtext",
       "required": true
     },
-    "reviewer_name": {
+    "name": {
       "type": "string",
       "required": true,
       "maxLength": 90

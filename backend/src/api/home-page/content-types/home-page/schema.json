@@ -36,17 +36,6 @@
       "repeatable": true,
       "component": "text-box.detailed-text-box"
     },
-    "review_section_title": {
-      "type": "string",
-      "required": true,
-      "maxLength": 90
-    },
-    "reviews": {
-      "type": "component",
-      "repeatable": true,
-      "component": "text-box.reviews",
-      "required": true
-    },
     "video": {
       "type": "media",
       "multiple": false,
@@ -59,6 +48,11 @@
       "type": "component",
       "repeatable": true,
       "component": "happenings.event-section"
+    },
+    "reviews": {
+      "type": "component",
+      "repeatable": false,
+      "component": "text-box.review-section"
     }
   }
 }

@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "menu_item": {
+    "item": {
       "type": "string",
       "required": true,
       "maxLength": 60

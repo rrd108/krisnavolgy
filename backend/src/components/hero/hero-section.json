@@ -2,24 +2,25 @@
   "collectionName": "components_hero_hero_sections",
   "info": {
     "displayName": "hero_section",
-    "icon": "address-card"
+    "icon": "address-card",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "cover_image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "hero_text": {
+    "text": {
       "type": "component",
       "repeatable": false,
       "component": "text-box.simply-text-box"
     },
-    "hero_button": {
+    "button": {
       "type": "component",
       "repeatable": false,
       "component": "buttons.icon-button"

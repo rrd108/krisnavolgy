@@ -2,11 +2,12 @@
   "collectionName": "components_menus_sub_menus",
   "info": {
     "displayName": "sub menu",
-    "icon": "address-card"
+    "icon": "address-card",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "menu_item": {
+    "item": {
       "type": "string",
       "required": true,
       "maxLength": 60

@@ -1,5 +1,10 @@
-export default interface Review {
+export interface ReviewSection {
+  title: string
+  reviews: Review[]
+}
+
+export interface Review {
   id: number
-  review_content: string
-  reviewer_name: string
+  content: string
+  name: string
 }

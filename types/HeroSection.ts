@@ -1,12 +1,12 @@
 export default interface Hero {
-  hero_text: {
+  text: {
     id: number
     title: string
     content: string
   }
-  hero_button: {
+  button: {
     id: number
-    button_text: string
+   text: string
     url: string
     icon: string
   }

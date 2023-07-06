@@ -21,8 +21,8 @@
       <img src="/images/divider.png" />
     </picture>
 
-    <h1>{{ props.hero.hero_text.title }}</h1>
-    <p>{{ props.hero.hero_text.content }}</p>
+    <h1>{{ props.hero.text.title }}</h1>
+    <p>{{ props.hero.text.content }}</p>
     <ServiceSections :services="services" />
   </section>
   <span id="cloudBig"></span>

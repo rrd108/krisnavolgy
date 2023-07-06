@@ -14,14 +14,14 @@
 <template>
   <section>
     <h2>{{ subscribe.title }}</h2>
-    <p>{{ subscribe.call_to_action }}</p>
+    <p>{{ subscribe.cta }}</p>
     <input
       type="email"
       v-model="email"
       :placeholder="subscribe.email_entry_field"
     />
     <button @click="addUser">
-      {{ subscribe.subscribe_button.button_text }}
+      {{ subscribe.button?.text }}
     </button>
   </section>
 </template>

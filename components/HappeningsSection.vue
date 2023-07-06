@@ -2,7 +2,7 @@
   import { HappeningsSection } from 'types/Happening'
 
   const props = defineProps<{
-    happenings_section: HappeningsSection[]
+    happenings_section: HappeningsSection
   }>()
 </script>
 
@@ -14,16 +14,15 @@
       <img src="/images/divider.png" />
     </picture>
 
-    <h2>{{ happenings_section[0].title }}</h2>
+    <h2>{{ happenings_section.title }}</h2>
 
     <section>
+      {{ happenings_section.happenings.data }}
       <Carousel>
         <ul class="horizontal-scroll">
-          <li v-for="happening in happenings_section[0].happenings.data">
+          <li v-for="happening in happenings_section.happenings.data">
             <Slide>
-              <HappeningSectionBox
-                :happening="happening.attributes.happening"
-              />
+              <HappeningSectionBox :happening="happening" />
             </Slide>
           </li>
         </ul>

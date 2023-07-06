@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import { HappeningData } from 'types/Happening'
+  import { Happening } from 'types/Happening'
 
   const props = defineProps({
     happening: {
-      type: Object as PropType<HappeningData>,
+      type: Object as PropType<Happening>,
       required: true,
     },
   })

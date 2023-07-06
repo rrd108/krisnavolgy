@@ -5,18 +5,11 @@ export interface HappeningsSection {
   id: number
   title: string
   happenings: {
-    data: Happening[]
+    data: StrapiSingleResponse<Happening>[]
   }
 }
 
 export interface Happening {
-  id: number
-  attributes: {
-    happening: HappeningData
-  }
-}
-
-export interface HappeningData {
   id: number
   title: string
   short_name: string

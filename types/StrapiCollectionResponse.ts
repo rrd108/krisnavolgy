@@ -1,9 +1,8 @@
 export default interface StrapiCollectionResponse<T> {
-  [x: string]: any
   data: {
     id: number
     attributes: {
-      [x: string]: T[]
+      [x: string]: T | T[]
     }
   }[]
   meta: Record<string, unknown>

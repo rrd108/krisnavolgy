@@ -46,7 +46,7 @@
     },
     "happenings_section": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "happenings.event-section"
     },
     "reviews": {

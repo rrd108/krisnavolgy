@@ -53,6 +53,8 @@
   }
   img {
     width: 100%;
+    height: 10em;
+    object-fit: cover;
     border-radius: 0.5em;
   }
   a {

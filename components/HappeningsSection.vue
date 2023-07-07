@@ -16,7 +16,7 @@
 
     <h2>{{ happenings_section.title }}</h2>
 
-    <Carousel>
+    <Carousel :perPage="$device.isDesktop ? 3 : 1">
       <Slide v-for="happeningBlock in happenings_section.happenings.data">
         <HappeningSectionBox :happeningBlock="happeningBlock" />
       </Slide>

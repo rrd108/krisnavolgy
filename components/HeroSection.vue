@@ -42,6 +42,8 @@
   p {
     position: relative;
     z-index: 2;
+    max-width: 35rem;
+    margin: 0 auto;
   }
   #cloudBig,
   #cloudSmall {

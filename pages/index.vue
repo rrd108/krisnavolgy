@@ -1,11 +1,11 @@
 <script setup lang="ts">
   import HomePage from 'types/HomePage'
-  import StrapiSingleResponse from 'types/StrapiSingleResponse'
+  import StrapiResponse from 'types/StrapiResponse'
 
   const client = useStrapiClient()
-  let response = {} as StrapiSingleResponse<HomePage>
+  let response = {} as StrapiResponse<HomePage>
   try {
-    response = await client<StrapiSingleResponse<HomePage>>('/home-page', {
+    response = await client<StrapiResponse<HomePage>>('/home-page', {
       params: { populate: 'deep' },
     })
   } catch (error) {

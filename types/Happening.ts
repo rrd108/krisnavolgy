@@ -1,5 +1,5 @@
 import StrapiButton from './StrapiButton'
-import StrapiSingleResponse from './StrapiSingleResponse'
+import StrapiResponse from './StrapiResponse'
 
 export interface HappeningsSection {
   id: number
@@ -22,5 +22,5 @@ export interface Happening {
   start_date: string
   end_date: string
   button: StrapiButton
-  image: StrapiSingleResponse<StrapiImage>
+  image: StrapiResponse<StrapiImage>
 }

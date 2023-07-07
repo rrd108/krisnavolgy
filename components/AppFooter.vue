@@ -1,11 +1,11 @@
 <script setup lang="ts">
-  import StrapiSingleResponse from '../types/StrapiSingleResponse'
+  import StrapiResponse from '../types/StrapiResponse'
   import Footer from '../types/Footer'
 
   const client = useStrapiClient()
-  let footer = {} as StrapiSingleResponse<Footer>
+  let footer = {} as StrapiResponse<Footer>
   try {
-    footer = await client<StrapiSingleResponse<Footer>>('/footer', {
+    footer = await client<StrapiResponse<Footer>>('/footer', {
       params: { populate: 'deep' },
     })
   } catch (error) {
@@ -41,3 +41,4 @@
     margin: 0.75em 0;
   }
 </style>
+../types/StrapiResponse

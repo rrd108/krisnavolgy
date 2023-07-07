@@ -1,4 +1,4 @@
-export default interface StrapiSingleResponse<T> {
+export default interface StrapiResponse<T> {
   data: {
     id: number
     attributes: T

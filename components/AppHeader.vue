@@ -1,13 +1,13 @@
 <script setup lang="ts">
-  import StrapiSingleResponse from 'types/StrapiSingleResponse'
+  import StrapiResponse from 'types/StrapiResponse'
   import { MainMenu, Menu } from 'types/MainMenu'
 
   const { isDesktop } = useDevice()
 
   const client = useStrapiClient()
-  let response = {} as StrapiSingleResponse<MainMenu>
+  let response = {} as StrapiResponse<MainMenu>
   try {
-    response = await client<StrapiSingleResponse<MainMenu>>('/main-menus/1', {
+    response = await client<StrapiResponse<MainMenu>>('/main-menus/1', {
       params: { populate: 'deep' },
     })
   } catch (error) {
@@ -55,3 +55,4 @@
     }
   }
 </style>
+types/StrapiResponse

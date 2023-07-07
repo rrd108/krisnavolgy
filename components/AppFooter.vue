@@ -5,7 +5,8 @@
   const client = useStrapiClient()
   let footer = {} as StrapiResponse<Footer>
   try {
-    footer = await client<StrapiResponse<Footer>>('/footer', {
+    footer = await client<StrapiResponse<Footer>>('/subscribes/1', {
+      // TODO replace with footer
       params: { populate: 'deep' },
     })
   } catch (error) {
@@ -15,14 +16,9 @@
 
 <template>
   <footer>
-    <Subscribe
-      :title="footer.data.attributes.Subscribe.Title"
-      :content="footer.data.attributes.Subscribe.Text"
-      :placeholder="footer.data.attributes.Subscribe_button.Subscribe_field"
-      button_text="TODO"
-    />
-    <OpeningHours :data="footer.data.attributes.Opening_hours" />
-    <Contact :data="footer.data.attributes.Availability" />
+    <SubscribeForm :subscribe="footer.data.attributes.subscribe" />
+    <!--OpeningHours :data="footer.data.attributes.Opening_hours" />
+    <Contact :data="footer.data.attributes.Availability" /-->
   </footer>
 </template>
 

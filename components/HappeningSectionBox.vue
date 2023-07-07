@@ -1,14 +1,16 @@
 <script setup lang="ts">
-  import { Happening } from 'types/Happening'
+  import { Happening, HappeningBlock } from 'types/Happening'
 
   const props = defineProps({
-    happening: {
-      type: Object as PropType<Happening>,
+    happeningBlock: {
+      type: Object as PropType<HappeningBlock>,
       required: true,
     },
   })
 
   const config = useRuntimeConfig()
+
+  const happening = props.happeningBlock.attributes.happening as Happening
 </script>
 
 <template>

@@ -14,5 +14,5 @@ export default interface HomePage {
   services_section: ServiceSection[]
   reviews: ReviewSection
   video: unknown // TODO
-  happenings_section: HappeningsSection[]
+  happenings_section: HappeningsSection
 }

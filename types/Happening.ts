@@ -5,13 +5,13 @@ export interface HappeningsSection {
   id: number
   title: string
   happenings: {
-    data: {
-      id: number
-      attributes: {
-        happening: Happening
-      }
-    }[]
+    data: HappeningBlock[]
   }
+}
+
+export interface HappeningBlock {
+  id: number
+  attributes: { happening: Happening }
 }
 
 export interface Happening {

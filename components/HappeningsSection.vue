@@ -17,12 +17,11 @@
     <h2>{{ happenings_section.title }}</h2>
 
     <section>
-      {{ happenings_section.happenings.data }}
       <Carousel>
         <ul class="horizontal-scroll">
-          <li v-for="happening in happenings_section.happenings.data">
+          <li v-for="happeningBlock in happenings_section.happenings.data">
             <Slide>
-              <HappeningSectionBox :happening="happening" />
+              <HappeningSectionBox :happeningBlock="happeningBlock" />
             </Slide>
           </li>
         </ul>

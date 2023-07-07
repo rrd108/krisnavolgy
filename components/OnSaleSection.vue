@@ -19,7 +19,7 @@
 <template>
   <section>
     <h2>Akciók TODO</h2>
-    <Carousel :centerMode="true" :perPage="4">
+    <Carousel :centerMode="true" :perPage="$device.isDesktop ? 4 : 2">
       <Slide v-for="(product, i) in data">
         <OnSaleSectionBox :product="product" />
       </Slide>

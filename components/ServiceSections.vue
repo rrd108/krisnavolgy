@@ -27,6 +27,7 @@
         />
       </li>
     </ul>
+    mobile: pager
     <Pager :length="services.length" :visible="serviceSectionsViews" />
   </div>
 
@@ -47,6 +48,7 @@
           </Slide>
         </li>
       </ul>
+      desktop: carousel
     </Carousel>
   </div>
 </template>

@@ -44,6 +44,7 @@
 
 <style scoped>
   section {
+    margin: 1em;
     background-color: var(--light);
     padding: 1em;
     border-radius: 0.5em;

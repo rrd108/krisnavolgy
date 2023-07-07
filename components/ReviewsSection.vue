@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
   import { ReviewSection } from 'types/Review'
 
   const props = defineProps<{

@@ -13,7 +13,10 @@
     <img :src="product.images[0].src" />
     <p>
       {{
-        product.description.replace(/<\/?[^>]+(>|$)/g, '').substring(0, 112)
+        product.description
+          .replace(/leírás/i, '')
+          .replace(/<\/?[^>]+(>|$)/g, '')
+          .substring(0, 112)
       }}...
     </p>
     <div>
@@ -37,6 +40,9 @@
 </template>
 
 <style scoped>
+  section {
+    margin: 1em;
+  }
   h3 {
     margin-bottom: 1em;
     height: 2.5rem;

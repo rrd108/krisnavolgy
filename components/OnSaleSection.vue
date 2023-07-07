@@ -19,21 +19,16 @@
 <template>
   <section>
     <h2>Akciók TODO</h2>
-    <Carousel>
-      <ul class="horizontal-scroll">
-        <li v-for="(product, i) in data">
-          <Slide>
-            <OnSaleSectionBox :product="product" />
-          </Slide>
-        </li>
-      </ul>
+    <Carousel :centerMode="true" :perPage="4">
+      <Slide v-for="(product, i) in data">
+        <OnSaleSectionBox :product="product" />
+      </Slide>
     </Carousel>
   </section>
 </template>
 
 <style scoped>
   section {
-    padding: 2em 0 0 var(--horizontal-scroll-padding-right);
     text-align: center;
     background-color: var(--light);
   }
@@ -44,9 +39,6 @@
   @media screen and (min-width: 64rem) {
     li {
       width: 25vw;
-    }
-    li:last-child {
-      margin-right: calc(1em + var(--horizontal-scroll-padding-right));
     }
   }
 </style>

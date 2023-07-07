@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import Menu from 'types/Menu'
+  import { Menu } from 'types/MainMenu'
 
   const props = defineProps({
     menus: {
@@ -19,10 +19,10 @@
         @mouseenter="showSubmenu = item.id"
         @mouseleave="showSubmenu = 0"
       >
-        <NuxtLink :to="item.link">{{ item.menu_item }}</NuxtLink>
+        <NuxtLink :to="item.link">{{ item.item }}</NuxtLink>
         <ul v-show="showSubmenu == item.id">
           <li v-for="subItem in item.sub_menu">
-            <NuxtLink :to="subItem.link">{{ subItem.menu_item }}</NuxtLink>
+            <NuxtLink :to="subItem.link">{{ subItem.item }}</NuxtLink>
           </li>
         </ul>
       </li>

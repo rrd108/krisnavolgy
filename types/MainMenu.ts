@@ -1,6 +1,6 @@
 export interface Menu {
   id: number
-  menu_item: string
+  item: string
   link: string
   sub_menu?: Menu[]
 }

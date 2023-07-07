@@ -28,6 +28,8 @@
     <br />
     Mi Krisna-völgy
     <br />
+    Videó
+    <br />
     <ReviewsSection :reviews_section="homePage.reviews" />
     Térkép
   </div>

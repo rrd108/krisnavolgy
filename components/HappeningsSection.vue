@@ -16,18 +16,16 @@
 
     <h2>{{ happenings_section.title }}</h2>
 
-    <section>
-      <Carousel>
-        <ul class="horizontal-scroll">
-          <li v-for="happeningBlock in happenings_section.happenings.data">
-            <Slide>
-              <HappeningSectionBox :happeningBlock="happeningBlock" />
-            </Slide>
-          </li>
-        </ul>
-      </Carousel>
-      <!--HappeningFeatured /-->
-    </section>
+    <Carousel>
+      <ul class="horizontal-scroll">
+        <li v-for="happeningBlock in happenings_section.happenings.data">
+          <Slide>
+            <HappeningSectionBox :happeningBlock="happeningBlock" />
+          </Slide>
+        </li>
+      </ul>
+    </Carousel>
+    <!--HappeningFeatured /-->
   </section>
 </template>
 

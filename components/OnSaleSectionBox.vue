@@ -1,36 +1,14 @@
 <script setup lang="ts">
-  import { PropType, ref } from 'vue'
-  import { useElementVisibility } from '@vueuse/core'
-
   const props = defineProps({
-    num: {
-      type: Number,
-      required: true,
-    },
     product: {
       type: Object,
       required: true,
     },
-    scrollElement: {
-      type: Object as PropType<HTMLElement>,
-      required: true,
-    },
   })
-
-  const emit = defineEmits<{
-    (e: 'visibility', value: [number, boolean]): void
-  }>()
-
-  const target = ref(null)
-  const targetIsVisible = useElementVisibility(target, {
-    scrollTarget: props.scrollElement,
-  })
-
-  watch(targetIsVisible, value => emit('visibility', [props.num, value]))
 </script>
 
 <template>
-  <div ref="target">
+  <section>
     <h3>{{ product.name }}</h3>
     <img :src="product.images[0].src" />
     <p>
@@ -55,7 +33,7 @@
       }}</span>
     </div>
     <NuxtLink :to="product.permalink" class="button">Tovább</NuxtLink>
-  </div>
+  </section>
 </template>
 
 <style scoped>

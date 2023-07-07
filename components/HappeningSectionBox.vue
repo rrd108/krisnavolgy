@@ -31,9 +31,9 @@
 
       <p>{{ happening.description }}</p>
 
-      <button>
-        {{ happening.button.text }}
-      </button>
+      <NuxtLink :to="happening.button.url" class="button">{{
+        happening.button.text
+      }}</NuxtLink>
     </div>
 
     <img
@@ -53,5 +53,9 @@
   img {
     width: 100%;
     border-radius: 0.5em;
+  }
+  a {
+    display: inline-block;
+    margin: 1em auto;
   }
 </style>

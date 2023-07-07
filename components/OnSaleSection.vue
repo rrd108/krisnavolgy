@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { ref } from 'vue'
   import WoocommerceProduct from '../types/WoocommerceProduct'
+  import carousel from 'plugins/carousel'
 
   const { data } = await useFetch<WoocommerceProduct[]>(
     'https://bolt.krisnavolgy.hu/wp-json/wc/v3/products',
@@ -13,51 +14,39 @@
       },
     }
   )
-
-  const onSaleSectionElement = ref(null as unknown as HTMLElement)
-  const onSaleSectionsViews = ref([true])
-  const visibilityChanged = (value: [number, boolean]) => {
-    const [num, isVisible] = value
-    onSaleSectionsViews.value[num] = isVisible
-  }
 </script>
 
 <template>
-  <div class="touch-right">
+  <section>
     <h2>Akciók TODO</h2>
-    <ul ref="onSaleSectionElement" class="horizontal-scroll">
-      <li v-for="(product, i) in data">
-        <OnSaleSectionBox
-          v-if="onSaleSectionElement"
-          :product="product"
-          :num="i"
-          :scrollElement="onSaleSectionElement"
-          @visibility="visibilityChanged"
-        />
-      </li>
-    </ul>
-
-    <Pager
-      :color="'#000'"
-      :length="data?.length || 1"
-      :visible="onSaleSectionsViews"
-    />
-  </div>
+    <Carousel>
+      <ul class="horizontal-scroll">
+        <li v-for="(product, i) in data">
+          <Slide>
+            <OnSaleSectionBox :product="product" />
+          </Slide>
+        </li>
+      </ul>
+    </Carousel>
+  </section>
 </template>
 
 <style scoped>
-  div {
-    background-color: var(--light);
-    padding: 1em 0;
+  section {
+    padding: 2em 0 0 var(--horizontal-scroll-padding-right);
     text-align: center;
+    background-color: var(--light);
   }
   h2 {
-    margin-bottom: 1em;
+    margin: 1em;
   }
 
   @media screen and (min-width: 64rem) {
     li {
-      width: 25%;
+      width: 25vw;
+    }
+    li:last-child {
+      margin-right: calc(1em + var(--horizontal-scroll-padding-right));
     }
   }
 </style>

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_social_media_social_media_sections",
+  "info": {
+    "displayName": "social media section",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "maxLength": 90
+    },
+    "social_media_bars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::social-media-bar.social-media-bar"
+    }
+  }
+}

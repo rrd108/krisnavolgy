@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_footer_sections",
+  "info": {
+    "displayName": "section",
+    "icon": "brush",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 90
+    },
+    "text": {
+      "displayName": "text",
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.text"
+    }
+  }
+}

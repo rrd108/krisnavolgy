@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { FooterItem } from 'types/Footer'
+  import { FooterItem } from '../types/Footer'
   import { PropType } from 'vue'
 
   const props = defineProps({
@@ -19,8 +19,4 @@
   </div>
 </template>
 
-<style scoped>
-  h3 {
-    border-bottom: 0.1em solid var(--link-color);
-  }
-</style>
+<style scoped></style>

@@ -31,6 +31,11 @@
       "type": "component",
       "repeatable": false,
       "component": "social-media.social-media-section"
+    },
+    "subscribe": {
+      "type": "component",
+      "repeatable": false,
+      "component": "subscribe.subscribe-bar"
     }
   }
 }

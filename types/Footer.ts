@@ -1,39 +1,32 @@
-export default interface Footer {
-  Blog_titles: string
-  Social_media_bar_title: string
-  Subscribe: {
-    id: number
-    Title: string
-    Text: string
-  }
-  Subscribe_button: {
-    id: number
-    Subscribe_field: string
-  }
-  Opening_hours: {
-    id: number
-    Title: string
-    Opening_hours: string
-  }
-  Availability: {
-    id: number
-    Title: string
-    Address: string
-    Number: string
-    Email: string
-  }
-  Social_media_bar: {
-    id: number
-    Link: string
-    Fontawesome_icon: string
+import { Subscribe } from './SubscribeForm'
+
+export interface FooterItem {
+  title: string
+  item: {
+    fontawesome_icon: string
+    content: string
+    link: string
   }[]
-  Search_button: {
-    id: number
-    Title: string
-    Link: string
-    Fontawesome_icon: string
+}
+
+export interface SocialMedia {
+  title: string
+  social_media_bars: {
+    data: {
+      attributes: {
+        social_media_icons: {
+          fontawesome_icon: string
+          link: string
+        }
+      }
+    }[]
   }
-  Footer_menu: {
-    id: number
-  }
+}
+
+export interface Footer {
+  opening_hours: FooterItem
+  contact: FooterItem
+  website_navigation: FooterItem
+  social_media_section: SocialMedia
+  subscribe: Subscribe
 }

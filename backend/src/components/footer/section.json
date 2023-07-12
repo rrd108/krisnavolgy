@@ -12,10 +12,10 @@
       "required": true,
       "maxLength": 90
     },
-    "text": {
+    "item": {
       "displayName": "text",
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "footer.text"
     }
   }

@@ -1,8 +1,9 @@
 {
   "collectionName": "components_footer_texts",
   "info": {
-    "displayName": "text",
-    "icon": "bulletList"
+    "displayName": "item",
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {

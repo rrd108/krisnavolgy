@@ -2,11 +2,12 @@
   "collectionName": "components_social_media_social_media_sections",
   "info": {
     "displayName": "social media section",
-    "icon": "calendar"
+    "icon": "calendar",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "maxLength": 90
     },

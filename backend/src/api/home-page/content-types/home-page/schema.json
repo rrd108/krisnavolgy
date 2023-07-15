@@ -53,6 +53,9 @@
       "type": "component",
       "repeatable": false,
       "component": "text-box.review-section"
+    },
+    "video_link": {
+      "type": "string"
     }
   }
 }

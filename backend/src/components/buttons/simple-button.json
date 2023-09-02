@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "text": {
+    "label": {
       "type": "string",
       "required": true,
       "maxLength": 20

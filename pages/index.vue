@@ -28,7 +28,15 @@
     <br />
     Mi Krisna-völgy
     <br />
-    Videó
+    <div class="youtube-video-container">
+    <iframe
+	width="560"
+	height="315"
+	:src="homePage.video_link"
+	allowfullscreen
+	frameborder="0"
+	    ></iframe>
+    </div>
     <br />
     <ReviewsSection :reviews_section="homePage.reviews" />
     Térkép

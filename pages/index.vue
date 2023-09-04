@@ -29,7 +29,6 @@
     Mi Krisna-völgy
     <br />
     <Video :video_link="homePage.video_link"/>
-    </div>
     <br />
     <ReviewsSection :reviews_section="homePage.reviews" />
     Térkép

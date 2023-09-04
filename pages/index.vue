@@ -28,14 +28,7 @@
     <br />
     Mi Krisna-völgy
     <br />
-    <div class="youtube-video-container">
-    <iframe
-	width="560"
-	height="315"
-	:src="homePage.video_link"
-	allowfullscreen
-	frameborder="0"
-	    ></iframe>
+    <Video :video_link="homePage.video_link"/>
     </div>
     <br />
     <ReviewsSection :reviews_section="homePage.reviews" />

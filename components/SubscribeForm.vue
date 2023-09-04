@@ -21,7 +21,7 @@
       :placeholder="subscribe.email_entry_field"
     />
     <button @click="addUser">
-      {{ subscribe.button?.text }}
+      {{ subscribe.button?.label }}
     </button>
   </section>
 </template>

@@ -32,7 +32,7 @@
       <p>{{ happening.description }}</p>
 
       <NuxtLink :to="happening.button.url" class="button">{{
-        happening.button.text
+        happening.button.label
       }}</NuxtLink>
     </div>
 

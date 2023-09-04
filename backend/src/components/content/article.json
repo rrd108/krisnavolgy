@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_content_articles",
+  "info": {
+    "displayName": "article",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "style": {
+      "type": "enumeration",
+      "enum": [
+        "default",
+        "blog",
+        "happening",
+        "sale"
+      ],
+      "required": true,
+      "default": "default"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "buttons.simple-button"
+    }
+  }
+}

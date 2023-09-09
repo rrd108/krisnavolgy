@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "heading": {
+    "title": {
       "type": "string",
       "required": true
     },
@@ -21,8 +21,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "heading",
-      "required": true
+      "required": true,
+      "targetField": "title"
     },
     "content": {
       "type": "dynamiczone",

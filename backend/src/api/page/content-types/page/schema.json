@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "heading": {
+    "title": {
       "type": "string",
       "required": true
     },
@@ -21,14 +21,15 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "heading",
+      "targetField": "title",
       "required": true
     },
-    "content": {
+    "pageZone": {
       "type": "dynamiczone",
       "components": [
-        "content.article",
-        "content.image"
+        "page.image",
+        "page.quote",
+        "page.rich-text"
       ]
     }
   }

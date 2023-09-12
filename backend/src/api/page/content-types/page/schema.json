@@ -29,7 +29,8 @@
       "components": [
         "page.image",
         "page.quote",
-        "page.rich-text"
+        "page.rich-text",
+        "page.link"
       ]
     }
   }

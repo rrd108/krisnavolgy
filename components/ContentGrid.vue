@@ -1,7 +1,6 @@
 <script setup lang="ts">
   const config = useRuntimeConfig()
   // content is query data from parent page
-  // title is the page title of parent page
   const props = defineProps({
     content: Object,
   })

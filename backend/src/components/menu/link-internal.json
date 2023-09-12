@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_menu_link_internals",
+  "info": {
+    "displayName": "linkInternal",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    }
+  }
+}

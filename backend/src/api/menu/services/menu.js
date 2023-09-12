@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * nav-bar service
+ * menu service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::nav-bar.nav-bar');
+module.exports = createCoreService('api::menu.menu');

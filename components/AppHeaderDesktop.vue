@@ -1,82 +1,102 @@
 <script setup lang="ts">
-  import { Menu } from 'types/MainMenu'
-
-  const props = defineProps({
-    menus: {
-      type: Array as PropType<Menu[]>,
-      required: true,
-    },
-  })
-
-  const showSubmenu = ref(0)
+const props = defineProps({
+  content: Object,
+});
 </script>
 
 <template>
   <nav>
     <ul>
-      <li
-        v-for="item in menus"
-        @mouseenter="showSubmenu = item.id"
-        @mouseleave="showSubmenu = 0"
-      >
-        <NuxtLink :to="item.link">{{ item.item }}</NuxtLink>
-        <ul v-show="showSubmenu == item.id">
-          <li v-for="subItem in item.sub_menu">
-            <NuxtLink :to="subItem.link">{{ subItem.item }}</NuxtLink>
-          </li>
+      <li v-for="zone in content.menuZone">
+        <NuxtLink
+          v-if="zone.__typename === 'ComponentMenuLinkExternal'"
+          :to="zone.url"
+          >{{ zone.label }}</NuxtLink
+        >
+
+        <NuxtLink
+          v-if="zone.__typename === 'ComponentMenuLinkInternal'"
+          :to="zone.page.data.attributes.slug"
+        >
+          {{ zone.label }}</NuxtLink
+        >
+        <ul class="dropdown" v-if="zone.__typename === 'ComponentMenuDropdown'">
+          {{
+            zone.label
+          }}
+          <div class="dropdown-content">
+            <li v-for="link in zone.linkInternal">
+              <NuxtLink :to="link.page.data.attributes.slug">{{
+                link.label
+              }}</NuxtLink>
+            </li>
+            <li v-for="link in zone.linkExternal">
+              <NuxtLink :to="link.url">{{ link.label }}</NuxtLink>
+            </li>
+          </div>
         </ul>
       </li>
-      <!--li>
-          <SearchInput :placeholder="menu.data?.attributes.search_field" />
-        </!--li-->
-      <!--li>
-          <span v-for="item in menu.data?.attributes.Social_media_bar">
-            <ClientOnly>
-              <NuxtLink :to="item.Link">
-                <font-awesome-icon :icon="item.Fontawesome_icon" />
-              </NuxtLink>
-            </ClientOnly>
-          </span>
-        </!--li-->
     </ul>
   </nav>
 </template>
 
 <style scoped>
-  @media screen and (min-width: 64rem) {
-    nav {
-      z-index: 1;
-    }
-    nav > ul {
-      display: flex;
-      gap: 1em;
-      justify-content: flex-end;
-      background-color: var(--bg-light);
-      font-size: 1em;
-      cursor: pointer;
-    }
-    nav a {
-      text-decoration: none;
-      display: inline-block;
-    }
-    ul {
-      font-family: 'Open Sans', serif;
-      font-weight: bold;
-    }
-    nav > ul li {
-      text-align: center;
-      width: 5rem;
-    }
-    li a {
-      padding: 0.5em;
-      white-space: nowrap;
-    }
-    li a:hover {
-      background-color: var(--dark);
-      color: var(--light);
-    }
-    ul ul li {
-      text-align: left;
-    }
+@media screen and (min-width: 64rem) {
+  nav {
+    z-index: 1;
   }
+  nav > ul {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-light);
+    font-size: 1em;
+    cursor: pointer;
+  }
+  nav a {
+    text-decoration: none;
+    display: inline-block;
+  }
+  ul li {
+    font-family: "Open Sans", serif;
+    font-weight: bold;
+  }
+  nav > ul li {
+    text-align: center;
+    min-width: 5em;
+  }
+  nav > ul > li > ul {
+    width: 100%;
+  }
+  li a {
+    padding: 0.5em;
+    white-space: nowrap;
+    width: 100%;
+  }
+  li a:hover {
+    background-color: var(--dark);
+    color: var(--light);
+  }
+  ul ul li {
+    text-align: left;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--light);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px var(--dark);
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
 </style>

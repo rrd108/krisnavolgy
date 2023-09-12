@@ -2,6 +2,7 @@
   import Menu from 'types/Menu'
 
   const props = defineProps({
+      content: Object,
     menus: {
       type: Array as PropType<Menu[]>,
       required: true,
@@ -22,26 +23,33 @@
       />
     </ClientOnly>
     <ul :class="{ open: isOpen }">
-      <li v-for="item in menus">
-        <NuxtLink :to="item.link">{{ item.menu_item }}</NuxtLink>
-        <ul>
-          <li v-for="subItem in item.sub_menu">
-            <NuxtLink :to="subItem.link">{{ subItem.menu_item }}</NuxtLink>
-          </li>
+      <li v-for="zone in content.menuZone">
+        <NuxtLink
+          v-if="zone.__typename === 'ComponentMenuLinkExternal'"
+          :to="zone.url"
+          >{{ zone.label }}</NuxtLink
+        >
+
+        <NuxtLink
+          v-if="zone.__typename === 'ComponentMenuLinkInternal'"
+          :to="zone.page.data.attributes.slug"
+        >
+          {{ zone.label }}</NuxtLink
+        >
+        <ul v-if="zone.__typename === 'ComponentMenuDropdown'">
+          {{
+            zone.label
+          }}
+            <li v-for="link in zone.linkInternal">
+              <NuxtLink :to="link.page.data.attributes.slug">{{
+                link.label
+              }}</NuxtLink>
+            </li>
+            <li v-for="link in zone.linkExternal">
+              <NuxtLink :to="link.url">{{ link.label }}</NuxtLink>
+            </li>
         </ul>
       </li>
-      <!--li>
-          <SearchInput :placeholder="menu.data?.attributes.search_field" />
-        </!--li-->
-      <!--li>
-          <span v-for="item in menu.data?.attributes.Social_media_bar">
-            <ClientOnly>
-              <NuxtLink :to="item.Link">
-                <font-awesome-icon :icon="item.Fontawesome_icon" />
-              </NuxtLink>
-            </ClientOnly>
-          </span>
-        </!--li-->
     </ul>
   </nav>
 </template>

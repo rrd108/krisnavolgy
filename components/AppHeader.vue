@@ -15,7 +15,9 @@ const menu = result.data.menu.data.attributes;
 
 <template>
   <header>
-    <img src="/images/logo.png" alt="logo" />
+    <NuxtLink to="/">
+      <img src="/images/logo.png" alt="logo" />
+    </NuxtLink>
     <AppHeaderMobile v-if="!isDesktop" :content="menu" />
     <AppHeaderDesktop v-if="isDesktop" :content="menu" />
   </header>

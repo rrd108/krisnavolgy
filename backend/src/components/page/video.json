@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_page_videos",
+  "info": {
+    "displayName": "video",
+    "icon": "television"
+  },
+  "options": {},
+  "attributes": {
+    "embedUrl": {
+      "type": "string"
+    }
+  }
+}

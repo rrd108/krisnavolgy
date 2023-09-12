@@ -24,8 +24,16 @@ query Pages($Slug: String!){
           ... on ComponentPageRichText {
             richText
           }
+          ... on ComponentPageLink {
+            label
+            url
+            style
+          }
+          ... on ComponentPageVideo {
+            embedUrl
+          }
         }
       }
     }
   }
-}`
+}`;

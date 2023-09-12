@@ -30,7 +30,8 @@
         "page.image",
         "page.quote",
         "page.rich-text",
-        "page.link"
+        "page.link",
+        "page.video"
       ]
     }
   }

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_page_subscribe_forms",
+  "info": {
+    "displayName": "subscribeForm",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Subscribe"
+    },
+    "cta": {
+      "type": "string",
+      "required": true,
+      "default": "It is worth it"
+    },
+    "placeholderEmail": {
+      "type": "string",
+      "required": true,
+      "default": "Enter E-mail"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Subscribe"
+    },
+    "subscribeUrl": {
+      "type": "string",
+      "required": true,
+      "default": "https://mailchip.com"
+    }
+  }
+}

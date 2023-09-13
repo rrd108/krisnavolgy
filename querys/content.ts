@@ -32,6 +32,13 @@ query Pages($Slug: String!){
           ... on ComponentPageVideo {
             embedUrl
           }
+          ... on ComponentPageSubscribeForm{
+            title
+            cta
+            placeholderEmail
+            buttonLabel
+            subscribeUrl
+          }
         }
       }
     }

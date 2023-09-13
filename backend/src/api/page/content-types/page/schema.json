@@ -31,7 +31,8 @@
         "page.quote",
         "page.rich-text",
         "page.link",
-        "page.video"
+        "page.video",
+        "page.subscribe-form"
       ]
     }
   }

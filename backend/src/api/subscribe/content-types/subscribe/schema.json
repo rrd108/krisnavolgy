@@ -4,7 +4,8 @@
   "info": {
     "singularName": "subscribe",
     "pluralName": "subscribes",
-    "displayName": "Subscribe"
+    "displayName": "Subscribe",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

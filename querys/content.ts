@@ -37,7 +37,6 @@ query Pages($Slug: String!){
             cta
             placeholderEmail
             buttonLabel
-            subscribeUrl
           }
         }
       }

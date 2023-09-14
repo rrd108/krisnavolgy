@@ -5,10 +5,6 @@ const props = defineProps({
   content: Object,
 });
 
-const mailchimplogic = (event) => {
-  //TODO
-  console.log(event.target.elements.email.value)
-};
 </script>
 
 <template>
@@ -41,12 +37,7 @@ const mailchimplogic = (event) => {
       </div>
       <!-- Displays all Subscribe forms-->
       <div v-if="zone.__typename === 'ComponentPageSubscribeForm'">
-        <h2>{{zone.title}}</h2>
-            <p>{{zone.cta}}</p>
-            <form @submit.prevent="mailchimplogic">
-              <input type="email" name="email" :placeholder="zone.placeholderEmail" required>
-              <input type="submit" :value="zone.buttonLabel" class="button">
-            </form>
+        <MailchimpSubscribe :content="zone" />
       </div>
     </div>
   </div>

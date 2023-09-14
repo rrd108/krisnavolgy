@@ -26,11 +26,6 @@
       "type": "string",
       "required": true,
       "default": "Subscribe"
-    },
-    "subscribeUrl": {
-      "type": "string",
-      "required": true,
-      "default": "https://mailchip.com"
     }
   }
 }

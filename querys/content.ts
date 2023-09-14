@@ -27,10 +27,11 @@ query Pages($Slug: String!){
           ... on ComponentPageLink {
             label
             url
-            style
+            linkStyle
           }
           ... on ComponentPageVideo {
             embedUrl
+            mediaStyle
           }
           ... on ComponentPageSubscribeForm{
             title

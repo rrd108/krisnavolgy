@@ -15,12 +15,13 @@
       "type": "string",
       "required": true
     },
-    "style": {
+    "linkStyle": {
       "type": "enumeration",
       "enum": [
+        "default",
         "button"
       ],
-      "default": "button",
+      "default": "default",
       "required": true
     }
   }

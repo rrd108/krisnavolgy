@@ -36,4 +36,7 @@
   width: 100%;
   height: 100%;
 }
+.mediumMedia {
+  max-width: 50%;
+}
 </style>

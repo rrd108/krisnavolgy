@@ -28,12 +28,12 @@ const props = defineProps({
       </div>
       <!-- Displays all Links-->
       <div v-if="zone.__typename === 'ComponentPageLink'">
-        <NuxtLink :class="zone.style" :to="zone.url">{{ zone.label }}</NuxtLink>
+        <NuxtLink :class="zone.linkStyle" :to="zone.url">{{ zone.label }}</NuxtLink>
       </div>
 
       <!-- Displays all Video's-->
       <div v-if="zone.__typename === 'ComponentPageVideo'">
-        <Video :video_link="zone.embedUrl" />
+        <Video :class="zone.mediaStyle" :video_link="zone.embedUrl" />
       </div>
       <!-- Displays all Subscribe forms-->
       <div v-if="zone.__typename === 'ComponentPageSubscribeForm'">

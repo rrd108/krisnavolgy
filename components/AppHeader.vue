@@ -32,6 +32,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 0.1em solid var(--divider-color);
   }
   img {
     height: calc(100% - 2 * 0.5em);
@@ -45,6 +46,7 @@
   @media screen and (min-width: 64rem) {
     header {
       padding: 1em;
+      font-weight: bold;
     }
     img {
       height: 2rem;

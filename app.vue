@@ -1,11 +1,5 @@
 <template>
-  <div id="app">
-    <AppHeader />
-    <main>
-      <NuxtPage />
-    </main>
-    <AppFooter />
+  <div>
+    <NuxtWelcome />
   </div>
 </template>
-
-<style></style>

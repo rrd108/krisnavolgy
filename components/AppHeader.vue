@@ -26,30 +26,26 @@
 </template>
 
 <style scoped>
+  ul {
+    display: flex;
+    gap: 1em;
+  }
   header {
-    height: var(--header-height);
-    height: var(--header-dynamic-height);
+    padding: 1em;
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 0.1em solid var(--divider-color);
   }
   img {
-    height: calc(100% - 2 * 0.5em);
-    margin: 0.5em;
-  }
-  ul {
-    display: flex;
-    gap: 1em;
+    height: 2rem;
   }
 
-  @media screen and (min-width: 64rem) {
+  @media screen and (max-width: 35rem) {
     header {
-      padding: 1em;
-      font-weight: bold;
-    }
-    img {
-      height: 2rem;
+      height: var(--header-height);
+      height: var(--header-dynamic-height);
     }
   }
 </style>

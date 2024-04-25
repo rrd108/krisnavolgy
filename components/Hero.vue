@@ -46,10 +46,11 @@
     position: absolute;
   }
   #cloudBig {
-    top: 20%;
+    top: 10%;
     left: calc(60% - v-bind(cloudBigPos));
-    width: 35%;
-    height: 10%;
+    --width: 8rem;
+    width: var(--width);
+    height: calc(var(--width) / 1.91);
     background-image: url('/images/cloud-big.png');
   }
   #cloudSmall {
@@ -68,9 +69,8 @@
       gap: 3em;
     }
     #cloudBig {
+      top: 20%;
       --width: 16rem;
-      width: var(--width);
-      height: calc(var(--width) / 1.91);
     }
     #cloudSmall {
       --width: 6rem;

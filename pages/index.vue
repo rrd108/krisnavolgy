@@ -1,5 +1,13 @@
 <script setup></script>
 
-<template>INDEX</template>
+<template>
+  <div class="TODO">
+    <Hero />
+  </div>
+</template>
 
-<style scoped></style>
+<style scoped>
+  .TODO {
+    min-height: 300vh;
+  }
+</style>

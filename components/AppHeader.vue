@@ -1,12 +1,12 @@
 <script setup lang="ts">
   const menus = [
     { label: 'Látogatás', path: '/latogatas' },
-    { label: 'Programok', path: '/programok' },
-    { label: 'Szállás', path: '/szallas' },
-    { label: 'Étterem', path: '/etterem' },
+    //    { label: 'Programok', path: '/programok' },
+    { label: 'Szállás', path: 'https://vendeghaz.krisnavolgy.hu' },
+    //    { label: 'Étterem', path: '/etterem' },
     { label: 'Webshop', path: 'https://bolt.krisnavolgy.hu' },
-    { label: 'Rólunk', path: '/rolunk' },
-    { label: 'Kapcsolat', path: '/kapcsolat' },
+    //    { label: 'Rólunk', path: '/rolunk' },
+    //    { label: 'Kapcsolat', path: '/kapcsolat' },
   ]
 </script>
 

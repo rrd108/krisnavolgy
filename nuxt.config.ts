@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/style.css'],
-  modules: ['@vesp/nuxt-fontawesome'],
+  modules: ['@vesp/nuxt-fontawesome', '@vueuse/nuxt'],
   fontawesome: {
     icons: {
       solid: ['cog'],

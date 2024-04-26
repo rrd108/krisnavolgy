@@ -69,7 +69,7 @@
   @media screen and (min-width: 64rem) {
     #hero {
       background-image: url('/images/background-desktop.png');
-      background-size: cover;
+      background-position: center;
       display: flex;
       flex-direction: column;
       gap: 3em;

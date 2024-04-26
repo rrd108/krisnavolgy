@@ -79,30 +79,7 @@ a {
   border-radius: 50% !important;
 }
 
-/*
-.touch-right {
-  margin-right: -1em;
-}
-
-.horizontal-scroll {
-  display: flex;
-  gap: 1em;
-  overflow-x: scroll;
-  scroll-snap-type: inline mandatory;
-  scroll-padding: var(--horizontal-scroll-padding-right);
-}
-.horizontal-scroll li {
-  border-radius: 0.5em;
-  padding: 0 0 1em 1em;
-  width: 72vw;
-  flex-shrink: 0;
-  text-align: left;
-  scroll-snap-align: start;
-}
-.horizontal-scroll li:last-child {
-  margin-right: var(--horizontal-scroll-padding-right);
-}
-.button {
+/*.button {
   background-color: var(--dark);
   color: var(--light);
   border: none;
@@ -115,6 +92,5 @@ a {
 
 @media screen and (min-width: 64rem) {
   :root {
-    --horizontal-scroll-padding-right: 5em;
   }
 }

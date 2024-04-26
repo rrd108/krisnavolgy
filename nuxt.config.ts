@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: ['@vesp/nuxt-fontawesome', '@vueuse/nuxt', 'vue3-carousel-nuxt', '@nuxtjs/device'],
   fontawesome: {
     icons: {
-      solid: ['bed', 'child-reaching', 'ellipsis-vertical', 'people-group', 'utensils'],
+      solid: ['arrow-right', 'bed', 'child-reaching', 'ellipsis-vertical', 'people-group', 'utensils'],
     },
   },
 })

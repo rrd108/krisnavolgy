@@ -5,6 +5,7 @@
     <Hero />
     <SubscribeForm />
     <Counters />
+    <Events />
   </div>
 </template>
 

@@ -54,11 +54,11 @@ small {
 
 .df {
   display: flex;
-  gap: 1em;
+  gap: 0.5em;
 }
-.grid {
+.dg {
   display: grid;
-  gap: 1em;
+  gap: 0.5em;
 }
 h1,
 h2,
@@ -82,7 +82,8 @@ a {
   border-radius: 50% !important;
 }
 
-/*.button {
+button,
+.button {
   background-color: var(--dark);
   color: var(--light);
   border: none;
@@ -91,9 +92,10 @@ a {
   text-decoration: none;
   text-align: center;
 }
-*/
 
 @media screen and (min-width: 41rem) {
-  :root {
+  .dg,
+  .df {
+    gap: 1em;
   }
 }

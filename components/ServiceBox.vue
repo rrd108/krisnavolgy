@@ -37,7 +37,6 @@
   @media screen and (min-width: 41rem) {
     div {
       width: 20vw;
-      height: 9vw;
       margin: 1em;
       padding: 1em;
     }

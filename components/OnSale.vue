@@ -35,6 +35,7 @@
 <style scoped>
   section {
     background-color: var(--light);
+    padding-top: 1em;
   }
   h2 {
     margin: 1em;

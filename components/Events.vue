@@ -9,7 +9,7 @@
       title: 'Boldog Boci',
       description: 'Egyedülálló élményt nyújt az állatok tiszteletéről.',
       url: '/',
-      thumbnail: 'https://source.unsplash.com/170x120',
+      thumbnail: `https://source.unsplash.com/170x120?${Math.floor(Math.random() * 100)}`,
     },
     {
       start_date: '2024. május 18.',
@@ -17,7 +17,7 @@
       title: 'India Varázsa',
       description: 'Merülj el az indiai kultúra varázsában nálunk!',
       url: '/',
-      thumbnail: 'https://source.unsplash.com/170x120',
+      thumbnail: `https://source.unsplash.com/170x120?${Math.floor(Math.random() * 100)}`,
     },
     {
       start_date: '2024. június 22.',
@@ -25,7 +25,7 @@
       title: 'Holi',
       description: 'A boldogság és a barátság színes porokká válnak. ',
       url: '/',
-      thumbnail: 'https://source.unsplash.com/170x120',
+      thumbnail: `https://source.unsplash.com/170x120?${Math.floor(Math.random() * 100)}`,
     },
     {
       start_date: '2024. július 26.',
@@ -33,7 +33,7 @@
       title: 'Búcsú',
       description: 'Krisna-völgy legnagyobb eseménye',
       url: '/',
-      thumbnail: 'https://source.unsplash.com/170x120',
+      thumbnail: `https://source.unsplash.com/170x120?${Math.floor(Math.random() * 100)}`,
     },
     {
       start_date: '2024. augusztus 17. ',
@@ -41,7 +41,7 @@
       title: 'India Napok',
       description: 'Az indiai kultúra minden szegletét megismerheted.',
       url: '/',
-      thumbnail: 'https://source.unsplash.com/170x120',
+      thumbnail: `https://source.unsplash.com/170x120?${Math.floor(Math.random() * 100)}`,
     },
   ]
 </script>
@@ -63,6 +63,7 @@
       :autoplay="2500"
       :pauseAutoplayOnHover="true"
       :wrapAround="true"
+      dir="rtl"
     >
       <Slide v-for="(event, i) in events" :key="event.title">
         <EventBox :event="event" />

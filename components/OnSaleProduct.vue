@@ -5,6 +5,7 @@
       required: true,
     },
   })
+  const { isMobile } = useDevice()
 </script>
 
 <template>
@@ -16,7 +17,7 @@
         product.description
           .replace(/leírás/i, '')
           .replace(/<\/?[^>]+(>|$)/g, '')
-          .substring(0, 60)
+          .substring(0, isMobile ? 60 : 120)
       }}...
     </p>
     <div>
@@ -42,6 +43,9 @@
 <style scoped>
   section {
     padding: 1em;
+  }
+  h3 {
+    margin-bottom: 1em;
   }
   img {
     height: 12em;

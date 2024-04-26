@@ -6,6 +6,7 @@
     <SubscribeForm />
     <Counters />
     <Events />
+    <OnSale />
   </div>
 </template>
 

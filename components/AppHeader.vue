@@ -56,28 +56,26 @@
       position: fixed;
       top: 1em;
       right: 1em;
-      z-index: 1;
+      z-index: 3;
     }
     header {
       padding: 0.25em;
       align-items: flex-start;
-      overflow-x: hidden;
     }
     ul {
       flex-direction: column;
       gap: 0.5em;
-      margin-top: calc(var(--header-dynamic-height) - 0.25em);
-      margin-top: calc(var(--header-height) - 0.25em);
-      transform: translateX(10em);
+      padding: 0.5em 3em 0.5em 1em;
+      transform: translateY(-100%) scale(0);
+      transform-origin: calc(100% - 1.25em) 6.5em;
       transition: transform 350ms ease-in-out;
       background-color: pink;
-      padding: 0.5em 2em 0.5em 1em;
       position: fixed;
       right: 0;
       z-index: 2;
     }
     ul.open {
-      transform: translateX(0);
+      transform: translateY(0) scale(1);
     }
   }
 </style>

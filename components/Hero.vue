@@ -24,14 +24,16 @@
   section {
     height: var(--main-height);
     height: var(--main-dynamic-height);
-    background-image: url('/images/bg_gradient_cut.png');
+    background-image: url('/images/background-mobile.png');
     background-size: cover;
     text-align: center;
     position: relative;
     padding: var(--horizontal-scroll-padding-right);
   }
   h1 {
+    position: relative;
     z-index: 2;
+    margin: 0.5em;
   }
   p {
     position: relative;
@@ -46,34 +48,39 @@
     position: absolute;
   }
   #cloudBig {
-    top: 10%;
-    left: calc(60% - v-bind(cloudBigPos));
+    top: 23vh;
+    right: calc(1em + v-bind(cloudBigPos));
     --width: 8rem;
     width: var(--width);
     height: calc(var(--width) / 1.91);
     background-image: url('/images/cloud-big.png');
   }
   #cloudSmall {
-    top: 25%;
-    left: calc(30% + v-bind(cloudSmallPos));
-    width: 17.5%;
-    height: 2.5%;
+    top: 27vh;
+    left: calc(2em + v-bind(cloudSmallPos));
+    --width: 4rem;
+    width: var(--width);
+    height: calc(var(--width) / 3.75);
     background-image: url('/images/cloud-small.png');
   }
 
   @media screen and (min-width: 64rem) {
     section {
       background-image: url('/images/background-desktop.png');
+      background-size: cover;
       display: flex;
       flex-direction: column;
       gap: 3em;
     }
     #cloudBig {
-      top: 20%;
-      --width: 16rem;
+      --width: 19rem;
+      top: 10vh;
+      right: calc(12em + v-bind(cloudBigPos));
     }
     #cloudSmall {
-      --width: 6rem;
+      --width: 12rem;
+      top: 15vh;
+      left: calc(12em + v-bind(cloudSmallPos));
       width: var(--width);
       height: calc(var(--width) / 3.75);
     }

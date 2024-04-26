@@ -9,18 +9,34 @@
   ]
 
   // https://ismail9k.github.io/vue3-carousel/getting-started.html
+
+  const { isMobile } = useDevice()
 </script>
 
 <template>
-  <Carousel :itemsToShow="4.5" snapAlign="start" :autoplay="2500" :pauseAutoplayOnHover="true" :wrapAround="true">
-    <Slide v-for="(service, i) in services" :key="service.title">
-      <ServiceBox :service="service" />
-    </Slide>
+  <div id="services">
+    <Carousel
+      :itemsToShow="isMobile ? 1.3 : 4.5"
+      snapAlign="start"
+      :autoplay="2500"
+      :pauseAutoplayOnHover="true"
+      :wrapAround="true"
+    >
+      <Slide v-for="(service, i) in services" :key="service.title">
+        <ServiceBox :service="service" />
+      </Slide>
 
-    <template #addons>
-      <Pagination />
-    </template>
-  </Carousel>
+      <template #addons>
+        <Pagination />
+      </template>
+    </Carousel>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  @media screen and (max-width: 40rem) {
+    #services {
+      margin-top: 12em;
+    }
+  }
+</style>

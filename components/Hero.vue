@@ -8,7 +8,7 @@
   <section id="hero">
     <picture>
       <!-- TODO replace with nuxt image -->
-      <source media="(max-width: 800px)" srcset="/images/divider.png" />
+      <source media="(max-width: 40rem)" srcset="/images/divider.png" />
       <source srcset="/images/divider-desktop.png" />
       <img src="/images/divider.png" />
     </picture>
@@ -31,6 +31,9 @@
     text-align: center;
     position: relative;
     padding: var(--horizontal-scroll-padding-right);
+    background-position: center;
+    display: flex;
+    flex-direction: column;
   }
   h1 {
     position: relative;
@@ -40,7 +43,7 @@
   p {
     position: relative;
     z-index: 2;
-    max-width: 35rem;
+    max-width: 40rem;
     margin: 0 auto;
   }
   #cloudBig,
@@ -66,12 +69,9 @@
     background-image: url('/images/cloud-small.png');
   }
 
-  @media screen and (min-width: 64rem) {
+  @media screen and (min-width: 41rem) {
     #hero {
       background-image: url('/images/background-desktop.png');
-      background-position: center;
-      display: flex;
-      flex-direction: column;
       gap: 3em;
     }
     #cloudBig {

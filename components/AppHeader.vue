@@ -50,7 +50,7 @@
     gap: 1em;
   }
 
-  @media screen and (max-width: 35rem) {
+  @media screen and (max-width: 40rem) {
     #mobileMenu {
       display: block;
       position: fixed;

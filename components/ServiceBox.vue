@@ -19,12 +19,12 @@
   div {
     background-color: var(--light);
     border-radius: 0.5em;
-    padding: 1em;
     text-align: left;
     opacity: 0.9;
-    width: 20vw;
-    height: 9vw;
-    margin: 1em;
+    width: 75vw;
+    height: 8rem;
+    margin: 0.5em;
+    padding: 0.5em;
   }
   h3,
   p {
@@ -33,5 +33,13 @@
   }
   p {
     font-size: 0.8rem;
+  }
+  @media screen and (min-width: 41rem) {
+    div {
+      width: 20vw;
+      height: 9vw;
+      margin: 1em;
+      padding: 1em;
+    }
   }
 </style>

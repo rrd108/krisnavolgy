@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: ['@vesp/nuxt-fontawesome', '@vueuse/nuxt'],
   fontawesome: {
     icons: {
-      solid: ['cog'],
+      solid: ['ellipsis-vertical'],
     },
   },
 })

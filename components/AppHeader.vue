@@ -8,6 +8,8 @@
     //    { label: 'Rólunk', path: '/rolunk' },
     //    { label: 'Kapcsolat', path: '/kapcsolat' },
   ]
+
+  const isMobileMenuOpen = ref(false)
 </script>
 
 <template>
@@ -16,7 +18,8 @@
       <img src="/images/logo.png" alt="logo" />
     </NuxtLink>
     <nav>
-      <ul>
+      <font-awesome icon="ellipsis-vertical" id="mobileMenu" @click="isMobileMenuOpen = !isMobileMenuOpen" />
+      <ul :class="{ open: isMobileMenuOpen }">
         <li v-for="menu in menus">
           <NuxtLink :to="menu.path">{{ menu.label }}</NuxtLink>
         </li>
@@ -26,11 +29,12 @@
 </template>
 
 <style scoped>
-  ul {
-    display: flex;
-    gap: 1em;
+  #mobileMenu {
+    display: none;
   }
   header {
+    height: var(--header-height);
+    height: var(--header-dynamic-height);
     padding: 1em;
     font-weight: bold;
     display: flex;
@@ -41,11 +45,39 @@
   img {
     height: 2rem;
   }
+  ul {
+    display: flex;
+    gap: 1em;
+  }
 
   @media screen and (max-width: 35rem) {
+    #mobileMenu {
+      display: block;
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      z-index: 1;
+    }
     header {
-      height: var(--header-height);
-      height: var(--header-dynamic-height);
+      padding: 0.25em;
+      align-items: flex-start;
+      overflow-x: hidden;
+    }
+    ul {
+      flex-direction: column;
+      gap: 0.5em;
+      margin-top: calc(var(--header-dynamic-height) - 0.25em);
+      margin-top: calc(var(--header-height) - 0.25em);
+      transform: translateX(10em);
+      transition: transform 350ms ease-in-out;
+      background-color: pink;
+      padding: 0.5em 2em 0.5em 1em;
+      position: fixed;
+      right: 0;
+      z-index: 2;
+    }
+    ul.open {
+      transform: translateX(0);
     }
   }
 </style>

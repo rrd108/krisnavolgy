@@ -14,7 +14,7 @@
     </picture>
 
     <h1>Felejthetetlen élmény</h1>
-    <p>Csodálatos! Nézze meg az egyik elvonulásunkat egy teljes, spirituális témákkal teli hétvégére</p>
+    <p>Csodálatos! Nézd meg az egyik elvonulásunkat egy teljes, spirituális témákkal teli hétvégére</p>
     <span id="cloudBig"></span>
     <span id="cloudSmall"></span>
   </section>

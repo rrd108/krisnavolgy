@@ -1,13 +1,10 @@
-<script setup></script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="TODO">
+  <div>
     <Hero />
+    <SubscribeForm />
   </div>
 </template>
 
-<style scoped>
-  .TODO {
-    min-height: 300vh;
-  }
-</style>
+<style scoped></style>

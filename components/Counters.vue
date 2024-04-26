@@ -45,7 +45,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1em;
-    padding: 1em;
+    padding: var(--main-padding);
   }
   li {
     display: flex;

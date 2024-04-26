@@ -17,7 +17,7 @@
 <style scoped>
   section {
     text-align: center;
-    padding: 2.5em 0;
+    padding: 2.5em var(--main-padding);
   }
   h2,
   p {

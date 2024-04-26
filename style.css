@@ -6,10 +6,13 @@
   --bh-light: #d9d8c5;
   --link-color: #6d6c62;
   --divider-color: #d0cfbc;
+
   --header-dynamic-height: 7dvh;
   --header-height: 7vh;
   --main-dynamic-height: calc(100dvh - var(--header-dynamic-height));
   --main-height: calc(100vh - var(--header-height));
+
+  --main-padding: 1em;
   --horizontal-scroll-padding-right: 1em;
 }
 * {

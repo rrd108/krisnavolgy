@@ -707,7 +707,7 @@
     "which" "^3.0.1"
     "ws" "^8.16.0"
 
-"@nuxt/kit@^3.10.2", "@nuxt/kit@^3.11.2", "@nuxt/kit@^3.2.0", "@nuxt/kit@^3.9.1", "@nuxt/kit@3.11.2":
+"@nuxt/kit@^3.10.2", "@nuxt/kit@^3.11.0", "@nuxt/kit@^3.11.2", "@nuxt/kit@^3.2.0", "@nuxt/kit@^3.9.1", "@nuxt/kit@3.11.2":
   "integrity" "sha512-yiYKP0ZWMW7T3TCmsv4H8+jEsB/nFriRAR8bKoSqSV9bkVYWPE36sf7JDux30dQ91jSlQG6LQkB3vCHYTS2cIg=="
   "resolved" "https://registry.npmjs.org/@nuxt/kit/-/kit-3.11.2.tgz"
   "version" "3.11.2"
@@ -5708,6 +5708,19 @@
     "@vue/runtime-dom" "3.4.25"
     "@vue/server-renderer" "3.4.25"
     "@vue/shared" "3.4.25"
+
+"vue3-carousel-nuxt@^1.1.1":
+  "integrity" "sha512-vhsHeB1bjTPSrKUmci0saXA2ueT4g7WArCG2cv6NzXiVnyaPZUCUjZcPcwTqQ86amRUjg92NgGhOlgDsz4pNHg=="
+  "resolved" "https://registry.npmjs.org/vue3-carousel-nuxt/-/vue3-carousel-nuxt-1.1.1.tgz"
+  "version" "1.1.1"
+  dependencies:
+    "@nuxt/kit" "^3.11.0"
+    "vue3-carousel" "^0.3.3"
+
+"vue3-carousel@^0.3.3":
+  "integrity" "sha512-VsuOBE4LG9lxAiYGR9U7ps4RyJ4oFQGzk79/49ybvoxzNpahPAVWIDHKK3a1lOv0CSplFq6u4FvaFLZ8x3FgWg=="
+  "resolved" "https://registry.npmjs.org/vue3-carousel/-/vue3-carousel-0.3.3.tgz"
+  "version" "0.3.3"
 
 "webidl-conversions@^3.0.0":
   "integrity" "sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ=="

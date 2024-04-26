@@ -74,6 +74,11 @@ a {
   color: var(--link-color);
 }
 
+.carousel__pagination-button::after {
+  height: var(--vc-pgn-width) !important;
+  border-radius: 50% !important;
+}
+
 /*
 .touch-right {
   margin-right: -1em;

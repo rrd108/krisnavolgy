@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <section>
+  <section id="hero">
     <picture>
       <!-- TODO replace with nuxt image -->
       <source media="(max-width: 800px)" srcset="/images/divider.png" />
@@ -17,11 +17,13 @@
     <p>Csodálatos! Nézd meg az egyik elvonulásunkat egy teljes, spirituális témákkal teli hétvégére</p>
     <span id="cloudBig"></span>
     <span id="cloudSmall"></span>
+
+    <Services />
   </section>
 </template>
 
 <style scoped>
-  section {
+  #hero {
     height: var(--main-height);
     height: var(--main-dynamic-height);
     background-image: url('/images/background-mobile.png');
@@ -65,7 +67,7 @@
   }
 
   @media screen and (min-width: 64rem) {
-    section {
+    #hero {
       background-image: url('/images/background-desktop.png');
       background-size: cover;
       display: flex;

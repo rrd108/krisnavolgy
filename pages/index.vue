@@ -7,6 +7,7 @@
     <Counters />
     <Events />
     <OnSale />
+    <Youtube />
   </div>
 </template>
 

@@ -8,6 +8,7 @@
     <Events />
     <OnSale />
     <Youtube />
+    <Testimonials />
   </div>
 </template>
 

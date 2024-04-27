@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   fontawesome: {
     icons: {
       solid: ['arrow-right', 'bed', 'child-reaching', 'ellipsis-vertical', 'people-group', 'utensils'],
+      brands: ['facebook', 'instagram', 'tiktok', 'youtube'],
     },
   },
 })

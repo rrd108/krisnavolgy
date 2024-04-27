@@ -1,11 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
+  <div class="video-wrapper">
     <ClientOnly>
       <iframe
-        width="800"
-        height="500"
         src="https://www.youtube.com/embed/YXf5TI_SWG4?si=E23WSxPJYCMitDCo"
         title="YouTube video player"
         frameborder="0"
@@ -18,23 +16,13 @@
 </template>
 
 <style scoped>
-  div {
-    position: relative;
-    overflow: hidden;
+  .video-wrapper {
+    display: flex;
     width: 100%;
   }
 
-  div::after {
-    display: block;
-    content: '';
-    padding-top: 56.25%; /*16:9 aspect ratio*/
-  }
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .video-wrapper iframe {
+    flex-grow: 1;
+    aspect-ratio: 16/9;
   }
 </style>

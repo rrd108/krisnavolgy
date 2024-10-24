@@ -25,7 +25,7 @@ const addUser = () => {
 
     <div>
       <h3>Maradjunk kapcsolatban</h3>
-      <ul class="df">
+      <!--ul class="df">
         <li>
           <NuxtLink to="https://www.facebook.com/krisnavolgy">
             <font-awesome :icon="['fab', 'facebook']" />
@@ -46,7 +46,7 @@ const addUser = () => {
             <font-awesome :icon="['fab', 'instagram']" />
           </NuxtLink>
         </li>
-      </ul>
+      </!--ul-->
     </div>
 
     <div>

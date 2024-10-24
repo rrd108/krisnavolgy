@@ -11,6 +11,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/icon": "^1.5.6",
     "@vueuse/nuxt": "^10.9.0",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
@@ -22,7 +23,6 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@nuxtjs/device": "^3.1.1",
-    "@vesp/nuxt-fontawesome": "^1.0.4",
     "vue-mess-detector-nuxt-devtools": "^0.1.2"
   }
 }

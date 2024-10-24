@@ -1,16 +1,47 @@
 <script setup>
-  const services = [
-    { title: 'Belépőjegy árak', content: 'Diák, nyugdíjas, felnőtt jegyek', price: '2.000 - 10.000 Ft' },
-    { title: 'Csoportok', content: 'Csoport programok', price: 'Kérj ajánlatot' },
-    { title: 'Szállás', content: 'Különböző igényekre igazodó szálláshelyek', price: '3.400 Ft - 38.000 Ft' },
-    { title: 'Étterem', content: 'Indiai ételkülönlegességek', price: '2.690 Ft - 5.490 Ft' },
-    { title: 'Webshop', content: 'India kincsei', price: 'Árak a webshopban' },
-    { title: 'Elvonulások', content: 'Hosszú hétvégék feltöltődésre', price: '55.000 - 125.000' },
-  ]
+// TODO create pages
+const services = [
+  {
+    title: "Belépőjegy árak",
+    content: "Diák, nyugdíjas, felnőtt jegyek",
+    price: "2.000 - 10.000 Ft",
+    page: "TODO",
+  },
+  {
+    title: "Csoportok",
+    content: "Csoport programok",
+    price: "Kérj ajánlatot",
+    page: "TODO",
+  },
+  {
+    title: "Szállás",
+    content: "Különböző igényekre igazodó szálláshelyek",
+    price: "3.400 Ft - 38.000 Ft",
+    link: "TODO",
+  },
+  {
+    title: "Étterem",
+    content: "Indiai ételkülönlegességek",
+    price: "2.690 Ft - 5.490 Ft",
+    page: "TODO",
+  },
+  {
+    title: "Webshop",
+    content: "India kincsei",
+    price: "Árak a webshopban",
+    link: "TODO",
+  },
+  {
+    title: "Elvonulások",
+    content: "Hosszú hétvégék feltöltődésre",
+    price: "55.000 - 125.000",
+    link: "TODO",
+  },
+];
 
-  // https://ismail9k.github.io/vue3-carousel/getting-started.html
+// https://ismail9k.github.io/vue3-carousel/getting-started.html
 
-  const { isMobile } = useDevice()
+const { isMobile } = useDevice();
 </script>
 
 <template>
@@ -34,9 +65,9 @@
 </template>
 
 <style scoped>
-  @media screen and (max-width: 40rem) {
-    #services {
-      margin-top: 12em;
-    }
+@media screen and (max-width: 40rem) {
+  #services {
+    margin-top: 12em;
   }
+}
 </style>

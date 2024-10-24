@@ -8,6 +8,8 @@
     },
   })
 
+  //console.log(data)
+
   const { isMobile } = useDevice()
 </script>
 

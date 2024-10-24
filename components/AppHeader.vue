@@ -21,9 +21,10 @@ const isMobileMenuOpen = ref(false);
     </NuxtLink>
     <nav>
       <font-awesome
-        icon="ellipsis-vertical"
+        :icon="isMobileMenuOpen ? 'xmark' : 'bars'"
         id="mobileMenu"
         @click="isMobileMenuOpen = !isMobileMenuOpen"
+        :class="{ open: isMobileMenuOpen }"
       />
       <ul :class="{ open: isMobileMenuOpen }">
         <li v-for="menu in menus">
@@ -55,6 +56,9 @@ ul {
   display: flex;
   gap: 1em;
 }
+a {
+  color: var(--light);
+}
 
 @media screen and (max-width: 40rem) {
   #mobileMenu {
@@ -63,6 +67,10 @@ ul {
     top: 1em;
     right: 1em;
     z-index: 3;
+    color: var(--link-color);
+  }
+  #mobileMenu.open {
+    color: var(--light);
   }
   header {
     padding: 0.25em;
@@ -71,17 +79,18 @@ ul {
   ul {
     flex-direction: column;
     gap: 0.5em;
+    margin-top: -0.25em;
     padding: 0.5em 3em 0.5em 1em;
-    transform: translateY(-100%) scale(0);
+    transform: translateX(100%);
     transform-origin: calc(100% - 1.25em) 6.5em;
     transition: transform 350ms ease-in-out;
-    background-color: pink;
+    background-color: var(--link-color);
     position: fixed;
     right: 0;
     z-index: 2;
   }
   ul.open {
-    transform: translateY(0) scale(1);
+    transform: translateX(0);
   }
 }
 </style>

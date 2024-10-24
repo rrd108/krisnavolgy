@@ -3,4 +3,5 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/style.css'],
   modules: ['@vueuse/nuxt', 'vue3-carousel-nuxt', '@nuxtjs/device', 'vue-mess-detector-nuxt-devtools', '@nuxt/icon'],
+  compatibilityDate: '2024-10-24'
 })

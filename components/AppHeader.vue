@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const menus = [
-  { label: "Főoldal", path: "/" },
+  { label: "Főoldal", path: "/", icon: "line-md:home-simple-twotone" },
   { label: "Látogatás", path: "/latogatas" },
   //{ label: 'Programok', path: '/programok' },
   { label: "Szállás", path: "https://vendeghaz.krisnavolgy.hu" },
@@ -106,8 +106,7 @@ const menus = [
 	<li"><a href="https://krisnavolgy.hu/kapcsolat-elvonulas-lelki-gyakorlatok/">Elvonulás, lelki gyakorlatok</a></li>
 </ul>
 </li>
-<li class="astm-search-menu is-menu is-dropdown menu-item"><a href="#" aria-label="Search Icon Link"><svg width="20" height="20" class="search-icon" role="img" viewBox="2 9 20 5" focusable="false" aria-label="Search">
-						<path class="search-icon-path" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></a><form data-min-no-for-search="1" data-result-box-max-height="400" data-form-class="is-search-form is-form-style is-form-style-2 is-form-id-9167 is-ajax-search" action="https://krisnavolgy.hu/" method="get" role="search"><label for="is-search-input-9167"><span class="is-screen-reader-text">Search for:<input type="search" id="is-search-input-9167" name="s" value="" class="is-search-input" placeholder="Keresés..." autocomplete="off"><span class="is-loader-image" style="display: none;background-image:url(https://krisnavolgy.hu/wp-content/plugins/add-search-to-menu/public/images/spinner.gif);"></label></form></li></ul>
+Search
  */
 
 const isMobileMenuOpen = ref(false);
@@ -127,7 +126,10 @@ const isMobileMenuOpen = ref(false);
       />
       <ul :class="{ open: isMobileMenuOpen }">
         <li v-for="menu in menus">
-          <NuxtLink :to="menu.path">{{ menu.label }}</NuxtLink>
+          <NuxtLink :to="menu.path">
+            <Icon v-if="menu.icon" :name="menu.icon" />
+            {{ menu.label }}
+          </NuxtLink>
         </li>
       </ul>
     </nav>

@@ -8,4 +8,8 @@
   </div>
 </template>
 
-<style></style>
+<style>
+main {
+  padding: 1em;
+}
+</style>

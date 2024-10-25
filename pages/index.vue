@@ -12,4 +12,8 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+div {
+  margin: -1em;
+}
+</style>

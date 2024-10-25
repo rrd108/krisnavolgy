@@ -1,8 +1,8 @@
 {
   "name": "krisnavolgy",
+  "type": "module",
   "version": "0.0.4",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -11,7 +11,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@antfu/eslint-config": "^3.8.0",
     "@nuxt/icon": "^1.5.6",
+    "@nuxt/image": "^1.8.1",
     "@vueuse/nuxt": "^10.9.0",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
@@ -19,9 +21,7 @@
     "vue3-carousel-nuxt": "^1.1.1"
   },
   "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.5.2",
-    "@fortawesome/free-regular-svg-icons": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@iconify-json/material-symbols": "^1.2.5",
     "@nuxtjs/device": "^3.1.1",
     "vue-mess-detector-nuxt-devtools": "^0.1.2"
   }

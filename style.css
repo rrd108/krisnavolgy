@@ -3,6 +3,7 @@
 :root {
   --light: #f1efe8;
   --dark: #123a2c;
+  --lighter-dark: #1d4437;
   --bh-light: #d9d8c5;
   --link-color: #6d6c62;
   --divider-color: #d0cfbc;
@@ -15,14 +16,17 @@
   --main-padding: 1em;
   --horizontal-scroll-padding-right: 1em;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: var(--bh-light);
 }
+
 #app {
   max-width: 90rem;
   margin: 0 auto;
@@ -33,33 +37,47 @@ input,
 button {
   font-family: 'Open sans', sans-serif;
 }
+
 button {
   font-size: 0.9rem;
 }
+
 input {
   font-size: 1rem;
 }
+
 input,
 button {
   padding: 0.5em;
 }
+
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
+
+ol {
+  margin-left: 1.5em;
+}
+
+p {
+  margin: 1em 0;
+}
+
 small {
   font-size: 0.75rem;
+  font-weight: lighter;
 }
 
 .df {
   display: flex;
   gap: 0.5em;
 }
+
 .dg {
   display: grid;
   gap: 0.5em;
 }
+
 h1,
 h2,
 h3,
@@ -68,6 +86,7 @@ h5,
 h6 {
   font-family: 'Playfair Display', serif;
 }
+
 h1 {
   margin: 1em 0;
 }
@@ -93,7 +112,45 @@ button,
   text-align: center;
 }
 
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+thead {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+thead tr:nth-child(even) {
+  background-color: var(--lighter-dark);
+}
+
+tr:nth-child(even) {
+  background-color: var(--divider-color);
+}
+
+th,
+td {
+  padding: 0.5em;
+}
+
+
+.center {
+  display: block;
+  margin: 1em auto;
+}
+
+.right {
+  text-align: right;
+}
+
+.full {
+  width: 100%;
+}
+
 @media screen and (min-width: 41rem) {
+
   .dg,
   .df {
     gap: 1em;

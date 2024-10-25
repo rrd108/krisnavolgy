@@ -15,8 +15,8 @@ const cloudSmallPos = computed(() => `${y.value / 20}%`);
 
     <h1>Felejthetetlen élmény</h1>
     <p>
-      Csodálatos! Nézd meg az egyik elvonulásunkat egy teljes, spirituális
-      témákkal teli hétvégére
+      Vegyél részt egyik elvonulásunkon egy teljes, spirituális témákkal teli
+      hétvégén!
     </p>
     <span id="cloudBig"></span>
     <span id="cloudSmall"></span>

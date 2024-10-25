@@ -7,12 +7,7 @@ const addUser = () => {
 
 <template>
   <footer>
-    <div>
-      <h3>Nyitvatartás</h3>
-      <ul>
-        <li>Kedd - vasárnap: 10:00-17:00</li>
-      </ul>
-    </div>
+    <OpenHours />
 
     <div>
       <h3>Elérhetőség</h3>

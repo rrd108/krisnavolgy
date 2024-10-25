@@ -130,7 +130,7 @@
     <h3>Érdekelhet még</h3>
     <ul>
       <li>
-        <NuxtLink to="/csoportoknak-jegyarak">
+        <NuxtLink to="/csoport-jegyarak">
           Csoportoknak szóló ajánlataink
         </NuxtLink>
       </li>

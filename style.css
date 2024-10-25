@@ -138,6 +138,7 @@ td {
 
 .center {
   display: block;
+  width: fit-content;
   margin: 1em auto;
 }
 

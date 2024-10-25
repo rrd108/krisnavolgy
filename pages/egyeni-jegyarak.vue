@@ -87,6 +87,9 @@
     <h3>Kedvezmények</h3>
     <ul>
       <li>Kerékpárral érkező vendégeinknek részére: 10% kedvezmény</li>
+      <li>
+        Hungarocard kártyával fizető vendégeinknek részére: 10% kedvezmény
+      </li>
     </ul>
 
     <Divider />

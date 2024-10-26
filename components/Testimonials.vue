@@ -1,18 +1,24 @@
 <script setup lang="ts">
-  const { isMobile } = useDevice()
+const { isMobile } = useDevice();
 
-  const testimonials = [
-    {
-      name: 'Szőke Jánosné',
-      text: 'Minden nagyon csodálatos. A Krisnások mindegyike roppant kedves,vendégszerető ember! Ajanlani tudom mindenkinek ezt a nyugalom szigetét. Köszönjük,hogy ismét eljuthattunk erre a csodálatos helyre!',
-    },
-    {
-      name: 'Bakos Judit',
-      text: 'Ajánlom az egész völgy-farm különleges látnivalóit. Egy nagyon szép napot töltöttünk itt el a családdal, unokákkal. Részt vettünk a játékokban, finom italokat, ételeket fogyasztottunk.',
-    },
-    { name: 'Aladár', text: 'Finom a kaja' },
-    { name: 'Pepe', text: 'Cool, de tényleg' },
-  ]
+const testimonials = [
+  {
+    name: "Orbán Csilla",
+    text: "Nagyon elégedettek voltunk mindennel, az első naptól az utolsó percig nagyon élveztük a Krisna völgyben töltött időt. Szinte új emberként tértünk haza, és másnap még visszavágytunk, nehezen sikerült a visszailleszkedés a mindennapokba. Köszönjük az élményt! Mindenki nagyon kedves és barátságos volt. Kérdéseinket maximálisan megválaszolták, amiben szükségünk volt, segítségünkre voltak. Éreztük a gondoskodást.",
+  },
+  {
+    name: "Palyovné Jevtuhov Boglárka",
+    text: "Hálás vagyok a lehetőségért, a sok mindenért, amit tanulhattam. A vendégvezetők is fantasztikusak voltak! Amikor ott voltam még nem is ismertem fel, milyen nagy változás indult el bennem. Még mindig a hatása alatt vagyok. Hálásan köszönöm! ",
+  },
+  {
+    name: "Veronika",
+    text: "Nagyon tetszettek a vezetett túrák és hogy ezáltal lehetőségünk volt beszélgetni a völgyben élőkkel, illetve tanulni tőlük. Az étel nagyon finom volt. Ezeken kívül még alapvetően az az energia és béke tetszett, (még a tömeg ellenére is) amit ott tapasztaltunk :) ",
+  },
+  {
+    name: "T. Luca",
+    text: "Mély benyomást tett rám a hívők közvetlen, segítőkész szándéka, az ételek minősége, a Kirtan zenék, óriási tehetség és összhang kell hozzá, illetve a karkötőkészítés és annak felajánlása.",
+  },
+];
 </script>
 
 <template>
@@ -37,10 +43,10 @@
 </template>
 
 <style scoped>
-  section {
-    text-align: center;
-  }
-  h2 {
-    margin: 1em;
-  }
+section {
+  text-align: center;
+}
+h2 {
+  margin: 1em;
+}
 </style>

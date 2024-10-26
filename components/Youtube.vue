@@ -1,4 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+/**
+ecept:
+https://www.youtube.com/watch?v=XuHYvJIeljc
+
+éttermi téma:
+https://www.youtube.com/watch?v=Pnyr-BK334w
+
+szentély és általános bemutató:
+https://www.youtube.com/watch?v=0qUtAMTqfmQ
+ */
+</script>
 
 <template>
   <div class="video-wrapper">

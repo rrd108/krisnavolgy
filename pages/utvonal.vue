@@ -24,6 +24,8 @@
     nem vagyunk személyautóval megközelíthetőek!
   </InfoBlock>
 
+  <Divider />
+
   <h3>Budapest és Balaton felől</h3>
   <NuxtLink
     to="https://www.google.com/maps/dir/Budapest/Somogyv%C3%A1mos,+Krisna-v%C3%B6lgy"

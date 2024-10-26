@@ -11,7 +11,7 @@ const menus = [
         children: [
           {
             label: "Egyéni",
-            path: "/egyeniek",
+            path: "/vendegek",
             icon: "material-symbols:person",
           },
           {

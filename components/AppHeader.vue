@@ -11,12 +11,12 @@ const menus = [
         children: [
           {
             label: "Egyéni",
-            path: "/egyeni-jegyarak",
+            path: "/egyeniek",
             icon: "material-symbols:person",
           },
           {
             label: "Csoport",
-            path: "/csoport-jegyarak",
+            path: "/csoportok",
             icon: "fa6-solid:people-group",
           },
         ],

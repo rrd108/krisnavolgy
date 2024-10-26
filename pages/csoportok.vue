@@ -305,6 +305,14 @@ const { allComingEvents } = await import("../data/events");
 
   <Divider />
 
+  <h3>Elvonulások</h3>
+  <p>Elvonulásainkon lehetőség van egyénileg és csoportosan is részt venni.</p>
+  <ul>
+    <li>
+      <NuxtLink to="https://elvonulas.krisnavolgy.hu">Információk itt</NuxtLink>
+    </li>
+  </ul>
+
   <NuxtLink
     to="https://forms.gle/dq2TXtnh4iCQAVLV7"
     class="button center"

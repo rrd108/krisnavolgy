@@ -23,6 +23,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bh-light);
 }
@@ -87,7 +91,7 @@ h6 {
   font-family: 'Playfair Display', serif;
 }
 
-h1 {
+h1, h2, h3 {
   margin: 1em 0;
 }
 

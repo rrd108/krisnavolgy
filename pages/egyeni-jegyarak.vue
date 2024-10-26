@@ -44,7 +44,7 @@
         </tr>
         <tr>
           <td>Fogyatékkal élők</td>
-          <td class="right">1.150 Ft</td>
+          <td class="right">1.700 Ft</td>
         </tr>
       </tbody>
     </table>

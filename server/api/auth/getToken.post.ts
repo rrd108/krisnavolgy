@@ -5,7 +5,6 @@ export default defineEventHandler(async (event) => {
     const options = useRuntimeConfig().public.nuxtTokenAuthentication;
     const data = await readBody(event);
 
-
     const { rows } = await db.sql`
     SELECT * FROM {${options.authTable}}
     WHERE email = ${data.email}
@@ -23,10 +22,11 @@ export default defineEventHandler(async (event) => {
     }
 
     const user = rows ? rows[0] : undefined;
+    let token;
     if (user) {
         delete user.password;
-        const token = crypto.randomUUID();
+        token = crypto.randomUUID();
         await db.sql`UPDATE {${options.authTable}} SET token = ${token} WHERE email = ${user.email as string}`;
     }
-    return { user };
+    return { ...user, token };
 });

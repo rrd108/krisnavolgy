@@ -1,4 +1,10 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+const defaultDatabase = {
+  connector: 'sqlite' as const,
+  options: {
+    path: './data/krisnavolgy.sqlite3',
+  },
+}
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/style.css'],
@@ -8,7 +14,22 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     'vue-mess-detector-nuxt-devtools',
     '@nuxt/icon',
-    '@nuxt/image'
+    '@nuxt/image', 'nuxt-token-authentication'
   ],
+  nitro: {
+    experimental: {
+      database: true,
+    },
+    database: {
+      default: defaultDatabase,
+    },
+  },
+  nuxtTokenAuthentication: {
+    noAuthRoutes: ['POST:/api/auth/getToken'],
+    connector: {
+      name: defaultDatabase.connector,
+      options: defaultDatabase.options,
+      },
+    },
   compatibilityDate: '2024-10-24'
 })

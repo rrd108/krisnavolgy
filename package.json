@@ -1,7 +1,7 @@
 {
   "name": "krisnavolgy",
   "type": "module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -15,7 +15,10 @@
     "@nuxt/icon": "^1.5.6",
     "@nuxt/image": "^1.8.1",
     "@vueuse/nuxt": "^10.9.0",
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^11.5.0",
     "nuxt": "^3.11.2",
+    "nuxt-token-authentication": "^1.0.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vue3-carousel-nuxt": "^1.1.1"
@@ -23,6 +26,7 @@
   "devDependencies": {
     "@iconify-json/material-symbols": "^1.2.5",
     "@nuxtjs/device": "^3.1.1",
+    "@types/bcrypt": "^5.0.2",
     "vue-mess-detector-nuxt-devtools": "^0.1.2"
   }
 }

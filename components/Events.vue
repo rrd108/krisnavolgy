@@ -1,7 +1,5 @@
 <script setup lang="ts">
 const { isMobile } = useDevice()
-
-const { touristComingEvents } = await import("../data/events")
 </script>
 
 <template>

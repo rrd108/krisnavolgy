@@ -24,3 +24,5 @@ logs
 !.env.example
 
 kv.zip
+
+data/krisnavolgy.sqlite3

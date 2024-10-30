@@ -7,6 +7,7 @@
   --bh-light: #d9d8c5;
   --link-color: #6d6c62;
   --divider-color: #d0cfbc;
+  --error: #8b4343;
 
   --header-dynamic-height: 7dvh;
   --header-height: 7vh;
@@ -53,6 +54,8 @@ input {
 input,
 button {
   padding: 0.5em;
+  border: none;
+  border-radius: 0.5em;
 }
 
 ul {

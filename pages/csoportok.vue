@@ -1,6 +1,4 @@
-<script setup>
-const { allComingEvents } = await import("../data/events");
-</script>
+<script setup></script>
 
 <template>
   <h1><Icon name="lucide:tickets" /> Csoport jegyárak</h1>

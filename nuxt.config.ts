@@ -14,8 +14,13 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     'vue-mess-detector-nuxt-devtools',
     '@nuxt/icon',
-    '@nuxt/image', 'nuxt-token-authentication'
+    '@nuxt/image', 
+    'nuxt-token-authentication', 
+    '@formkit/nuxt'
   ],
+  formkit: {
+    autoImport: true,
+  },
   nitro: {
     experimental: {
       database: true,
@@ -25,11 +30,11 @@ export default defineNuxtConfig({
     },
   },
   nuxtTokenAuthentication: {
-    noAuthRoutes: ['POST:/api/auth/getToken'],
+    noAuthRoutes: ['GET:/api/events', 'POST:/api/auth/getToken'],
     connector: {
       name: defaultDatabase.connector,
       options: defaultDatabase.options,
-      },
     },
+  },
   compatibilityDate: '2024-10-24'
 })

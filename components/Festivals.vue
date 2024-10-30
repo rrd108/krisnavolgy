@@ -16,8 +16,8 @@ const { isMobile } = useDevice()
       :wrapAround="true"
       dir="rtl"
     >
-      <Slide v-for="(event, i) in touristComingEvents" :key="event.title">
-        <EventBox :event="event" />
+      <Slide v-for="(festival, i) in touristComingFestivals" :key="festival.title">
+        <FestivalBox :festival />
       </Slide>
 
       <template #addons>

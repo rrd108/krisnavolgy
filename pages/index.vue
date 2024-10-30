@@ -5,7 +5,7 @@
     <Hero />
     <SubscribeForm />
     <Counters />
-    <Events />
+    <Festivals />
     <OnSale />
     <Youtube />
     <Testimonials />

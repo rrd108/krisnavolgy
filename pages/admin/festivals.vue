@@ -1,0 +1,107 @@
+<script setup lang="ts">
+definePageMeta({
+  layout: "admin",
+})
+
+const userStore = useUserStore()
+
+interface Festival {
+  id: number
+  title: string
+  start_date: string
+  end_date: string
+  description?: string
+  long_description?: string
+  url?: string
+  thumbnail?: string
+}
+
+const selectedFestival = ref<Festival>({} as Festival)
+
+const updateFestival = () => {
+  $fetch('/api/festivals', {
+    method: 'PATCH',
+    body: selectedFestival.value,
+    headers: {
+      'Token': userStore.token
+    }
+  }).then(res => {
+    console.log(res)
+  }).catch(err => {
+      console.error(err)
+    })
+}
+</script>
+
+<template>
+  <h1>
+    <Icon name="material-symbols:tips-and-updates-outline-rounded" /> Programok
+  </h1>
+
+  <ul>
+    <li v-for="festival in allComingFestivals" @click="selectedFestival = festival">
+      <h5>{{ festival.title }} <Icon name="mdi:fountain-pen-tip" /></h5>
+      <small>{{ festival.start_date }}</small>
+      <small v-if="festival.end_date !== festival.start_date">
+        - {{ festival.end_date }}
+      </small>
+    </li>
+  </ul>
+
+  <FormKit type="form" v-show="selectedFestival.id" v-model="selectedFestival" submit-label="Módosítás" @submit="updateFestival">
+    <h2>Szerkesztés</h2>
+    <FormKit
+      type="text"
+      name="title"
+      label="Cím"
+    />
+    <FormKit
+      type="date"
+      name="start_date"
+      label="Kezdés"
+    />
+    <FormKit
+      type="date"
+      name="end_date"
+      label="Befejezés"
+      optional
+    />
+    <FormKit
+      type="textarea"
+      name="description"
+      label="Leírás"
+      optional
+    />
+    <FormKit
+      type="textarea"
+      name="long_description"
+      label="Hoszzú leírás"
+      optional
+    />
+    <FormKit type="text" name="url" label="URL" optional />
+    <FormKit
+      type="text"
+      name="thumbnail"
+      label="Kép"
+      optional
+    />
+  </FormKit>
+</template>
+
+<style scoped>
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+li {
+  background-color: var(--link-color);
+  color: var(--light);
+  padding: 0.5em;
+  border-radius: 0.25em;
+}
+h5 {
+  display: flex;
+  justify-content: space-between;
+}
+</style>

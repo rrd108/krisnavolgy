@@ -3,15 +3,15 @@
 <template>
   <h1><Icon name="material-symbols:tips-and-updates-outline-rounded" /> Programok</h1>
 
-  <div v-for="event in touristComingEvents">
-    <h2>{{ event.title }}</h2>
+  <div v-for="festival in touristComingFestivals">
+    <h2>{{ festival.title }}</h2>
     <h3>
       {{ event.start_date }}
-      <span v-if="event.end_date !== event.start_date">
-        - {{ event.end_date }}
-        </span>
+      <span v-if="festival.end_date !== festival.start_date">
+        - {{ festival.end_date }}
+      </span>
     </h3>
-    <p>{{ event.description }}</p>
+    <p>{{ festival.description }}</p>
   </div>
 </template>
 

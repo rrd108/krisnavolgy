@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps({
-  event: {
+  festival: {
     type: Object,
     required: true,
   },
@@ -11,23 +11,23 @@ const props = defineProps({
   <section>
     <h6>
       <span>
-        {{ event.start_date }}
+        {{ festival.start_date }}
       </span>
-      <span v-if="event.end_date != event.start_date">
-        - {{ event.end_date }}
+      <span v-if="festival.end_date != festival.start_date">
+        - {{ festival.end_date }}
       </span>
     </h6>
     <div class="dg">
       <div>
-        <h3>{{ event.title }}</h3>
-        <small>{{ event.description }}</small>
-        <NuxtLink :to="event.url"
+        <h3>{{ festival.title }}</h3>
+        <small>{{ festival.description }}</small>
+        <NuxtLink :to="festival.url"
           >Tovább
           <!--font-awesome icon="arrow-right" /--></NuxtLink
         >
       </div>
 
-      <img :src="`${event.thumbnail}`" />
+      <img :src="`${festival.thumbnail}`" />
     </div>
   </section>
 </template>

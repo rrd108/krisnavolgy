@@ -9,14 +9,15 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/style.css'],
   modules: [
-    '@vueuse/nuxt',
-    'vue3-carousel-nuxt',
-    '@nuxtjs/device',
-    'vue-mess-detector-nuxt-devtools',
+    '@formkit/nuxt',
     '@nuxt/icon',
     '@nuxt/image', 
+    '@nuxtjs/device',
     'nuxt-token-authentication', 
-    '@formkit/nuxt'
+    '@pinia/nuxt',
+    'vue-mess-detector-nuxt-devtools',
+    'vue3-carousel-nuxt',
+    '@vueuse/nuxt'
   ],
   formkit: {
     autoImport: true,
@@ -30,7 +31,7 @@ export default defineNuxtConfig({
     },
   },
   nuxtTokenAuthentication: {
-    noAuthRoutes: ['GET:/api/events', 'POST:/api/auth/getToken'],
+    noAuthRoutes: ['GET:/api/festivals', 'POST:/api/auth/getToken'],
     connector: {
       name: defaultDatabase.connector,
       options: defaultDatabase.options,

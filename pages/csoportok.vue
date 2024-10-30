@@ -52,8 +52,8 @@
     Az alábbi napokon egyéb események miatt
     <strong>nem választható</strong> plusz csoportprogram:
     <ul>
-      <li v-for="event in allComingEvents" :key="event.title">
-        {{ event.start_date }} ({{ event.title }})
+      <li v-for="festival in allComingFestivals" :key="festival.title">
+        {{ festival.start_date }} ({{ festival.title }})
       </li>
     </ul>
   </InfoBlock>

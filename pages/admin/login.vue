@@ -1,20 +1,18 @@
 <script setup lang="ts">
 definePageMeta({
   layout: "admin",
-});
+})
+
+const userStore = useUserStore()
 
 const error = ref('');
 
-const login = (data: { email: string; password: string }) => {
-  $fetch("/api/auth/getToken", {
-    method: "POST",
-    body: data,
-  }).then((res) => {
-    navigateTo('/admin/events')
-  })
-    .catch((err) => {
-      error.value = 'Hibás email vagy jelszó!';
-    });
+const login = async (data: { email: string; password: string }) => {
+  try {
+    await userStore.login(data)
+  } catch (err) {
+    error.value = err.message
+  }
 };
 </script>
 

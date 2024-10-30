@@ -1,45 +1,84 @@
 <script setup lang="ts">
 definePageMeta({
   layout: "admin",
-})
+});
 
-const userStore = useUserStore()
+const userStore = useUserStore();
 
 interface Festival {
-  id: number
-  title: string
-  start_date: string
-  end_date: string
-  description?: string
-  long_description?: string
-  url?: string
-  thumbnail?: string
+  id: number;
+  title: string;
+  start_date: string;
+  end_date: string;
+  description?: string;
+  long_description?: string;
+  url?: string;
+  thumbnail?: string;
 }
 
-const selectedFestival = ref<Festival>({} as Festival)
+const emptyFestival = {
+  id: 0,
+  title: '',
+  start_date: '',
+  end_date: '',
+}
+const selectedFestival = ref<Festival>({} as Festival);
 
-const updateFestival = () => {
-  $fetch('/api/festivals', {
-    method: 'PATCH',
+const handleSubmit = () => {
+  if (selectedFestival.value.id === 0) {
+    createFestival()
+  } else {
+    updateFestival()
+  }
+}
+
+const createFestival = () => {
+  $fetch("/api/festivals", {
+    method: "POST",
     body: selectedFestival.value,
     headers: {
-      'Token': userStore.token
-    }
-  }).then(res => {
-    console.log(res)
-  }).catch(err => {
-      console.error(err)
+      Token: userStore.token,
+    },
+  }).then((res) => {
+      console.log(res);
     })
-}
+    .catch((err) => {
+      console.error(err);
+    });
+};
+
+const updateFestival = () => {
+  $fetch("/api/festivals", {
+    method: "PATCH",
+    body: selectedFestival.value,
+    headers: {
+      Token: userStore.token,
+    },
+  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
 </script>
 
 <template>
-  <h1>
-    <Icon name="material-symbols:tips-and-updates-outline-rounded" /> Programok
+  <h1 class="df sb">
+    <span>
+      <Icon name="material-symbols:tips-and-updates-outline-rounded" />
+      Programok
+    </span>
+    <Icon name="material-symbols-light:add-diamond" class="cp" @click="selectedFestival = emptyFestival" />
   </h1>
 
   <ul>
-    <li v-for="festival in allComingFestivals" @click="selectedFestival = festival">
+    <li
+      v-for="festival in allComingFestivals"
+      :key="festival.id"
+      @click="selectedFestival = festival"
+    >
       <h5>{{ festival.title }} <Icon name="mdi:fountain-pen-tip" /></h5>
       <small>{{ festival.start_date }}</small>
       <small v-if="festival.end_date !== festival.start_date">
@@ -48,30 +87,18 @@ const updateFestival = () => {
     </li>
   </ul>
 
-  <FormKit type="form" v-show="selectedFestival.id" v-model="selectedFestival" submit-label="Módosítás" @submit="updateFestival">
-    <h2>Szerkesztés</h2>
-    <FormKit
-      type="text"
-      name="title"
-      label="Cím"
-    />
-    <FormKit
-      type="date"
-      name="start_date"
-      label="Kezdés"
-    />
-    <FormKit
-      type="date"
-      name="end_date"
-      label="Befejezés"
-      optional
-    />
-    <FormKit
-      type="textarea"
-      name="description"
-      label="Leírás"
-      optional
-    />
+  <FormKit
+    type="form"
+    v-show="selectedFestival.id >= 0"
+    v-model="selectedFestival"
+    :submit-label="selectedFestival.id ? 'Módosítás' : 'Létrehozás'"
+    @submit="handleSubmit"
+  >
+    <h2>{{ selectedFestival.id ? 'Szerkesztés' : 'Létrehozás' }}</h2>
+    <FormKit type="text" name="title" label="Cím" />
+    <FormKit type="date" name="start_date" label="Kezdés" />
+    <FormKit type="date" name="end_date" label="Befejezés" optional />
+    <FormKit type="textarea" name="description" label="Leírás" optional />
     <FormKit
       type="textarea"
       name="long_description"
@@ -79,12 +106,7 @@ const updateFestival = () => {
       optional
     />
     <FormKit type="text" name="url" label="URL" optional />
-    <FormKit
-      type="text"
-      name="thumbnail"
-      label="Kép"
-      optional
-    />
+    <FormKit type="text" name="thumbnail" label="Kép" optional />
   </FormKit>
 </template>
 

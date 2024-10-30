@@ -157,6 +157,18 @@ td {
   width: 100%;
 }
 
+.df {
+  display: flex;
+}
+
+.sb {
+  justify-content: space-between;
+}
+
+.cp {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 41rem) {
 
   .dg,

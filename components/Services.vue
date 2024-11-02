@@ -47,7 +47,7 @@ const { isMobile } = useDevice();
 <template>
   <div id="services">
     <Carousel
-      :itemsToShow="isMobile ? 1.3 : 4.5"
+      :itemsToShow="isMobile ? 1.2 : 4.5"
       snapAlign="start"
       :autoplay="2500"
       :pauseAutoplayOnHover="true"
@@ -67,7 +67,7 @@ const { isMobile } = useDevice();
 <style scoped>
 @media screen and (max-width: 40rem) {
   #services {
-    margin-top: 12em;
+    margin: 12em -1em 0 0 ;
   }
 }
 </style>

@@ -169,6 +169,10 @@ td {
   cursor: pointer;
 }
 
+.delete {
+  background-color: var(--error);
+}
+
 @media screen and (min-width: 41rem) {
 
   .dg,

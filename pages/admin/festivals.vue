@@ -18,19 +18,19 @@ interface Festival {
 
 const emptyFestival = {
   id: 0,
-  title: '',
-  start_date: '',
-  end_date: '',
-}
+  title: "",
+  start_date: "",
+  end_date: "",
+};
 const selectedFestival = ref<Festival>({} as Festival);
 
 const handleSubmit = () => {
   if (selectedFestival.value.id === 0) {
-    createFestival()
+    createFestival();
   } else {
-    updateFestival()
+    updateFestival();
   }
-}
+};
 
 const createFestival = () => {
   $fetch("/api/festivals", {
@@ -39,7 +39,8 @@ const createFestival = () => {
     headers: {
       Token: userStore.token,
     },
-  }).then((res) => {
+  })
+    .then((res) => {
       console.log(res);
     })
     .catch((err) => {
@@ -61,7 +62,9 @@ const updateFestival = () => {
     .catch((err) => {
       console.error(err);
     });
-};
+}
+
+const deleteFestival = () => {}
 </script>
 
 <template>
@@ -70,7 +73,11 @@ const updateFestival = () => {
       <Icon name="material-symbols:tips-and-updates-outline-rounded" />
       Programok
     </span>
-    <Icon name="material-symbols-light:add-diamond" class="cp" @click="selectedFestival = emptyFestival" />
+    <Icon
+      name="material-symbols-light:add-diamond"
+      class="cp"
+      @click="selectedFestival = emptyFestival"
+    />
   </h1>
 
   <ul>
@@ -91,10 +98,10 @@ const updateFestival = () => {
     type="form"
     v-show="selectedFestival.id >= 0"
     v-model="selectedFestival"
-    :submit-label="selectedFestival.id ? 'Módosítás' : 'Létrehozás'"
+    :actions="false"
     @submit="handleSubmit"
   >
-    <h2>{{ selectedFestival.id ? 'Szerkesztés' : 'Létrehozás' }}</h2>
+    <h2>{{ selectedFestival.id ? "Szerkesztés" : "Létrehozás" }}</h2>
     <FormKit type="text" name="title" label="Cím" />
     <FormKit type="date" name="start_date" label="Kezdés" />
     <FormKit type="date" name="end_date" label="Befejezés" optional />
@@ -107,6 +114,31 @@ const updateFestival = () => {
     />
     <FormKit type="text" name="url" label="URL" optional />
     <FormKit type="text" name="thumbnail" label="Kép" optional />
+
+    <div class="df">
+      <FormKit type="submit">
+        <Icon
+          :name="
+            selectedFestival.id
+              ? 'mdi:fountain-pen-tip'
+              : 'material-symbols-light:add-diamond'
+          "
+        />
+        {{ selectedFestival.id ? "Módosítás" : "Létrehozás" }}
+      </FormKit>
+
+      <FormKit
+        v-show="selectedFestival.id > 0"
+        type="button"
+        label="Törlés"
+        @click="deleteFestival"
+        :classes="{
+          input: { delete: true },
+        }"
+      >
+        <Icon name="mdi:trash-can-outline" /> Törlés
+      </FormKit>
+    </div>
   </FormKit>
 </template>
 

@@ -22,10 +22,9 @@
   <p>
     Vendégvezetőnk fogadja az érkező csoportot a templom főépületében, majd egy
     rövid tájékoztató következik Krisna-völgy létrejöttéről, az önfenntartó
-    faluközösségünk működéséről és mindennapi életünkről. Vendégeink
-    megtekinthetik az Európában egyedülálló, lenyűgöző indiai szentélyt, ahol
-    színes festmények és az impozáns főoltár fogadja Önöket, és vallásunk
-    alapjaiba is betekintést nyerhetnek.
+    faluközösségünk működéséről és mindennapi életünkről. Megtekintheted az Európában 
+    egyedülálló, lenyűgöző indiai szentélyt, ahol színes festmények és az impozáns 
+    főoltár fogad, és vallásunk alapjaiba is betekintést nyerhetsz.
   </p>
   <ul>
     <li>
@@ -97,13 +96,13 @@
     <strong>táncolj</strong> velünk! Láttál már indiai agyagdobot, vagyis
     mrdangát? Tudtad, hogy évezredek óta pontosan ugyanilyen dobon játszanak
     India ősi templomaiban? A "Zene varázsa" programunk keretében többek között
-    ezt a tradicionális hangszert is megszólaltatjuk, sőt, vendégeink a karatala
-    nevű hangszert maguk is kipróbálhatják! A lelki kultúra alapját képező közös
+    ezt a tradicionális hangszert is megszólaltatjuk, sőt, te magad is kipróbálhatod 
+    a karatala nevű hangszert! A lelki kultúra alapját képező közös
     tánc és ének életre kel, megtapasztalt spirituális élménnyé válik ebben a
     választható csoportprogramban. Garantáltan felszabadító, közösségépítő és
-    egyben szórakoztató is. Vendégeink nem csak passzív hallgatók, hanem
-    résztvevői is a muzsikának, sőt mi több, a bátrabbak egy könnyű tánclépést
-    is elsajátíthatnak a zenei bemutató után!
+    egyben szórakoztató is. Nem csak passzív hallgató leszel, hanem
+    résztvevője is a muzsikának, sőt mi több, ha bátor vagy, egy könnyű tánclépést
+    is elsajátíthatsz a zenei bemutató után!
   </p>
   <ul>
     <li><Icon name="material-symbols:schedule" /> 35 perc</li>
@@ -160,7 +159,7 @@
     vegetáriánus. Híresek a levesek, rizsek, lepénykenyerek, szemet
     gyönyörködtető édességek, csemegék, italok, csatnik és különféle ízes
     főételeik. Mi a titok? A sok aromás fűszer, melynek különleges pirításával
-    kezdik a főzést. A program során elmeséljük a különféle keleti fűszerek
+    kezdik a főzést. A program során elmeséljük neked a különféle keleti fűszerek
     felhasználásának módjait és az egészségre gyakorolt hatásait.
   </p>
   <ul>
@@ -173,11 +172,11 @@
   <h3 id="eletmod-seta">Életmód séta</h3>
   <p>
     Érdekel a Krisna-völgyi élet? Szeretnél bepillantani egy ökofalu
-    hétköznapjaiba? Az „Életmód séta” keretében a csoportod vezetőnk kíséretében
+    hétköznapjaiba? Az „Életmód séta” keretében csoportod vezetőnk kíséretében
     besétálhat Krisna-völgy lakóövezetébe, amely más esetben vendégek számára
-    nem látogatható. Így lehetőséget biztosítunk minden érdeklődő számára, hogy
+    nem látogatható. Így lehetőséget biztosítunk számodra, hogy
     a völgy mindennapjait, az itt élők életterét, szokásait akár háztartási
-    praktikáit, életmódját is megismerhessék. Minden kérdésre szívesen
+    praktikáit, életmódját is megismerd. Minden kérdésedre szívesen
     válaszolunk. Ismerj meg egy ma már alternatívnak nevezett életformát, amely
     talán nem is áll olyan távol a gyökereinktől, és nem is haszontalan az
     emberiség számára a mai, nyugati mintákat követő és oly sok válsággal küzdő
@@ -246,8 +245,8 @@
     valószínűleg az internet világában az egyik legismertebb Krisna-hívő. A
     vendégek körbevezetésében szintén járatos, a környezetbarát és
     Isten-központú élet pedig kifejezetten szívügye, ezért nagyon szeret mesélni
-    is ezekről. Természetesen a kérdéseiteket is szívesen fogadja, és ha zenés
-    programot is kértek, még együtt is énekelhettek vele. Főleg diákoknak
+    is ezekről. Természetesen a kérdéseidet is szívesen fogadja, és ha zenés
+    programot is kérsz, még együtt is énekelhetsz vele. Főleg diákoknak
     ajánljuk ezt a különleges programlehetőséget, amely során Vallabhi mutatja
     meg az ökofalu legfontosabb helyszíneit.
   </p>
@@ -292,7 +291,7 @@
 
   <h3>Különleges csoportok</h3>
   <p>
-    Egyéni kívánság szerinti programok: Papp Krisztina (Kundalata Dévi Dászi)
+    Egyéni kívánságod szerinti programokért keress minket: Papp Krisztina (Kundalata Dévi Dászi)
     +36 (30) 43 63 900; e-mail:
     <a href="mailto:csoport@krisnavolgy.hu">csoport@krisnavolgy.hu</a>
   </p>
@@ -303,7 +302,7 @@
 
   <Divider />
 
-  <h3>Elvonulások</h3>
+  <h3>Elvonulások (4-10 fő közötti csoportok részére)</h3>
   <p>Elvonulásainkon lehetőség van egyénileg és csoportosan is részt venni.</p>
   <ul>
     <li>
@@ -330,7 +329,7 @@
     Mára már hagyománnyá vált, hogy a Krisna-völgybe látogató csoportok
     valamilyen ajándékot hoznak Krisnának - azaz Istennek,
     <strong>pár szál virágot vagy néhány szem gyümölcsöt</strong>. Ez az ajándék
-    még értékesebb, ha esetleg a vendégek saját kertjéből származik.
+    még értékesebb, ha esetleg a saját kertetekből származik.
   </InfoBlock>
 </template>
 

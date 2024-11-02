@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+const { allComingFestivals } = await useFestivals();
+</script>
 
 <template>
   <h1><Icon name="lucide:tickets" /> Csoport jegyárak</h1>

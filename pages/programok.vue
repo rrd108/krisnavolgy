@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+const { touristComingFestivals } = await useFestivals()
+</script>
 
 <template>
-  <h1><Icon name="material-symbols:tips-and-updates-outline-rounded" /> Programok</h1>
+  <h1>
+    <Icon name="material-symbols:tips-and-updates-outline-rounded" /> Programok
+  </h1>
 
   <div v-for="festival in touristComingFestivals">
     <h2>{{ festival.title }}</h2>

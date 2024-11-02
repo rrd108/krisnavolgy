@@ -1,9 +1,10 @@
 <script setup lang="ts">
 definePageMeta({
   layout: "admin",
-});
+})
 
-const userStore = useUserStore();
+const userStore = useUserStore()
+const { allComingFestivals } =  await useFestivals()
 
 interface Festival {
   id: number;
@@ -62,9 +63,9 @@ const updateFestival = () => {
     .catch((err) => {
       console.error(err);
     });
-}
+};
 
-const deleteFestival = () => {}
+const deleteFestival = () => {};
 </script>
 
 <template>

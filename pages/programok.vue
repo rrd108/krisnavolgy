@@ -10,7 +10,7 @@ const { touristComingFestivals } = await useFestivals()
   <div v-for="festival in touristComingFestivals">
     <h2>{{ festival.title }}</h2>
     <h3>
-      {{ event.start_date }}
+      {{ festival.start_date }}
       <span v-if="festival.end_date !== festival.start_date">
         - {{ festival.end_date }}
       </span>

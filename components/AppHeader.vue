@@ -1,26 +1,26 @@
 <script setup lang="ts">
 const menus = [
   { label: "Főoldal", path: "/", icon: "line-md:home-simple-twotone" },
-  {
-    label: "Látogatás",
-    icon: "material-symbols:landscape-2-outline",
-    children: [
-      {
-        label: "Jegyárak",
-        icon: "lucide:tickets",
-        children: [
+  // {
+  //   label: "Látogatás",
+  //   icon: "material-symbols:landscape-2-outline",
+  //   children: [
+  //     {
+  //       label: "Jegyárak",
+  //       icon: "lucide:tickets",
+  //       children: [
           {
-            label: "Egyéni",
+            label: "Egyéni jegyek",
             path: "/vendegek",
             icon: "material-symbols:person",
           },
           {
-            label: "Csoport",
+            label: "Csoportok",
             path: "/csoportok",
             icon: "fa6-solid:people-group",
           },
-        ],
-      },
+      //   ],
+      // },
       {
         label: "Nyitvatartás",
         path: "/nyitvatartas",
@@ -31,8 +31,8 @@ const menus = [
         path: "/hazirend",
         icon: "material-symbols:list-alt-check-outline-rounded",
       },
-    ],
-  },
+  //   ],
+  // },
   {
     label: "Programok",
     path: "/programok",

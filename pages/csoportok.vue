@@ -3,7 +3,7 @@ const { allComingFestivals } = await useFestivals();
 </script>
 
 <template>
-  <h1><Icon name="lucide:tickets" /> Csoport jegyárak</h1>
+  <h1><Icon name="fa6-solid:people-group" /> Csoport jegyárak</h1>
 
   <NuxtLink
     to="https://forms.gle/dq2TXtnh4iCQAVLV7"

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <h1><Icon name="lucide:tickets" /> Egyéni jegyárak</h1>
+  <h1><Icon name="material-symbols:person" /> Egyéni jegyárak</h1>
   <section>
     <OpenHours />
 

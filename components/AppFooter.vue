@@ -18,30 +18,30 @@ const addUser = () => {
       </ul>
     </div>
 
-    <div>
+    <div class="socials">
       <h3>Maradjunk kapcsolatban</h3>
-      <!--ul class="df">
+      <ul class="df">
         <li>
           <NuxtLink to="https://www.facebook.com/krisnavolgy">
-            <font-awesome :icon="['fab', 'facebook']" />
+            <Icon name="ic:round-facebook" />
           </NuxtLink>
         </li>
         <li>
           <NuxtLink to="https://www.tiktok.com/@vallabhi_kanta">
-            <font-awesome :icon="['fab', 'tiktok']" />
+            <Icon name="ic:baseline-tiktok" />
           </NuxtLink>
         </li>
         <li>
           <NuxtLink to="https://www.youtube.com/@krisnavolgy">
-            <font-awesome :icon="['fab', 'youtube']" />
+            <Icon name="line-md:youtube-filled" />
           </NuxtLink>
         </li>
         <li>
           <NuxtLink to="https://www.instagram.com/krisnavolgy">
-            <font-awesome :icon="['fab', 'instagram']" />
+            <Icon name="ri:instagram-fill" />
           </NuxtLink>
         </li>
-      </!--ul-->
+      </ul>
     </div>
 
     <div>
@@ -52,8 +52,6 @@ const addUser = () => {
 
     <aside>
       <span>© 2024 Minden jog fenntartva</span>
-      <span>Oldaltérkép TODO</span>
-      <span>Felhasználási feltételek TODO</span>
     </aside>
   </footer>
 </template>
@@ -79,8 +77,9 @@ aside {
   padding: 1em;
   font-size: 0.75rem;
 }
-span {
-  margin: 0 1em;
+.socials ul {
+  font-size: 2rem;
+  padding-top: 0;
 }
 
 @media screen and (min-width: 64rem) {

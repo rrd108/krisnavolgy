@@ -20,11 +20,9 @@ const props = defineProps({
     <div class="dg">
       <div>
         <h3>{{ festival.title }}</h3>
-        <small>{{ festival.description }}</small>
-        <NuxtLink :to="festival.url"
-          >Tovább
-          <!--font-awesome icon="arrow-right" /--></NuxtLink
-        >
+        <NuxtLink :to="festival.url">
+          {{ festival.description }}
+        </NuxtLink>
       </div>
 
       <img :src="`${festival.thumbnail}`" />
@@ -43,13 +41,16 @@ section {
 h6 {
   text-align: left;
 }
+div {
+  unicode-bidi: plaintext;
+}
 div.dg {
-  margin-top: 0.5em;
+  margin-top: 0;
   text-align: left;
   grid-template-columns: 1fr 1fr;
 }
-small {
-  display: block;
+h3 {
+  margin: 0 0 0.5em 0;
 }
 img {
   width: 100%;
@@ -57,7 +58,6 @@ img {
   border-radius: 0.5em;
 }
 a {
-  display: inline-block;
-  margin: 1em auto;
+  color: var(--bg-color);
 }
 </style>

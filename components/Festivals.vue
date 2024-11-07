@@ -12,7 +12,7 @@ const { touristComingFestivals } = await useFestivals()
     <Carousel
       :itemsToShow="isMobile ? 1.1 : 4.5"
       snapAlign="start"
-      :autoplay="0"
+      :autoplay="2500"
       :pauseAutoplayOnHover="true"
       :wrapAround="true"
       dir="rtl"

@@ -6,13 +6,6 @@ const cloudSmallPos = computed(() => `${y.value / 20}%`);
 
 <template>
   <section id="hero">
-    <picture>
-      <!-- TODO replace with nuxt image -->
-      <source media="(max-width: 40rem)" srcset="/images/divider.png" />
-      <source srcset="/images/divider-desktop.png" />
-      <img src="/images/divider.png" />
-    </picture>
-
     <h1>Felejthetetlen élmény</h1>
     <p>
       Vegyél részt egyik elvonulásunkon egy teljes, spirituális témákkal teli

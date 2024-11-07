@@ -1,13 +1,18 @@
-<script setup></script>
+<script setup>
+const { isMobile } = useDevice();
+</script>
 
 <template>
   <NuxtImg
-    src="/images/divider.png"
+    :src="isMobile ? '/images/divider.png' : '/images/divider-desktop.png'"
     alt="divider"
     sizes="sm:100vw md:100vw lg:100vw"
     :modifiers="{ format: 'webp' }"
-    class="center"
   />
 </template>
 
-<style scoped></style>
+<style scoped>
+img {
+  margin: 1em;
+}
+</style>

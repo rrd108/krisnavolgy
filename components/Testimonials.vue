@@ -4,7 +4,7 @@ const { isMobile } = useDevice();
 const testimonials = [
   {
     name: "Orbán Csilla",
-    text: "Nagyon elégedettek voltunk mindennel, az első naptól az utolsó percig nagyon élveztük a Krisna völgyben töltött időt. Szinte új emberként tértünk haza, és másnap még visszavágytunk, nehezen sikerült a visszailleszkedés a mindennapokba. Köszönjük az élményt! Mindenki nagyon kedves és barátságos volt. Kérdéseinket maximálisan megválaszolták, amiben szükségünk volt, segítségünkre voltak. Éreztük a gondoskodást.",
+    text: "Nagyon elégedettek voltunk mindennel, az első naptól az utolsó percig nagyon élveztük a Krisna völgyben töltött időt. Szinte új emberként tértünk haza, és másnap még visszavágytunk, nehezen sikerült a visszailleszkedés a mindennapokba. Köszönjük az élményt!",
   },
   {
     name: "Palyovné Jevtuhov Boglárka",
@@ -47,6 +47,7 @@ section {
   text-align: center;
 }
 h2 {
-  margin: 1em;
+  margin: .5em .5em .5em .5em;
+  padding-top: 1em;
 }
 </style>

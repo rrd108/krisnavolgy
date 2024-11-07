@@ -25,15 +25,13 @@
   }
   input {
     border: thin solid var(--light);
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
+    border-radius: 1em 0 0 1em;
   }
   button {
     background-color: var(--dark);
     color: #fff;
     border: none;
     padding: 0.6rem;
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
+    border-radius: 0 1em 1em 0;
   }
 </style>

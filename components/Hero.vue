@@ -30,6 +30,7 @@ const cloudSmallPos = computed(() => `${y.value / 20}%`);
   background-position: center;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 h1 {
   position: relative;

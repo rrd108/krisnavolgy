@@ -3,6 +3,12 @@
 <template>
   <h1><Icon name="ic:sharp-restaurant-menu" /> Govinda Étterem</h1>
 
+  <NuxtImg
+    src="/images/kiraly-menu.jpg"
+    alt="Királyi menü"
+    sizes="sm:90vw md:90vw lg:90vw"
+  />
+
   <p>
     Fenséges, ajurvédikus, <strong>vegán és vegetáriánus</strong> ebéd, italok,
     desszertek. A menü szezonális, vegyszermentes Krisna-völgyi zöldségek és

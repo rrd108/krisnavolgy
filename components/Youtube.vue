@@ -1,40 +1,37 @@
 <script setup lang="ts">
-/**
-ecept:
-https://www.youtube.com/watch?v=XuHYvJIeljc
+const isLoaded = ref(false);
+const isPlaying = ref(false);
+const video = ref();
+const stateChange = (event: YT.OnStateChangeEvent) => {
+  isPlaying.value = event.data === 1;
+};
 
-éttermi téma:
-https://www.youtube.com/watch?v=Pnyr-BK334w
-
-szentély és általános bemutató:
-https://www.youtube.com/watch?v=0qUtAMTqfmQ
- */
+const videos = ["XuHYvJIeljc", "Pnyr-BK334w", "0qUtAMTqfmQ"]
+const videoId = videos[Math.floor(Math.random() * videos.length)]
 </script>
 
 <template>
-  <div class="video-wrapper">
-    <ClientOnly>
-      <!--iframe
-        src="https://www.youtube.com/embed/YXf5TI_SWG4?si=E23WSxPJYCMitDCo"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></!--iframe-->
-      TODO
-    </ClientOnly>
-  </div>
+  <section>
+    <ScriptYouTubePlayer
+      ref="video"
+      :video-id="videoId"
+      @ready="isLoaded = true"
+      @state-change="stateChange"
+    >
+      <template #awaitingLoad>
+        <Icon name="line-md:youtube-filled" />
+      </template>
+    </ScriptYouTubePlayer>
+  </section>
 </template>
 
 <style scoped>
-.video-wrapper {
-  display: flex;
-  width: 100%;
-}
-
-.video-wrapper iframe {
-  flex-grow: 1;
-  aspect-ratio: 16/9;
+span {
+  font-size: 10rem;
+  color: #f00;
+  display: block;
+  margin: auto;
+  position: absolute;
+  inset: 0;
 }
 </style>

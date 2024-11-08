@@ -1,7 +1,7 @@
 {
   "name": "krisnavolgy",
   "type": "module",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -15,6 +15,7 @@
     "@formkit/nuxt": "^1.6.7",
     "@nuxt/icon": "^1.5.6",
     "@nuxt/image": "^1.8.1",
+    "@nuxt/scripts": "^0.9.5",
     "@vueuse/nuxt": "^10.9.0",
     "bcrypt": "^5.1.1",
     "better-sqlite3": "^11.5.0",
@@ -31,5 +32,6 @@
     "@pinia/nuxt": "^0.6.0",
     "@types/bcrypt": "^5.0.2",
     "vue-mess-detector-nuxt-devtools": "^0.1.2"
-  }
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }

@@ -11,13 +11,14 @@ export default defineNuxtConfig({
   modules: [
     '@formkit/nuxt',
     '@nuxt/icon',
-    '@nuxt/image', 
+    '@nuxt/image',
     '@nuxtjs/device',
-    'nuxt-token-authentication', 
+    'nuxt-token-authentication',
     '@pinia/nuxt',
     'vue-mess-detector-nuxt-devtools',
     'vue3-carousel-nuxt',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxt/scripts'
   ],
   formkit: {
     autoImport: true,

@@ -25,7 +25,12 @@ const props = defineProps({
         </NuxtLink>
       </div>
 
-      <img :src="`${festival.thumbnail}`" />
+      <NuxtImg
+        :src="festival.thumbnail"
+        :alt="festival.title"
+        sizes="sm:100vw md:100vw lg:100vw"
+        :modifiers="{ format: 'webp' }"
+      />
     </div>
   </section>
 </template>

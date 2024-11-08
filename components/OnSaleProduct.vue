@@ -43,7 +43,9 @@ const { isMobile } = useDevice();
         }).format(product.sale_price)
       }}</span>
     </div>
-    <NuxtLink :to="product.permalink" class="button">Tovább</NuxtLink>
+    <NuxtLink :to="product.permalink" class="button">
+      Tovább
+    </NuxtLink>
   </section>
 </template>
 
@@ -56,6 +58,9 @@ h3 {
 }
 img {
   border-radius: 0.5em;
+  width: 100%;
+  height: 12em;
+  object-fit: cover;
 }
 div > div {
   display: flex;

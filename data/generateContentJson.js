@@ -30,6 +30,13 @@ const extractContentFromFile = async (filePath, type) => {
         // Create URL path from file path
         const urlPath = filePath.replace(/\.vue$/, '')
 
+        // TODO algoila record limit
+        // if (urlPath == 'pages/csoportok') {
+        //     const sections = content.match(/<section[^>]*>(.*?)<\/section>/gs)
+        //     we can extracct the hash and title from h3
+        //     console.log(sections)
+        // }
+
         if (urlPath == 'pages/programok') {
             const festivals = await getFestivals()
             content = ''
@@ -38,19 +45,21 @@ const extractContentFromFile = async (filePath, type) => {
             })
         }
 
+        content = content
+            .replace(title, '')
+            .replace(/<script[^>]*>.*?<\/script>/s, '')
+            .replace(/<style[^>]*>.*?<\/style>/s, '')
+            .replace(/<\/*template>/s, '')
+            .replace(/<NuxtLink[^>]*>(.*?)<\/NuxtLink>/gs, '$1')
+            .replace(/<[^>]+>/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim()
+
         return {
             objectID: urlPath || '/',
             title,
             site: 'https://jaccoter.1108.cc',
-            content: content
-                .replace(title, '')
-                .replace(/<script[^>]*>.*?<\/script>/s, '')
-                .replace(/<style[^>]*>.*?<\/style>/s, '')
-                .replace(/<\/*template>/s, '')
-                .replace(/<NuxtLink[^>]*>(.*?)<\/NuxtLink>/gs, '$1')
-                .replace(/<[^>]+>/g, ' ')
-                .replace(/\s+/g, ' ')
-                .trim(),
+            content,
             type,
             path: urlPath.replace('pages', '') || '/'
         }

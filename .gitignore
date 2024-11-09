@@ -26,3 +26,5 @@ logs
 kv.zip
 
 data/krisnavolgy.sqlite3
+
+data/pages-content.json

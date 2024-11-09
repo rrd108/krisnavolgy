@@ -18,8 +18,16 @@ export default defineNuxtConfig({
     'vue-mess-detector-nuxt-devtools',
     'vue3-carousel-nuxt',
     '@vueuse/nuxt',
-    '@nuxt/scripts'
+    '@nuxt/scripts',
+    '@nuxtjs/algolia'
   ],
+  algolia: {
+    apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+    applicationId: process.env.ALGOLIA_APPLICATION_ID,
+    /*instantSearch: {
+      theme: 'algolia'
+    }*/
+  },
   formkit: {
     autoImport: true,
   },

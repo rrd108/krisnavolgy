@@ -2,7 +2,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 
 const PAGES_DIR = './pages'
-const OUTPUT_FILE = './data/pages-content.json'
+const OUTPUT_FILE = './data/pagesContent.json'
 
 const getFestivals = async () => {
     try {
@@ -61,7 +61,7 @@ const extractContentFromFile = async (filePath, type) => {
             site: 'https://jaccoter.1108.cc',
             content,
             type,
-            path: urlPath.replace('pages', '') || '/'
+            path: urlPath.replace('pages', '') || '/',
         }
     } catch (error) {
         console.error(`Error processing ${filePath}:`, error)
@@ -108,7 +108,7 @@ const generateAlgoliaContent = async () => {
         const validContents = contents.filter(page => page.content !== '')
         await fs.writeFile(
             OUTPUT_FILE,
-            JSON.stringify(validContents, null, 2)
+            JSON.stringify(validContents, null, 2),
         )
 
         console.log(`✅ Generated Algolia content at ${OUTPUT_FILE}`)

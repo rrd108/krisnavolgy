@@ -1,5 +1,5 @@
 <script setup>
-const { isMobile } = useDevice();
+const { isMobile } = useDevice()
 </script>
 
 <template>

@@ -15,11 +15,11 @@
   <section>
     <h2>Akciók</h2>
     <Carousel
-      :itemsToShow="isMobile ? 1.2 : 3"
-      snapAlign="start"
+      :items-to-show="isMobile ? 1.2 : 3"
+      snap-align="start"
       :autoplay="2500"
-      :pauseAutoplayOnHover="true"
-      :wrapAround="true"
+      :pause-autoplay-on-hover="true"
+      :wrap-around="true"
     >
       <Slide v-for="(product, i) in data" :key="product.id">
         <OnSaleProduct :product="product" />

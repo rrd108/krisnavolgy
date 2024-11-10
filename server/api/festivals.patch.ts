@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
     if (updates.length === 0) {
         throw createError({
             statusCode: 400,
-            message: 'No valid fields to update'
+            message: 'No valid fields to update',
         })
     }
 

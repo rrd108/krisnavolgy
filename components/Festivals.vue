@@ -10,11 +10,11 @@ const { touristComingFestivals } = await useFestivals()
     <h2>Közelgő események</h2>
 
     <Carousel
-      :itemsToShow="isMobile ? 1.1 : 4.5"
-      snapAlign="start"
+      :items-to-show="isMobile ? 1.1 : 4.5"
+      snap-align="start"
       :autoplay="2500"
-      :pauseAutoplayOnHover="true"
-      :wrapAround="true"
+      :pause-autoplay-on-hover="true"
+      :wrap-around="true"
       dir="rtl"
     >
       <Slide

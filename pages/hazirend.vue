@@ -34,7 +34,7 @@
       <li>
         <Icon name="mdi:dog-side-off" />
         Kérjük, ne hozzatok magatokkal házi kedvenceiket - kutyát, macskát, és
-        egyéb háziállatot.<br />
+        egyéb háziállatot.<br >
         Krisna-völgyben a természetes élővilág megmentésén, visszatelepítésén
         dolgozunk. Arborétum létrehozásával számos védett madárfajnak
         teremtettünk megfelelő otthont, és ezért is nem engedjük be pl. a

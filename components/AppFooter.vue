@@ -1,8 +1,10 @@
 <script setup lang="ts">
-const email = ref("");
+const email = ref("")
 const addUser = () => {
-  alert("TODO");
-};
+  alert("TODO")
+}
+
+const year = new Date().getFullYear()
 </script>
 
 <template>
@@ -46,12 +48,12 @@ const addUser = () => {
 
     <div>
       <h3>Íratozz fel a hírlevélre!</h3>
-      <input type="email" v-model="email" placeholder="Email" />
+      <input v-model="email" type="email" placeholder="Email" >
       <button @click="addUser">Feliratkozom</button>
     </div>
 
     <aside>
-      <span>© 2024 Minden jog fenntartva</span>
+      <span>© {{ year }} Minden jog fenntartva</span>
     </aside>
   </footer>
 </template>

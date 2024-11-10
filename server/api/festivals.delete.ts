@@ -4,4 +4,4 @@ export default defineEventHandler(async (event) => {
 
     const result = await db.sql`DELETE FROM festivals WHERE id = ${data.id}`
     return { result }
-});
+})

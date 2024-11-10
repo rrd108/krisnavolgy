@@ -19,7 +19,8 @@ export default defineNuxtConfig({
     'vue3-carousel-nuxt',
     '@vueuse/nuxt',
     '@nuxt/scripts',
-    '@nuxtjs/algolia'
+    '@nuxtjs/algolia',
+    '@nuxt/eslint',
   ],
   algolia: {
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
@@ -46,5 +47,5 @@ export default defineNuxtConfig({
       options: defaultDatabase.options,
     },
   },
-  compatibilityDate: '2024-10-24'
+  compatibilityDate: '2024-10-24',
 })

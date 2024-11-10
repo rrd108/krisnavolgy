@@ -3,6 +3,7 @@ const { result, search } = useAlgoliaSearch('pagesContent')
 const query = ref("")
 
 const getMatchingSentence = (content: string, matchedWord: string) => {
+  // TODO handle mistyped words in results
   if (!content || !matchedWord) return ""
 
   // Split content into sentences (considering common sentence endings)
@@ -20,7 +21,7 @@ const getMatchingSentence = (content: string, matchedWord: string) => {
 <template>
   <div>
     <h1>Search</h1>
-    <input type="search" v-model="query" @input="search({ query })" />
+    <input v-model="query" type="search" @input="search({ query })" >
 
     <ul v-if="result">
       <li v-for="hit in result.hits" :key="hit.objectID">

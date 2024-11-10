@@ -5,7 +5,7 @@ definePageMeta({
 
 const userStore = useUserStore()
 
-const error = ref('');
+const error = ref('')
 
 const login = async (data: { email: string; password: string }) => {
   try {
@@ -13,7 +13,7 @@ const login = async (data: { email: string; password: string }) => {
   } catch (err) {
     error.value = err.message
   }
-};
+}
 </script>
 
 <template>
@@ -23,8 +23,8 @@ const login = async (data: { email: string; password: string }) => {
 
   <FormKit
     type="form"
-    @submit="login"
     submit-label="Uccu neki!"
+    @submit="login"
   >
     <FormKit type="email" name="email" label="Email" outer-class="breath" />
     <FormKit type="password" name="password" label="Password" outer-class="breath" />

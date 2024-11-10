@@ -22,16 +22,16 @@ const emptyFestival = {
   title: "",
   start_date: "",
   end_date: "",
-};
-const selectedFestival = ref<Festival>({} as Festival);
+}
+const selectedFestival = ref<Festival>({} as Festival)
 
 const handleSubmit = () => {
   if (selectedFestival.value.id === 0) {
-    createFestival();
+    createFestival()
   } else {
-    updateFestival();
+    updateFestival()
   }
-};
+}
 
 const createFestival = () => {
   $fetch("/api/festivals", {
@@ -42,12 +42,12 @@ const createFestival = () => {
     },
   })
     .then((res) => {
-      console.log(res);
+      console.log(res)
     })
     .catch((err) => {
-      console.error(err);
-    });
-};
+      console.error(err)
+    })
+}
 
 const updateFestival = () => {
   $fetch("/api/festivals", {
@@ -58,14 +58,14 @@ const updateFestival = () => {
     },
   })
     .then((res) => {
-      console.log(res);
+      console.log(res)
     })
     .catch((err) => {
-      console.error(err);
-    });
-};
+      console.error(err)
+    })
+}
 
-const deleteFestival = () => {};
+const deleteFestival = () => {}
 </script>
 
 <template>
@@ -96,9 +96,9 @@ const deleteFestival = () => {};
   </ul>
 
   <FormKit
-    type="form"
     v-show="selectedFestival.id >= 0"
     v-model="selectedFestival"
+    type="form"
     :actions="false"
     @submit="handleSubmit"
   >
@@ -132,10 +132,10 @@ const deleteFestival = () => {};
         v-show="selectedFestival.id > 0"
         type="button"
         label="Törlés"
-        @click="deleteFestival"
         :classes="{
           input: { delete: true },
         }"
+        @click="deleteFestival"
       >
         <Icon name="mdi:trash-can-outline" /> Törlés
       </FormKit>

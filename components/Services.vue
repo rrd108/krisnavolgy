@@ -36,18 +36,18 @@ const services = [
     price: '9 Ft - 999.999 Ft',
     link: 'https://elvonulas.krisnavolgy.hu',
   },
-];
-const { isMobile } = useDevice();
+]
+const { isMobile } = useDevice()
 </script>
 
 <template>
   <div id="services">
     <Carousel
-      :itemsToShow="isMobile ? 1.2 : 4.5"
-      snapAlign="start"
+      :items-to-show="isMobile ? 1.2 : 4.5"
+      snap-align="start"
       :autoplay="2500"
-      :pauseAutoplayOnHover="true"
-      :wrapAround="true"
+      :pause-autoplay-on-hover="true"
+      :wrap-around="true"
     >
       <Slide v-for="(service, i) in services" :key="service.title">
         <ServiceBox :service="service" />

@@ -4,8 +4,8 @@ const props = defineProps({
     type: Object,
     required: true,
   },
-});
-const { isMobile } = useDevice();
+})
+const { isMobile } = useDevice()
 </script>
 
 <template>

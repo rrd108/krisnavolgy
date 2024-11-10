@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { isMobile } = useDevice();
+const { isMobile } = useDevice()
 
 const testimonials = [
   {
@@ -18,18 +18,18 @@ const testimonials = [
     name: "T. Luca",
     text: "Mély benyomást tett rám a hívők közvetlen, segítőkész szándéka, az ételek minősége, a Kirtan zenék, óriási tehetség és összhang kell hozzá, illetve a karkötőkészítés és annak felajánlása.",
   },
-];
+]
 </script>
 
 <template>
   <section>
     <h2>Rólunk mondták</h2>
     <Carousel
-      :itemsToShow="isMobile ? 1.2 : 3"
-      snapAlign="start"
+      :items-to-show="isMobile ? 1.2 : 3"
+      snap-align="start"
       :autoplay="4000"
-      :pauseAutoplayOnHover="true"
-      :wrapAround="true"
+      :pause-autoplay-on-hover="true"
+      :wrap-around="true"
     >
       <Slide v-for="(testimonial, i) in testimonials" :key="testimonial.name">
         <TestimonialBox :testimonial="testimonial" />

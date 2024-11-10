@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const { x, y } = useWindowScroll();
-const cloudBigPos = computed(() => `${y.value / 20}%`);
-const cloudSmallPos = computed(() => `${y.value / 20}%`);
+const { x, y } = useWindowScroll()
+const cloudBigPos = computed(() => `${y.value / 20}%`)
+const cloudSmallPos = computed(() => `${y.value / 20}%`)
 </script>
 
 <template>
@@ -11,8 +11,8 @@ const cloudSmallPos = computed(() => `${y.value / 20}%`);
       Vegyél részt egyik elvonulásunkon egy teljes, spirituális témákkal teli
       hétvégén!
     </p>
-    <span id="cloudBig"></span>
-    <span id="cloudSmall"></span>
+    <span id="cloudBig"/>
+    <span id="cloudSmall"/>
 
     <Services />
   </section>

@@ -1,5 +1,5 @@
 <script setup>
-const { allComingFestivals } = await useFestivals();
+const { allComingFestivals } = await useFestivals()
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const { allComingFestivals } = await useFestivals();
   </NuxtLink>
   <InfoBlock>
     Jelentkezési lap leadási határideje: érkezési dátum előtt minimum
-    <strong>10 nappal</strong>.<br />
+    <strong>10 nappal</strong>.<br >
     Csoport program <strong>15 főtől</strong> rendelhető!
   </InfoBlock>
 
@@ -395,7 +395,7 @@ const { allComingFestivals } = await useFestivals();
     <li>40 fő feletti csoportok esetében a belépőjegy 2 főnek ingyenes!</li>
   </ul>
 
-  <br />
+  <br >
   <InfoBlock>
     Mára már hagyománnyá vált, hogy a Krisna-völgybe látogató csoportok
     valamilyen ajándékot hoznak Krisnának - azaz Istennek,

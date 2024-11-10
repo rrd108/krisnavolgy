@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { useIntervalFn, useElementVisibility } from "@vueuse/core";
+import { useIntervalFn, useElementVisibility } from "@vueuse/core"
 
-const target = ref(null);
-const targetIsVisible = useElementVisibility(target);
+const target = ref(null)
+const targetIsVisible = useElementVisibility(target)
 
-const countUp = ref(1);
+const countUp = ref(1)
 useIntervalFn(() => {
-  if (countUp.value > 100) return;
+  if (countUp.value > 100) return
   if (targetIsVisible.value) {
-    countUp.value++;
+    countUp.value++
   }
-}, 20);
+}, 20)
 
 const counters = [
   { title: "Program évente", number: 47, icon: "child-reaching" },
   { title: "Vendégéjszaka", number: 986, icon: "bed" },
   { title: "Látogató évente", number: 27600, icon: "people-group" },
   { title: "Finom ebéd", number: 12400, icon: "utensils" },
-];
+]
 </script>
 
 <template>

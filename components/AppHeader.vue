@@ -56,20 +56,20 @@ const menus = [
   },
   { label: "Rólunk", path: "/rolunk", icon: "material-symbols:info-outline" },
   { label: "Kapcsolat", path: "/kapcsolat", icon: "material-symbols:call-log" },
-];
+]
 
-const isMobileMenuOpen = ref(false);
+const isMobileMenuOpen = ref(false)
 </script>
 
 <template>
   <header>
     <NuxtLink to="/">
-      <img src="/images/logo.png" alt="logo" />
+      <img src="/images/logo.png" alt="logo" >
     </NuxtLink>
     <nav @click="isMobileMenuOpen = !isMobileMenuOpen">
       <Icon
-        :name="isMobileMenuOpen ? 'line-md:close' : 'line-md:menu'"
         id="mobileMenu"
+        :name="isMobileMenuOpen ? 'line-md:close' : 'line-md:menu'"
         :class="{ open: isMobileMenuOpen }"
       />
       <ul :class="{ open: isMobileMenuOpen }">

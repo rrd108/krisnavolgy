@@ -9,7 +9,7 @@
   <section>
     <h2>Ne hagyd ki!</h2>
     <p>Legyél az elsők között akik értesülnek az esményekről, kedvezményekről és más nagyszerű dolgokról.</p>
-    <input type="email" v-model="email" placeholder="Email" />
+    <input v-model="email" type="email" placeholder="Email" >
     <button @click="addUser">Feliratkozom</button>
   </section>
 </template>

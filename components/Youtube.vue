@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const isLoaded = ref(false);
-const isPlaying = ref(false);
-const video = ref();
+const isLoaded = ref(false)
+const isPlaying = ref(false)
+const video = ref()
 const stateChange = (event: YT.OnStateChangeEvent) => {
-  isPlaying.value = event.data === 1;
-};
+  isPlaying.value = event.data === 1
+}
 
 const videos = ["XuHYvJIeljc", "Pnyr-BK334w", "0qUtAMTqfmQ"]
 const videoId = videos[Math.floor(Math.random() * videos.length)]

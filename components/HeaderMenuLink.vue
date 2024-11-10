@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { MenuItem } from "@/types/MenuItem";
+import type { MenuItem } from "@/types/MenuItem"
 
 defineProps({
   menu: {
     type: Object as () => MenuItem,
     required: true,
   },
-});
+})
 </script>
 
 <template>
@@ -16,7 +16,7 @@ defineProps({
       {{ menu.label }}
     </NuxtLink>
 
-    <Icon :name="menu.icon" v-if="menu.children" />
+    <Icon v-if="menu.children" :name="menu.icon" />
     <span v-if="menu.children">
       {{ menu.label }}
     </span>

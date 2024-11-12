@@ -6,7 +6,7 @@ const stateChange = (event: YT.OnStateChangeEvent) => {
   isPlaying.value = event.data === 1
 }
 
-const videos = ["XuHYvJIeljc", "Pnyr-BK334w", "0qUtAMTqfmQ"]
+const videos = ['XuHYvJIeljc', 'Pnyr-BK334w', '0qUtAMTqfmQ']
 const videoId = videos[Math.floor(Math.random() * videos.length)]
 </script>
 
@@ -15,6 +15,7 @@ const videoId = videos[Math.floor(Math.random() * videos.length)]
     <ScriptYouTubePlayer
       ref="video"
       :video-id="videoId"
+      class="center"
       @ready="isLoaded = true"
       @state-change="stateChange"
     >
@@ -27,7 +28,7 @@ const videoId = videos[Math.floor(Math.random() * videos.length)]
 
 <style scoped>
 span {
-  font-size: 10rem;
+  font-size: 8rem;
   color: #f00;
   display: block;
   margin: auto;

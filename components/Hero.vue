@@ -71,6 +71,9 @@ p {
     background-image: url("/images/background-desktop.png");
     gap: 3em;
   }
+  h1 {
+    margin-top: 16em;
+  }
   #cloudBig {
     --width: 19rem;
     top: 10vh;

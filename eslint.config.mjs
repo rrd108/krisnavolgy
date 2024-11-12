@@ -10,5 +10,7 @@ export default withNuxt({
     'eqeqeq': 'off',
     'eol-last': ['error', 'always'],
     'comma-dangle': ['error', 'always-multiline'],
-  }},
-)
+    'vue/no-multiple-template-root': 'off',
+    'quotes': ['error', 'single'],
+  },
+})

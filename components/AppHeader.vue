@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const menus = [
-  { label: "Főoldal", path: "/", icon: "line-md:home-simple-twotone" },
+  { label: 'Főoldal', path: '/', icon: 'line-md:home-simple-twotone' },
   // {
   //   label: "Látogatás",
   //   icon: "material-symbols:landscape-2-outline",
@@ -9,53 +9,53 @@ const menus = [
   //       label: "Jegyárak",
   //       icon: "lucide:tickets",
   //       children: [
-          {
-            label: "Egyéni jegyek",
-            path: "/vendegek",
-            icon: "material-symbols:person",
-          },
-          {
-            label: "Csoportok",
-            path: "/csoportok",
-            icon: "fa6-solid:people-group",
-          },
-      //   ],
-      // },
-      {
-        label: "Nyitvatartás",
-        path: "/nyitvatartas",
-        icon: "material-symbols:alarm-outline",
-      },
-      {
-        label: "Házirend",
-        path: "/hazirend",
-        icon: "material-symbols:list-alt-check-outline-rounded",
-      },
+  {
+    label: 'Egyéni jegyek',
+    path: '/vendegek',
+    icon: 'material-symbols:person',
+  },
+  {
+    label: 'Csoportok',
+    path: '/csoportok',
+    icon: 'fa6-solid:people-group',
+  },
   //   ],
   // },
   {
-    label: "Programok",
-    path: "/programok",
-    icon: "material-symbols:tips-and-updates-outline-rounded",
+    label: 'Nyitvatartás',
+    path: '/nyitvatartas',
+    icon: 'material-symbols:alarm-outline',
   },
   {
-    label: "Szállás",
-    path: "https://vendeghaz.krisnavolgy.hu",
-    icon: "material-symbols:add-home-work-outline",
+    label: 'Házirend',
+    path: '/hazirend',
+    icon: 'material-symbols:list-alt-check-outline-rounded',
   },
-  { label: "Étterem", path: "/etterem", icon: "ic:sharp-restaurant-menu" },
+  //   ],
+  // },
   {
-    label: "Webshop",
-    path: "https://bolt.krisnavolgy.hu",
-    icon: "material-symbols:shopping-cart-outline",
+    label: 'Programok',
+    path: '/programok',
+    icon: 'material-symbols:tips-and-updates-outline-rounded',
   },
   {
-    label: "Útvonal",
-    path: "/utvonal",
-    icon: "material-symbols-light:directions-car",
+    label: 'Szállás',
+    path: 'https://vendeghaz.krisnavolgy.hu',
+    icon: 'material-symbols:add-home-work-outline',
   },
-  { label: "Rólunk", path: "/rolunk", icon: "material-symbols:info-outline" },
-  { label: "Kapcsolat", path: "/kapcsolat", icon: "material-symbols:call-log" },
+  { label: 'Étterem', path: '/etterem', icon: 'ic:sharp-restaurant-menu' },
+  {
+    label: 'Webshop',
+    path: 'https://bolt.krisnavolgy.hu',
+    icon: 'material-symbols:shopping-cart-outline',
+  },
+  {
+    label: 'Útvonal',
+    path: '/utvonal',
+    icon: 'material-symbols-light:directions-car',
+  },
+  { label: 'Rólunk', path: '/rolunk', icon: 'material-symbols:info-outline' },
+  { label: 'Kapcsolat', path: '/kapcsolat', icon: 'material-symbols:call-log' },
 ]
 
 const isMobileMenuOpen = ref(false)
@@ -73,13 +73,16 @@ const isMobileMenuOpen = ref(false)
         :class="{ open: isMobileMenuOpen }"
       />
       <ul :class="{ open: isMobileMenuOpen }">
-        <li v-for="menu in menus">
+        <li v-for="menu in menus" :key="menu.label">
           <HeaderMenuLink :menu />
           <ul v-if="menu.children">
-            <li v-for="child in menu.children">
+            <li v-for="child in menu.children" :key="child.label">
               <HeaderMenuLink :menu="child" />
               <ul v-if="child.children">
-                <li v-for="grandchild in child.children">
+                <li
+                  v-for="grandchild in child.children"
+                  :key="grandchild.label"
+                >
                   <HeaderMenuLink :menu="grandchild" />
                 </li>
               </ul>

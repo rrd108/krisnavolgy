@@ -41,11 +41,11 @@ export default defineNuxtConfig({
     },
   },
   nuxtTokenAuthentication: {
-    noAuthRoutes: ['GET:/api/festivals', 'POST:/api/auth/getToken'],
+    noAuthRoutes: ['GET:/api/festivals', 'POST:/api/auth/getToken', 'POST:/api/subscribe'],
     connector: {
       name: defaultDatabase.connector,
       options: defaultDatabase.options,
     },
   },
-  compatibilityDate: '2024-10-24',
+  compatibilityDate: '2024-04-03',
 })

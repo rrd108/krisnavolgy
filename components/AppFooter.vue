@@ -1,9 +1,4 @@
 <script setup lang="ts">
-const email = ref("")
-const addUser = () => {
-  alert("TODO")
-}
-
 const year = new Date().getFullYear()
 </script>
 
@@ -46,11 +41,9 @@ const year = new Date().getFullYear()
       </ul>
     </div>
 
-    <div>
+    <SubscribeForm>
       <h3>Íratozz fel a hírlevélre!</h3>
-      <input v-model="email" type="email" placeholder="Email" >
-      <button @click="addUser">Feliratkozom</button>
-    </div>
+    </SubscribeForm>
 
     <aside>
       <span>© {{ year }} Minden jog fenntartva</span>
@@ -68,6 +61,7 @@ footer {
   margin-top: 2em;
   border-bottom: 0.1em solid var(--bh-light);
   padding: 0 0 0.5em 0.5em;
+  text-align: left;
 }
 
 :deep(ul) {
@@ -75,6 +69,7 @@ footer {
 }
 
 aside {
+  margin-top: 2em;
   border-top: thin solid var(--bh-light);
   padding: 1em;
   font-size: 0.75rem;
@@ -82,6 +77,10 @@ aside {
 .socials ul {
   font-size: 2rem;
   padding-top: 0;
+}
+
+.error {
+  color: var(--error, #dc3545);
 }
 
 @media screen and (min-width: 64rem) {

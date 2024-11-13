@@ -63,7 +63,7 @@ const { isMobile } = useDevice()
 <style scoped>
 @media screen and (max-width: 40rem) {
   #services {
-    margin: 12em -1em 0 0 ;
+    margin: 1em -1em 0 0 ;
   }
 }
 </style>

@@ -1,37 +1,41 @@
 <script setup lang="ts">
-import { useIntervalFn, useElementVisibility } from "@vueuse/core"
+import { useElementVisibility } from '@vueuse/core'
+import NumberFlow from '@number-flow/vue'
 
 const target = ref(null)
 const targetIsVisible = useElementVisibility(target)
 
-const countUp = ref(1)
-useIntervalFn(() => {
-  if (countUp.value > 100) return
-  if (targetIsVisible.value) {
-    countUp.value++
-  }
-}, 20)
-
 const counters = [
-  { title: "Program évente", number: 47, icon: "child-reaching" },
-  { title: "Vendégéjszaka", number: 986, icon: "bed" },
-  { title: "Látogató évente", number: 27600, icon: "people-group" },
-  { title: "Finom ebéd", number: 12400, icon: "utensils" },
+  {
+    title: 'Program évente',
+    number: 42,
+    icon: 'material-symbols:tips-and-updates-outline-rounded',
+  },
+  {
+    title: 'Vendégéjszaka',
+    number: 3667,
+    icon: 'material-symbols:add-home-work-outline',
+  },
+  { title: 'Látogató évente', number: 27542, icon: 'fa6-solid:people-group' },
+  { title: 'Finom ebéd', number: 10162, icon: 'ic:sharp-restaurant-menu' },
 ]
 </script>
 
 <template>
   <ul ref="target">
     <li v-for="counter in counters" :key="counter.title">
-      <!--font-awesome :icon="counter.icon" /-->
+      <Icon :name="counter.icon" />
       <div>
         <h3>
-          {{
-            Intl.NumberFormat("hu-HU", {
-              style: "decimal",
+          <NumberFlow
+            :value="targetIsVisible ? counter.number : 0"
+            :format="{
+              style: 'decimal',
               maximumFractionDigits: 0,
-            }).format(counter.number * (countUp / 100))
-          }}
+              useGrouping: true,
+            }"
+            :transform-timing="{duration: 1750 }"
+          />
         </h3>
         <small>{{ counter.title }}</small>
       </div>
@@ -51,6 +55,9 @@ li {
   display: flex;
   align-items: center;
   gap: 1em;
+}
+h3 {
+  margin: 0;
 }
 
 @media screen and (min-width: 64rem) {

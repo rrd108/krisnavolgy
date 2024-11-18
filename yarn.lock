@@ -1317,6 +1317,14 @@
     "@nodelib/fs.scandir" "3.0.0"
     fastq "^1.15.0"
 
+"@number-flow/vue@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@number-flow/vue/-/vue-0.2.5.tgz#53a8242c3e450fe95a1998716f5922eef2b40467"
+  integrity sha512-9kyTheLEupGkdGkAntrwgELM4gYy7wnWGQpfFIVpaAnJL6Y87sx60NmtHlgQ45lDQH+bxQKVjW5+MNik4aujKA==
+  dependencies:
+    esm-env "^1.1.4"
+    number-flow "0.3.9"
+
 "@nuxt/devalue@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.2.tgz#5749f04df13bda4c863338d8dabaf370f45ef7c7"
@@ -4570,6 +4578,11 @@ eslint@^8.7.0:
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
+esm-env@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/esm-env/-/esm-env-1.1.4.tgz#340c78b03ee2298d31c5b9fab9793468ede828b0"
+  integrity sha512-oO82nKPHKkzIj/hbtuDYy/JHqBHFlMIW36SDiPCVsj87ntDLcWN+sJ1erdVryd4NxODacFTsdrIE3b7IamqbOg==
+
 espree@^10.1.0, espree@^10.3.0:
   version "10.3.0"
   resolved "https://registry.yarnpkg.com/espree/-/espree-10.3.0.tgz#29267cf5b0cb98735b65e64ba07e0ed49d1eed8a"
@@ -6772,6 +6785,13 @@ nth-check@^2.0.1, nth-check@^2.1.1:
   integrity sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==
   dependencies:
     boolbase "^1.0.0"
+
+number-flow@0.3.9:
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/number-flow/-/number-flow-0.3.9.tgz#0ea779a5779e154ad91ee75a6fe0d6c91fa97a73"
+  integrity sha512-I5CfsOIKyv6nE7ebcWHJsFHBa7yoAnA4RhiJmMkBklQlm5gQrLNTRDfp8fbux0rKkQNxXsNXrZUt3gl82juemQ==
+  dependencies:
+    esm-env "^1.1.4"
 
 nuxi@^3.15.0:
   version "3.15.0"

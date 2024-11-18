@@ -1,0 +1,8 @@
+SELECT
+    wp_posts.ID AS objectID,
+    wp_posts.post_title AS title,
+    'https://elvonulas.krisnavolgy.hu' AS site,
+    wp_posts.post_content AS content,
+    'page' AS type,
+    wp_posts.post_name AS path 
+from wp_posts where post_status = 'publish' and post_type = 'page' and post_content != '' and post_content like "%<p>%" and post_title not like "%WordPress%"

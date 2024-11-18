@@ -73,7 +73,7 @@ p {
     gap: 3em;
   }
   h1 {
-    margin-top: 16em;
+    margin-top: 4em;
   }
   #cloudBig {
     --width: 19rem;

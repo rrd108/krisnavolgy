@@ -4,7 +4,7 @@ const services = [
     title: 'Belépőjegy árak',
     content: 'Diák, nyugdíjas, felnőtt jegyek',
     price: '1.700 Ft - 3.400 Ft',
-    link: '/vendegek',
+    link: '/belepojegy',
   },
   {
     title: 'Csoportok',

@@ -10,8 +10,8 @@ const menus = [
   //       icon: "lucide:tickets",
   //       children: [
   {
-    label: 'Egyéni jegyek',
-    path: '/vendegek',
+    label: 'Belépőjegy',
+    path: '/belepojegy',
     icon: 'material-symbols:person',
   },
   {

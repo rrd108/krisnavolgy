@@ -46,16 +46,17 @@ const addUser = async () => {
       <button :disabled="loading" @click="addUser">
         {{ loading ? "Folyamatban..." : "Feliratkozom" }}
       </button>
-      <p v-if="message" :class="{ error: !message.includes('Sikeres') }">
-        {{ message }}
-      </p>
     </div>
+    <p v-if="message" :class="{ error: !message.includes('Sikeres') }">
+      {{ message }}
+    </p>
   </section>
 </template>
 
 <style scoped>
-p {
-  margin-bottom: 1em;
+div {
+  display: flex;
+  align-items: center;
 }
 input {
   border: thin solid var(--light);
@@ -67,5 +68,8 @@ button {
   border: none;
   padding: 0.6rem;
   border-radius: 0 1em 1em 0;
+}
+p {
+  margin-bottom: 1em;
 }
 </style>

@@ -85,4 +85,11 @@ a {
   display: block;
   font-style: italic;
 }
+
+@media screen and (min-width: 41rem) {
+  #search {
+    margin: 16em auto 0;
+    width: 30em;
+  }
+}
 </style>

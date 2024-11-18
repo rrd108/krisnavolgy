@@ -15,10 +15,9 @@ const { touristComingFestivals } = await useFestivals()
       :autoplay="2500"
       :pause-autoplay-on-hover="true"
       :wrap-around="true"
-      dir="rtl"
     >
       <Slide
-        v-for="(festival, i) in touristComingFestivals"
+        v-for="festival in touristComingFestivals"
         :key="festival.title"
       >
         <FestivalBox :festival />

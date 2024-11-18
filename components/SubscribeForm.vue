@@ -57,6 +57,7 @@ const addUser = async () => {
 div {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 input {
   border: thin solid var(--light);

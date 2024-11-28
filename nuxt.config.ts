@@ -15,12 +15,13 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     'nuxt-token-authentication',
     '@pinia/nuxt',
-    'vue-mess-detector-nuxt-devtools',
+    //'vue-mess-detector-nuxt-devtools',
     'vue3-carousel-nuxt',
     '@vueuse/nuxt',
     '@nuxt/scripts',
     '@nuxtjs/algolia',
     '@nuxt/eslint',
+    '@nuxt/test-utils/module',
   ],
   algolia: {
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
@@ -41,7 +42,7 @@ export default defineNuxtConfig({
     },
   },
   nuxtTokenAuthentication: {
-    noAuthRoutes: ['GET:/api/festivals', 'POST:/api/auth/getToken', 'POST:/api/subscribe'],
+    noAuthRoutes: ['GET:/api/festivals', 'POST:/api/auth/getToken', 'POST:/api/subscribe', 'GET:/api/simplePay/test'],
     connector: {
       name: defaultDatabase.connector,
       options: defaultDatabase.options,

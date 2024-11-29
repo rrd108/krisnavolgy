@@ -1,11 +1,9 @@
-import { startPayment } from '../utils/simplePay'
-
 export default defineEventHandler(async (event) => {
 
 const startNewPayment = async () => {
     try {
         const response = await startPayment({
-            orderRef: 'ORDER123',
+            orderRef: 'ORDER124',
             total: 1000, // Amount in HUF
             customerEmail: 'customer@example.com',
             invoice: {
@@ -18,15 +16,12 @@ const startNewPayment = async () => {
             },
         })
 
-        console.log(response)
+        return response
     } catch (error) {
         console.error('Payment initiation failed:', error)
     }
-}
-
-startNewPayment()
-
-    return {
-        message: 'Payment started',
     }
+
+    const response = await startNewPayment()
+    return response
 })

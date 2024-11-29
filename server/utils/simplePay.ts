@@ -330,10 +330,11 @@ interface PaymentStartResponse {
     merchant: string
     orderRef: string
     currency: string
-    transactionId: number
+    transactionId: string
     timeout: string
-    total: number
+    total: string
     paymentUrl: string
+    errorCodes?: string[]
 }
 
 const generateSignature = (body: string, merchantKey: string) => {
@@ -342,9 +343,13 @@ const generateSignature = (body: string, merchantKey: string) => {
     return hmac.digest('base64')
 }
 
+const checkSignature = (response: string, signature: string, merchantKey: string) => signature == generateSignature(response, merchantKey)
+
+
 const SIMPLEPAY_API_URL = 'https://secure.simplepay.hu/payment/v2'
 const SIMPLEPAY_SANDBOX_URL = 'https://sandbox.simplepay.hu/payment/v2/start'
-const SDK_VERSION = 'SimplePayV2.1_Payment_PHP_SDK_2.0.7_190701:dd236896400d7463677a82a47f53e36e'
+//const SDK_VERSION = 'SimplePayV2.1_Payment_PHP_SDK_2.0.7_190701:dd236896400d7463677a82a47f53e36e'
+const SDK_VERSION = 'SimplePayV2.1_Rrd_0.1.0'
 
 const startPayment = async (paymentData: PaymentStartRequest) => {
     const MERCHANT_KEY = process.env.SIMPLEPAY_MERCHANT_KEY
@@ -365,19 +370,23 @@ const startPayment = async (paymentData: PaymentStartRequest) => {
         sdkVersion: SDK_VERSION,
         methods: ['CARD'],
         total: paymentData.total.toString(),
-        timeout: new Date(Date.now() + 30 * 60 * 1000).toISOString(), // 30 minutes from now
+        timeout: new Date(Date.now() + 30 * 60 * 1000)
+            .toISOString()
+            .replace(/\.\d{3}Z$/, '+00:00'),
         url: process.env.SIMPLEPAY_REDIRECT_URL,
         invoice: paymentData.invoice,
     }
 
-    const bodyString = JSON.stringify(requestBody)
+    const bodyString = JSON.stringify(requestBody)//.replace(/\//g, '\\/')
     const signature = generateSignature(bodyString, MERCHANT_KEY)
+    console.log({ bodyString, signature })
 
     try {
         const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                //'Accept': 'application/json',
                 'Signature': signature,
             },
             body: bodyString,
@@ -388,10 +397,18 @@ const startPayment = async (paymentData: PaymentStartRequest) => {
         }
 
         const responseData = await response.json() as PaymentStartResponse
+        const responseText = await response.text()
         const responseSignature = response.headers.get('Signature')
 
+        console.log({ responseData, responseSignature })
+
+        if (responseData.errorCodes) {
+            throw new Error(`SimplePay API error: ${responseData.errorCodes}`)
+        }
+
         // Verify response signature
-        const calculatedResponseSignature = generateSignature(JSON.stringify(responseData), MERCHANT_KEY)
+        const calculatedResponseSignature = generateSignature(responseText, MERCHANT_KEY)
+        console.log({ calculatedResponseSignature })
         if (responseSignature !== calculatedResponseSignature) {
             throw new Error('Invalid response signature')
         }
@@ -403,4 +420,4 @@ const startPayment = async (paymentData: PaymentStartRequest) => {
     }
 }
 
-export { startPayment, generateSignature }
+export { startPayment, generateSignature, checkSignature }

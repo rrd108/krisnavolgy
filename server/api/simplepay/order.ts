@@ -1,7 +1,7 @@
-const startNewPayment = async () => {
+export default defineEventHandler(async (event) => {
     try {
         const response = await startPayment({
-            orderRef: 'sb-19',
+            orderRef: 'sb-21',
             total: 1212,
             customerEmail: 'rrd@webmania.cc',
             invoice: {
@@ -13,12 +13,10 @@ const startNewPayment = async () => {
                 address: 'Sehol u 0',
             },
         })
+        
         return response
     } catch (error) {
         console.error('Payment initiation failed:', error)
+        return error
     }
-}
-
-export default defineEventHandler(async (event) => {
-    return await startNewPayment()
 })

@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     },
   },
   nuxtTokenAuthentication: {
-    noAuthRoutes: ['GET:/api/festivals', 'POST:/api/auth/getToken', 'POST:/api/subscribe', 'GET:/api/simplePay/test', 'GET:/api/simplePay/generate'],
+    noAuthRoutes: ['GET:/api/festivals', 'POST:/api/auth/getToken', 'POST:/api/subscribe', 'GET:/api/simplepay/order', 'POST:/api/simplepay/result'],
     connector: {
       name: defaultDatabase.connector,
       options: defaultDatabase.options,

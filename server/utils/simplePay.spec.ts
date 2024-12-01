@@ -45,7 +45,23 @@ describe('checkSignature', () => {
 
     const expectedSignature = 'G5zWncPxVgnCJMUBIVM6pXwHerRZ5vYpdzOtRhocCC95IkiiApqCD8kafpMDvt7C'
     const result = checkSignature(JSON.stringify(response), expectedSignature, merchantKey)
+    expect(result).toBeTruthy()
+  })
+  it('should generate correct signature for the response', () => {
+    const merchantKey = 'P085602'
+    const response = {
+      transactionId: '504226393',
+      orderRef: 'ORDER124',
+      merchant: merchantKey,
+      timeout: '2024-11-29T13:29:17+01:00',
+      total: '1000',
+      paymentUrl: 'https://sb-checkout.simplepay.hu/trx/cJZs3UUc48FlGu7Mfa1M0tcTWO53oA5RxS0OUMPqA17Fe3HGBr',
+      currency: 'HUF',
+      salt: 'R0ZBm2gdCXuTmxpOkqB4s0aAhZxZwSWG'
+    }
 
+    const expectedSignature = 'G5zWncPxVgnCJMUBIVM6pXwHerRZ5vYpdzOtRhocCC95IkiiApqCD8kafpMDvt7C'
+    const result = checkSignature(JSON.stringify(response).replace(/\//g, '\\/'), expectedSignature, merchantKey)
     expect(result).toBeTruthy()
   })
 })

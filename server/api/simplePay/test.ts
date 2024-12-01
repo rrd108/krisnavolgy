@@ -1,27 +1,24 @@
-export default defineEventHandler(async (event) => {
-
 const startNewPayment = async () => {
     try {
         const response = await startPayment({
-            orderRef: 'ORDER124',
-            total: 1000, // Amount in HUF
-            customerEmail: 'customer@example.com',
+            orderRef: 'sb-12',
+            total: 1212,
+            customerEmail: 'rrd@webmania.cc',
             invoice: {
-                name: 'Customer Name',
+                name: 'Radharadhya Dasa',
                 country: 'HU',
-                state: 'Budapest',
-                city: 'Budapest',
-                zip: '1111',
-                address: 'Test Street 1',
+                state: 'Somogy',
+                city: 'Somogyvámos',
+                zip: '8699',
+                address: 'Sehol u 0',
             },
         })
-
         return response
     } catch (error) {
         console.error('Payment initiation failed:', error)
     }
-    }
+}
 
-    const response = await startNewPayment()
-    return response
+export default defineEventHandler(async (event) => {
+    return await startNewPayment()
 })

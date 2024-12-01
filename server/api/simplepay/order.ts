@@ -1,7 +1,9 @@
+import { startPayment } from 'simplepay-js-sdk'
+
 export default defineEventHandler(async (event) => {
     try {
         const response = await startPayment({
-            orderRef: 'sb-21',
+            orderRef: 'sb-23',
             total: 1212,
             customerEmail: 'rrd@webmania.cc',
             invoice: {

@@ -1,7 +1,7 @@
 const startNewPayment = async () => {
     try {
         const response = await startPayment({
-            orderRef: 'sb-12',
+            orderRef: 'sb-19',
             total: 1212,
             customerEmail: 'rrd@webmania.cc',
             invoice: {

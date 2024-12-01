@@ -1,8 +1,8 @@
 import crypto from 'crypto'
 
-interface PaymentStartRequest {
+interface PaymentData {
     orderRef: string
-    total: number
+    total: number | string
     customerEmail: string
     currency?: string
     language?: string
@@ -18,7 +18,17 @@ interface PaymentStartRequest {
     }
 }
 
-interface PaymentStartResponse {
+interface SimplePayRequestBody extends Omit<PaymentData, 'total'> {
+    total: string
+    salt: string
+    merchant: string
+    sdkVersion: string
+    methods: ['CARD']
+    timeout: string
+    url: string
+}
+
+interface SimplePayResponse {
     salt: string
     merchant: string
     orderRef: string
@@ -30,12 +40,14 @@ interface PaymentStartResponse {
     errorCodes?: string[]
 }
 
-const generateSignature = (body: string | JSON, merchantKey: string) => {
-    console.log(`👉 generateSignature called with ${typeof body} body`)
-    if (typeof body === 'object') {
-        body = JSON.stringify(body)
-        body = body.replace(/\//g, '\\/')
+const simplepayLogger = (...args: any[]) => {
+    if (process.env.SIMPLEPAY_LOGGER != 'true') {
+        return
     }
+    console.log(...args)
+}
+
+const generateSignature = (body: string, merchantKey: string) => {
     const hmac = crypto.createHmac('sha384', merchantKey.trim())
     hmac.update(body, 'utf8')
     return hmac.digest('base64')
@@ -43,22 +55,25 @@ const generateSignature = (body: string | JSON, merchantKey: string) => {
 
 const checkSignature = (responseText: string, signature: string, merchantKey: string) => signature == generateSignature(responseText, merchantKey)
 
+// escaping slashes for the request body to prevent strange SimplePay API errors (eg Missing Signature)
+const prepareRequestBody = (body: SimplePayRequestBody) => JSON.stringify(body).replace(/\//g, '\\/')
+
 
 const SIMPLEPAY_API_URL = 'https://secure.simplepay.hu/payment/v2'
 const SIMPLEPAY_SANDBOX_URL = 'https://sandbox.simplepay.hu/payment/v2/start'
-//const SDK_VERSION = 'SimplePayV2.1_Payment_PHP_SDK_2.0.7_190701:dd236896400d7463677a82a47f53e36e'
 const SDK_VERSION = 'SimplePayV2.1_Rrd_0.1.0'
 
-const startPayment = async (paymentData: PaymentStartRequest) => {
+const startPayment = async (paymentData: PaymentData) => {
     const MERCHANT_KEY = process.env.SIMPLEPAY_MERCHANT_KEY
     const MERCHANT_ID = process.env.SIMPLEPAY_MERCHANT_ID
     const API_URL = process.env.SIMPLEPAY_PRODUCTION == 'true' ? SIMPLEPAY_API_URL : SIMPLEPAY_SANDBOX_URL
+    simplepayLogger({ MERCHANT_KEY, MERCHANT_ID, API_URL })
 
     if (!MERCHANT_KEY || !MERCHANT_ID) {
         throw new Error('Missing SimplePay configuration')
     }
 
-    const requestBody = {
+    const requestBody: SimplePayRequestBody = {
         salt: crypto.randomBytes(16).toString('hex'),
         merchant: MERCHANT_ID,
         orderRef: paymentData.orderRef,
@@ -67,23 +82,19 @@ const startPayment = async (paymentData: PaymentStartRequest) => {
         language: paymentData.language || 'HU',
         sdkVersion: SDK_VERSION,
         methods: ['CARD'],
-        total: paymentData.total.toString(),
+        total: String(paymentData.total),
         timeout: new Date(Date.now() + 30 * 60 * 1000)
             .toISOString()
             .replace(/\.\d{3}Z$/, '+00:00'),
-        url: process.env.SIMPLEPAY_REDIRECT_URL,
+        url: process.env.SIMPLEPAY_REDIRECT_URL || 'http://url.to.redirect',
         invoice: paymentData.invoice,
     }
 
-    const bodyString = JSON.stringify(requestBody).replace(/\//g, '\\/')    // TODO move out replace
+    const bodyString = prepareRequestBody(requestBody)
     const signature = generateSignature(bodyString, MERCHANT_KEY)
-    console.log(75)
-    console.log({ bodyString })
-    console.log({ MERCHANT_KEY })
-    console.log({ signature })
+    simplepayLogger({ bodyString, signature })
 
     try {
-        console.log(API_URL)
         const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
@@ -93,22 +104,21 @@ const startPayment = async (paymentData: PaymentStartRequest) => {
             body: bodyString,
         })
 
-        console.log(96, { response })
+        simplepayLogger({ response })
 
         if (!response.ok) {
             throw new Error(`SimplePay API error: ${response.status}`)
         }
 
         const responseSignature = response.headers.get('Signature')
-        console.log({ responseSignature })
+        simplepayLogger({ responseSignature })
         if (!responseSignature) {
             throw new Error('Missing response signature')
         }
 
         const responseText = await response.text()
-        console.log({ responseText })
-        const responseJSON = JSON.parse(responseText) as PaymentStartResponse
-        console.log({ responseJSON })
+        const responseJSON = JSON.parse(responseText) as SimplePayResponse
+        simplepayLogger({ responseText, responseJSON })
 
         if (responseJSON.errorCodes) {
             throw new Error(`SimplePay API error: ${responseJSON.errorCodes}`)
@@ -119,6 +129,7 @@ const startPayment = async (paymentData: PaymentStartRequest) => {
         }
 
         return responseJSON
+        
     } catch (error) {
         console.error('SimplePay payment start error:', error)
         throw error

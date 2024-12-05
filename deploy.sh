@@ -24,8 +24,8 @@ if [ $PREV_STEP -eq 1 ];then
 	echo $'\n' "Bump frontend version number" $'\n'
 	npm version patch --no-git-tag-version
 
-	echo $'\n' "Running Static Build" $'\n'
-	yarn generate
+	echo $'\n' "Running Build" $'\n'
+	yarn build
 	if [ $? -eq 0 ]; then
 		echo -e $'\n' "${GREEN} \u2714 Build successfull ${NC}" $'\n'
 	else
@@ -38,14 +38,14 @@ if [ $PREV_STEP -eq 1 ];then
 	if [ $PREV_STEP -eq 1 ];then
 		echo $'\n' "Copy .output/public folder to server" $'\n'
 		rsync --progress -azh \
-			--delete --exclude='.htaccess' --exclude='robots.txt' .output/public/ \
+			--delete --exclude='.data' --exclude='robots.txt' --exclude='./ecosystem.config.js' ./.output/ \
 			-e "ssh -i /home/rrd/.ssh/sravanamGCI" \
 			$SSH_USER@$SSH_HOST:$SSH_PATH
 
 		if [ $? -eq 0 ]; then
-			echo -e $'\n' "${GREEN} \u2714 .output/public folder uploaded ${NC}" $'\n'
+			echo -e $'\n' "${GREEN} \u2714 .output folder uploaded ${NC}" $'\n'
 		else
-			echo -e $'\n' "${RED} \u2a2f .output/public folder upload failed ${NC}" $'\n'
+			echo -e $'\n' "${RED} \u2a2f .output folder upload failed ${NC}" $'\n'
 			PREV_STEP=0
 		fi
 	fi

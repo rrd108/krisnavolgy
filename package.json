@@ -1,7 +1,7 @@
 {
   "name": "krisnavolgy",
   "type": "module",
-  "version": "0.0.19",
+  "version": "0.0.29",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -11,7 +11,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "vitest"
+    "test": "vitest",
+    "deploy": "bash deploy.sh"
   },
   "dependencies": {
     "@antfu/eslint-config": "^3.8.0",

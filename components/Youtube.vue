@@ -7,7 +7,7 @@ const stateChange = (event: YT.OnStateChangeEvent) => {
 }
 
 const videos = ['XuHYvJIeljc', 'Pnyr-BK334w', '0qUtAMTqfmQ']
-const videoId = videos[Math.floor(Math.random() * videos.length)]
+const videoId = useState('videoId', () => videos[Math.floor(Math.random() * videos.length)])
 </script>
 
 <template>

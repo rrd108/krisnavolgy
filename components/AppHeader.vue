@@ -56,6 +56,7 @@ const menus = [
   },
   { label: 'Rólunk', path: '/rolunk', icon: 'material-symbols:info-outline' },
   { label: 'Kapcsolat', path: '/kapcsolat', icon: 'material-symbols:call-log' },
+  { label: 'Ajándékutalvány', path: '/ajandekutalvany', icon: 'material-symbols:featured-seasonal-and-gifts' },
 ]
 
 const isMobileMenuOpen = ref(false)

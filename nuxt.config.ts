@@ -9,12 +9,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/style.css'],
   modules: [
+    '@pinia/nuxt',
     '@formkit/nuxt',
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxtjs/device',
     'nuxt-token-authentication',
-    '@pinia/nuxt',
     //'vue-mess-detector-nuxt-devtools',
     'vue3-carousel-nuxt',
     '@vueuse/nuxt',
@@ -45,7 +45,7 @@ export default defineNuxtConfig({
     noAuthRoutes: ['GET:/api/festivals',
       'POST:/api/auth/getToken',
       'POST:/api/subscribe',
-      'GET:/api/simplepay/order',
+      'POST:/api/simplepay/order',
       'POST:/api/simplepay/result',
       'POST:/api/simplepay/ipn'],
     connector: {

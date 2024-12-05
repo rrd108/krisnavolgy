@@ -7,11 +7,14 @@
   <NuxtLink
     to="https://www.google.com/maps/dir/Kaposv%C3%A1r/Somogyv%C3%A1mos,+Krisna-v%C3%B6lgy"
   >
+
+
     <NuxtImg
       src="/images/megkozelites-kaposvar-felol.jpg"
       alt="Kaposvár felől"
-      sizes="sm:100vw md:100vw lg:100vw"
+      sizes="sm:90vw md:90vw lg:90vw"
       :modifiers="{ format: 'webp' }"
+      class="center"
       />
     </NuxtLink>
     <p>
@@ -20,8 +23,8 @@
   </p>
 
   <InfoBlock>
-    Több útvonal tervező javaslata ellenére <strong>Polányon keresztül</strong>
-    nem vagyunk személyautóval megközelíthetőek!
+    Több útvonal tervező javaslata ellenére <strong>Polányon keresztül nem</strong>
+    vagyunk személyautóval megközelíthetőek!
   </InfoBlock>
 
   <Divider />
@@ -33,8 +36,9 @@
     <NuxtImg
       src="/images/megkozelites-budapest-felol.jpg"
       alt="Budapest és Balaton felől"
-      sizes="sm:100vw md:100vw lg:100vw"
+      sizes="sm:90vw md:90vw lg:90vw"
       :modifiers="{ format: 'webp' }"
+      class="center"
     />
   </NuxtLink>
   <p>

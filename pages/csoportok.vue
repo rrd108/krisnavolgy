@@ -127,7 +127,8 @@ const { allComingFestivals } = await useFestivals()
     <NuxtImg
       src="/images/zene-varazsa.jpg"
       alt="Zene varázsa"
-      sizes="sm:90vw md:90vw lg:90vw"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
    />
 
     <p>
@@ -150,7 +151,8 @@ Különleges <strong>indiai hangszerek</strong>, felejthetetlen élmény... Ére
     <NuxtImg
       src="/images/kelet-divatja.jpg"
       alt="Légy hercegnő"
-      sizes="sm:90vw md:90vw lg:90vw"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
    />
 
     <p>
@@ -170,7 +172,8 @@ Indiai ruhák mesés világa... Melyik nő ne vágyna rá, hogy legalább kis id
     <NuxtImg
       src="/images/lelek-hangja.jpg"
       alt="Lélek hangja"
-      sizes="sm:90vw md:90vw lg:90vw"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
    />
 
     <p>
@@ -190,7 +193,8 @@ Feltöltődés a béke szigetén… Fedezd fel a <strong>Haré Krisna mantra</st
     <NuxtImg
       src="/images/fuszerkalauz.jpg"
       alt="Egzotikus fűszerkalauz"
-      sizes="sm:90vw md:90vw lg:90vw"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
    />
  
    <p>
@@ -210,7 +214,8 @@ Keleti ízek kavalkádja... Méltán tartják India konyhaművészetét a világ
     <NuxtImg
       src="/images/eletmod-seta.jpg"
       alt="Életünk Krisna-völgyben"
-      sizes="sm:90vw md:90vw lg:90vw"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
    />
 
     <p>
@@ -231,7 +236,8 @@ Kíváncsi vagy a Krisna-völgyi életünkre? Szeretnél bepillantani egy <stron
     <NuxtImg
       src="/images/szerencsehozo-zarandoklat.jpg"
       alt="Szerencsehozó zarándokkörút"
-      sizes="sm:90vw md:90vw lg:90vw"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
    />
 
     <p>
@@ -249,7 +255,8 @@ Gondoltál már rá, milyen jó lenne elmenni a messzi Indiába egy igazi zarán
     <NuxtImg
       src="/images/korseta.jpg"
       alt="Körséta"
-      sizes="sm:90vw md:90vw lg:90vw"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
    />
 
     <p>
@@ -269,7 +276,8 @@ Leginkább az <strong>önellátás</strong> iránti érdeklődésed hozott el ho
     <NuxtImg
       src="/images/korseta-vallabhival.jpg"
       alt="Körséta Vallabhival"
-      sizes="sm:90vw md:90vw lg:90vw"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
    />
 
     <p>
@@ -290,7 +298,8 @@ Lehet, hogy Vallabhitól hallottál először Krisna-völgyről? Ha szeretnél v
     <NuxtImg
       src="/images/kviz-jatek.jpg"
       alt="Kvízjáték Vallabhival"
-      sizes="sm:90vw md:90vw lg:90vw"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
    />
 
     <p>
@@ -308,7 +317,8 @@ Ezt a vidám programot kifejezetten diákok részére állítottuk össze. Garan
     <NuxtImg
       src="/images/okros-malom.jpg"
       alt="Ökrös malom"
-      sizes="sm:90vw md:90vw lg:90vw"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
    />
 
     <p>

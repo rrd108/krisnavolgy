@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    // Linting / Formatting
+    "dbaeumer.vscode-eslint",
+    "usernamehw.errorlens",
+    "yoavbls.pretty-ts-errors",
+    // Showing todo comments
+    "gruntfuggly.todo-tree",
+    "aaron-bond.better-comments",
+    // Language Support
+    "VisualStudioExptTeam.vscodeintellicode",
+    // Test
+    "vitest.explorer"
+  ]
+}

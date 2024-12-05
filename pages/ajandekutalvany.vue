@@ -5,9 +5,9 @@ const order = reactive({
   name: '',
   email: ''
 })
-
+const calculateTotal = () => order.ticket * 3400 + order.lunch * 3890
 const total = computed(() => {
-  return Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', useGrouping: true, maximumFractionDigits: 0 }).format(order.ticket * 3400 + order.lunch * 3890)
+  return Intl.NumberFormat('hu-HU', { style: 'currency', currency: 'HUF', useGrouping: true, maximumFractionDigits: 0 }).format(calculateTotal())
 })
 
 const sendOrder = async () => {
@@ -18,7 +18,7 @@ const sendOrder = async () => {
 
       const { data, status, error } = await useFetch('/api/simplepay/order', {
         method: 'POST',
-        body: {...order, total: total.value}
+        body: {...order, total: calculateTotal()}
       })
     if (data.value.paymentUrl) {
         navigateTo(data.value.paymentUrl, {external: true})
@@ -53,7 +53,6 @@ const sendOrder = async () => {
 
   <label>Neved</label>
   <input type="text" v-model="order.name" />
-
   <label>Email címed</label>
   <input type="email" v-model="order.email" />
 

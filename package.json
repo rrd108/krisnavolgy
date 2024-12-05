@@ -1,7 +1,7 @@
 {
   "name": "krisnavolgy",
   "type": "module",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -41,6 +41,7 @@
     "@pinia/nuxt": "^0.6.0",
     "@types/bcrypt": "^5.0.2",
     "@vue/test-utils": "^2.4.6",
+    "eslint": "^9.16.0",
     "happy-dom": "^15.11.7",
     "playwright-core": "^1.49.0",
     "typescript": "^5.6.3",

@@ -1,9 +1,20 @@
 <script setup lang="ts">
+const invoiceNeeded = ref(false)
 const order = reactive({
   ticket: 0,
   lunch: 0,
   name: '',
-  email: ''
+  email: '',
+  address: '',
+  invoice: {
+    name: '',
+    taxNumber: '',
+    country: 'HU',
+    state: 'Somogy',
+    city: '',
+    zip: '',
+    address: '',
+  }
 })
 const calculateTotal = () => order.ticket * 3400 + order.lunch * 3890
 const total = computed(() => {
@@ -18,7 +29,7 @@ const sendOrder = async () => {
 
       const { data, status, error } = await useFetch('/api/simplepay/order', {
         method: 'POST',
-        body: {...order, total: calculateTotal()}
+        body: {...order, total: calculateTotal()},
       })
     if (data.value.paymentUrl) {
         navigateTo(data.value.paymentUrl, {external: true})
@@ -38,27 +49,41 @@ const sendOrder = async () => {
 <div class="dg">
   <section>
 <h3>Ajándék belépő</h3>
-<NuxtImg src="/images/holi.jpg" alt="Ajándék belépőjegy" sizes="sm:40vw md:40vw lg:40vw" />
+<NuxtImg src="/images/ajandekutalvany-belepo.jpg" alt="Ajándék belépőjegy" sizes="sm:40vw md:40vw lg:40vw" />
 <strong>3.400 Ft/fő</strong>
-<input type="number" v-model="order.ticket" /> db
+<input v-model="order.ticket" type="number" min="0"> db
 </section>
 
 <section>
 <h3>Ebéd menü</h3>
-<NuxtImg src="/images/holi.jpg" alt="Ebéd menü" sizes="sm:40vw md:40vw lg:40vw" />
+<NuxtImg src="/images/ajandekutalvany-etkezes.jpg" alt="Ebéd menü" sizes="sm:40vw md:40vw lg:40vw" />
 <strong>3.890 Ft/fő</strong>
-<input type="number" v-model="order.lunch" /> db
+<input v-model="order.lunch" type="number" min="0"> db
 </section>
 </div>
 
   <label>Neved</label>
-  <input type="text" v-model="order.name" />
+  <input v-model="order.name" type="text">
   <label>Email címed</label>
-  <input type="email" v-model="order.email" />
+  <input v-model="order.email" type="email">
+  <label>Teljes postacím ahová kiküldjük</label>
+  <input v-model="order.address" type="text" placeholder="irsz város utca házszám">
 
+<label>Számlát kérek: <input v-model="invoiceNeeded" type="checkbox"></label>
+<div v-if="invoiceNeeded">
+  <label>Számlázási név</label>
+  <input v-model="order.invoice.name" type="text">
+  <label>Adószám</label>
+  <input v-model="order.invoice.taxNumber" type="text">
+  <label>Irányítószám</label>
+  <input v-model="order.invoice.zip" type="text">
+  <label>Település</label>
+  <input v-model="order.invoice.city" type="text">
+  <label>Utca, házszám</label>  
+  <input v-model="order.invoice.address" type="text">
+</div>
 <h3>Összesen: {{ total }}</h3>
 <button><Icon name="material-symbols:featured-seasonal-and-gifts" /> Rendelés elküldése</button>
-<small>TODO számlát kérek</small>
 </form>
 
 <p>Az ajándék belépőjegyek ára az aktuális Krisna-völgyi belépőjegy árával egyezik meg.</p>

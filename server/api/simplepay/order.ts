@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
             total: order.total,
             customerEmail: order.email,
             invoice: {
-                name: 'Névtelen Vendég',
+                name: order.name,
                 country: 'HU',
                 state: 'Somogy',
                 city: 'Somogyvámos',

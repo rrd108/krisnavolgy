@@ -71,7 +71,7 @@ const { allComingFestivals } = await useFestivals()
         <Icon
           name="streamline:shopping-catergories-dress-clothing-dress-skirt-women"
         />
-        Kelet divatja
+        Légy hercegnő
       </NuxtLink>
     </li>
     <li>
@@ -86,7 +86,7 @@ const { allComingFestivals } = await useFestivals()
     </li>
     <li>
       <NuxtLink :to="{ hash: '#eletmod-seta' }">
-        <Icon name="material-symbols:directions-walk" /> Életmód séta
+        <Icon name="material-symbols:directions-walk" /> Életünk Krisna-völgyben
       </NuxtLink>
     </li>
     <li>
@@ -157,12 +157,12 @@ const { allComingFestivals } = await useFestivals()
       <Icon
         name="streamline:shopping-catergories-dress-clothing-dress-skirt-women"
       />
-      Kelet divatja
+      Légy hercegnő - szári viselet kipróbálása
     </h3>
 
     <NuxtImg
       src="/images/kelet-divatja.jpg"
-      alt="Kelet divatja"
+      alt="Légy hercegnő"
       sizes="sm:90vw md:90vw lg:90vw"
    />
 
@@ -246,18 +246,18 @@ const { allComingFestivals } = await useFestivals()
   <section>
     <Divider />
     <h3 id="eletmod-seta">
-      <Icon name="material-symbols:directions-walk" /> Életmód séta
+      <Icon name="material-symbols:directions-walk" /> Életünk Krisna-völgyben - séta a lakóövezetben
     </h3>
 
     <NuxtImg
       src="/images/eletmod-seta.jpg"
-      alt="Életmód séta"
+      alt="Életünk Krisna-völgyben"
       sizes="sm:90vw md:90vw lg:90vw"
    />
 
     <p>
       Érdekel a Krisna-völgyi élet? Szeretnél bepillantani egy ökofalu
-      hétköznapjaiba? Az „Életmód séta” keretében csoportod vezetőnk kíséretében
+      hétköznapjaiba? Az "Életünk Krisna-völgyben" keretében csoportod vezetőnk kíséretében
       besétálhat Krisna-völgy lakóövezetébe, amely más esetben vendégek számára
       nem látogatható. Így lehetőséget biztosítunk számodra, hogy a völgy
       mindennapjait, az itt élők életterét, szokásait akár háztartási
@@ -422,7 +422,7 @@ const { allComingFestivals } = await useFestivals()
 
   <section>
     <Divider />
-    <h3>Különleges csoportok</h3>
+    <h3>Különleges kínálatok - egyedi igények szerint</h3>
     <p>
       Egyéni kívánságod szerinti programokért keress minket: Papp Krisztina
       (Kundalata Dévi Dászi) +36 (30) 43 63 900; e-mail:

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const {r,s} = useRoute().query
-const data = await $fetch('/api/simplepay/result', {method: 'POST', body: {r,s}})
+const data = await $fetch('/api/payment/result', {method: 'POST', body: {r,s}})
 </script>
 
 <template>

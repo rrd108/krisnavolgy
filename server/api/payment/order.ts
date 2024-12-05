@@ -3,7 +3,7 @@ import { startPayment } from 'simplepay-js-sdk'
 export default defineEventHandler(async (event) => {
     try {
         const response = await startPayment({
-            orderRef: 'sb-23',
+            orderRef: 'sb-25',
             total: 1212,
             customerEmail: 'rrd@webmania.cc',
             invoice: {

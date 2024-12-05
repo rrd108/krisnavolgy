@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const sendOrder = async () => {
-    const { data, status, error } = await useFetch('/api/simplepay/order')
+    const { data, status, error } = await useFetch('/api/payment/order')
     console.log(data.value)
     if (data.value.paymentUrl) {
         navigateTo(data.value.paymentUrl, {external: true})

@@ -472,6 +472,20 @@ const { allComingFestivals } = await useFestivals()
     <strong>pár szál virágot vagy néhány szem gyümölcsöt</strong>. Ez az ajándék
     még értékesebb, ha esetleg a saját kertetekből származik.
   </InfoBlock>
+
+      <Divider />
+
+    <h3>Érdekelhet még</h3>
+    <ul>
+      <li>
+        <NuxtLink to="/utvonal">Hogyan juttok el hozzánk?</NuxtLink>
+      </li>
+            <li>
+        <NuxtLink to="https://vendeghaz.krisnavolgy.hu">Vendégház</NuxtLink>
+      </li>
+
+    </ul>
+
 </template>
 
 <style scoped>

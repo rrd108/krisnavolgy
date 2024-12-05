@@ -41,6 +41,16 @@
   </ul>
 
   <p>Kóstolj bele Te is Krisna-völgyi terményeink ízvarázsába!</p>
+
+        <Divider />
+
+    <h3>Érdekelhet még</h3>
+    <ul>
+      <li>
+        <NuxtLink to="/rolunk">Rólunk</NuxtLink>
+      </li>
+    </ul>
+
 </template>
 
 <style scoped></style>

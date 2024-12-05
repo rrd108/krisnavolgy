@@ -41,6 +41,16 @@
     Fonyódon vagy Balatonbogláron át Lengyeltótin keresztül Kaposvár irányában,
     Somogyváron kell letérni Somogyvámosra. (Fonyódtól 30 km)
   </p>
+
+        <Divider />
+
+    <h3>Érdekelhet még</h3>
+    <ul>
+      <li>
+        <NuxtLink to="/belepojegy">Egyéni jegyek</NuxtLink>
+      </li>
+    </ul>
+
 </template>
 
 <style scoped></style>

@@ -137,6 +137,15 @@
           Csoportoknak szóló ajánlataink
         </NuxtLink>
       </li>
+      <li>
+        <NuxtLink to="/programok">Programjaink</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="https://elvonulas.krisnavolgy.hu">Elvonulások</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="https://vendeghaz.krisnavolgy.hu">Vendégház</NuxtLink>
+      </li>
     </ul>
   </section>
 </template>

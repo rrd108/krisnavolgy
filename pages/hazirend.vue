@@ -61,6 +61,16 @@
       Köszönjük a megértéseteket és reméljük, hogy kellemes pillanatokat
       szereztek majd a Krisna-völgyi látogatással!
     </p>
+
+          <Divider />
+
+    <h3>Érdekelhet még</h3>
+    <ul>
+      <li>
+        <NuxtLink to="/programok">Programjaink</NuxtLink>
+      </li>
+    </ul>
+
   </section>
 </template>
 

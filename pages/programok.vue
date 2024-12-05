@@ -17,6 +17,22 @@ const { touristComingFestivals } = await useFestivals()
     </h3>
     <p>{{ festival.description }}</p>
   </div>
+
+        <Divider />
+
+    <h3>Érdekelhet még</h3>
+    <ul>
+      <li>
+        <NuxtLink to="/belepojegy">Egyéni jegyek</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="https://elvonulas.krisnavolgy.hu">Elvonulások</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="https://vendeghaz.krisnavolgy.hu">Vendégház</NuxtLink>
+      </li>
+    </ul>
+
 </template>
 
 <style scoped></style>

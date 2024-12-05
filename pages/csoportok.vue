@@ -123,6 +123,13 @@ const { allComingFestivals } = await useFestivals()
     <h3 id="zene-varazsa">
       <Icon name="material-symbols:music-note" /> Zene varázsa
     </h3>
+
+    <NuxtImg
+      src="/images/zene-varazsa.jpg"
+      alt="Zene varázsa"
+      sizes="sm:90vw md:90vw lg:90vw"
+   />
+
     <p>
       Különleges hangszerek, felejthetetlen élmény... Ismerd meg és próbáld ki
       az
@@ -152,6 +159,13 @@ const { allComingFestivals } = await useFestivals()
       />
       Kelet divatja
     </h3>
+
+    <NuxtImg
+      src="/images/kelet-divatja.jpg"
+      alt="Kelet divatja"
+      sizes="sm:90vw md:90vw lg:90vw"
+   />
+
     <p>
       Indiai ruhák mesés világa... Melyik nő ne vágyna rá, hogy legalább egy
       napra, vagy pár órára hercegnő lehessen? Nálunk ez az álmod is valóra
@@ -173,6 +187,13 @@ const { allComingFestivals } = await useFestivals()
     <h3 id="lelek-hangja">
       <Icon name="material-symbols:notifications-active" /> Lélek hangja
     </h3>
+
+    <NuxtImg
+      src="/images/lelek-hangja.jpg"
+      alt="Lélek hangja"
+      sizes="sm:90vw md:90vw lg:90vw"
+   />
+
     <p>
       Feltöltődés a béke szigetén… Fedezd fel a Haré Krisna mantra békéjét!
       Tapasztald meg a mantrameditáció pozitív hatását! Túlhajszolt, stresszes,
@@ -198,7 +219,14 @@ const { allComingFestivals } = await useFestivals()
     <h3 id="egzotikus-fuszerkalauz">
       <Icon name="tdesign:chili" /> Egzotikus fűszerkalauz
     </h3>
-    <p>
+
+    <NuxtImg
+      src="/images/fuszerkalauz.jpg"
+      alt="Egzotikus fűszerkalauz"
+      sizes="sm:90vw md:90vw lg:90vw"
+   />
+ 
+   <p>
       Keleti ízek kavalkádja... Ha valaki már járt Indiában, vagy indiai
       étteremben, megtapasztalhatta a levegő fűszerektől elnehezült bódulatát.
       Méltán tartják India konyhaművészetét a világ legszínesebb és
@@ -220,6 +248,13 @@ const { allComingFestivals } = await useFestivals()
     <h3 id="eletmod-seta">
       <Icon name="material-symbols:directions-walk" /> Életmód séta
     </h3>
+
+    <NuxtImg
+      src="/images/eletmod-seta.jpg"
+      alt="Életmód séta"
+      sizes="sm:90vw md:90vw lg:90vw"
+   />
+
     <p>
       Érdekel a Krisna-völgyi élet? Szeretnél bepillantani egy ökofalu
       hétköznapjaiba? Az „Életmód séta” keretében csoportod vezetőnk kíséretében
@@ -244,6 +279,13 @@ const { allComingFestivals } = await useFestivals()
       <Icon name="material-symbols:barefoot-outline" /> Szerencsehozó
       zarándokkörút
     </h3>
+
+    <NuxtImg
+      src="/images/szerencsehozo-zarandoklat.jpg"
+      alt="Szerencsehozó zarándokkörút"
+      sizes="sm:90vw md:90vw lg:90vw"
+   />
+
     <p>
       Gondoltál már rá, milyen jó lenne elmenni a messzi Indiába, esetleg a
       Himalájába egy igazi zarándoklatra? Milyen csodálatos lenne látni a szent
@@ -272,6 +314,13 @@ const { allComingFestivals } = await useFestivals()
   <section>
     <Divider />
     <h3 id="korseta"><Icon name="material-symbols:tour" /> Körséta</h3>
+
+    <NuxtImg
+      src="/images/korseta.jpg"
+      alt="Körséta"
+      sizes="sm:90vw md:90vw lg:90vw"
+   />
+
     <p>
       Leginkább az önellátás iránti érdeklődésed hozott el hozzánk? Nagyszerű!
       Neked találtuk ki ezt a szabadtéri körsétát, amely során útba ejtjük a
@@ -297,6 +346,13 @@ const { allComingFestivals } = await useFestivals()
     <h3 id="vallabhi-korseta">
       <Icon name="ic:baseline-tiktok" /> Körséta Vallabhival
     </h3>
+
+    <NuxtImg
+      src="/images/korseta-vallabhival.jpg"
+      alt="Körséta Vallabhival"
+      sizes="sm:90vw md:90vw lg:90vw"
+   />
+
     <p>
       Lehet, hogy éppen Vallabhitól hallottál először Krisna-völgyről? Ha
       szeretnél vele élőben is találkozni, választhatod őt körbevezetődnek.
@@ -321,6 +377,13 @@ const { allComingFestivals } = await useFestivals()
       <Icon name="material-symbols:quiz" /> Ismerd meg Krisna-völgyet -
       kvízjáték Vallabhival (min 20 fő)
     </h3>
+
+    <NuxtImg
+      src="/images/kviz-jatek.jpg"
+      alt="Kvízjáték Vallabhival"
+      sizes="sm:90vw md:90vw lg:90vw"
+   />
+
     <p>
       Ezt a vidám programot kifejezetten diákok részére állítottuk össze.
       Garantáltan szórakoztató és nagyon tanulságos is egyben. A csoport tagjai
@@ -338,6 +401,13 @@ const { allComingFestivals } = await useFestivals()
   <section>
     <Divider />
     <h3 id="okros-malom"><Icon name="ph:cow" /> Ökrös malom</h3>
+
+    <NuxtImg
+      src="/images/okros-malom.jpg"
+      alt="Ökrös malom"
+      sizes="sm:90vw md:90vw lg:90vw"
+   />
+
     <p>
       A program egy élő bemutató az ökrös szárazmalomban, mely alatt
       megismerkedhetsz a malom történetével, és láthatod azt működés közben is.

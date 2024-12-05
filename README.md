@@ -1,5 +1,5 @@
 # Deploy
 
 ```bash
-yar deploy
+yarn deploy sravanam 34.159.248.160
 ```

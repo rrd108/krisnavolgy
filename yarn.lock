@@ -8067,10 +8067,10 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-simplepay-js-sdk@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/simplepay-js-sdk/-/simplepay-js-sdk-0.1.0.tgz#41bc8c8f9cb98a056567653812b8d3ea735bbb29"
-  integrity sha512-YpLESpaa/zAP+sAIjmthvtaiJZ4E1UJxD5gI+sdgylqSd28WRHc8eYWjFsJXoIMVhYWZ7zlD1byRca16Wg4S7A==
+simplepay-js-sdk@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/simplepay-js-sdk/-/simplepay-js-sdk-0.6.0.tgz#58c843b48fe68246e7f730ffbe4343a1c3e0009f"
+  integrity sha512-qcPGuAmSVCYCOMiu0tBp1GPXO/eTP1kktSjEJqT5LuGBUxJwtm66ge8DlBSLfhySwBjesK1dXWhv/4RwNDVQrw==
 
 sirv@^2.0.4:
   version "2.0.4"

@@ -27,7 +27,7 @@
   })
 
   const sendOrder = async () => {
-    if (!order.name || !order.email || !(order.ticket + order.lunch)) {
+    if (!order.name || !order.email || !order.address || !(order.ticket + order.lunch)) {
       alert('Nevet, emailcímet és mennyiséget meg kell adnod!')
       return
     }
@@ -97,7 +97,12 @@
     <label>Email címed</label>
     <input v-model="order.email" type="email" />
     <label>Teljes postacím ahová kiküldjük</label>
-    <input v-model="order.address" type="text" placeholder="irsz város utca házszám" />
+    <input
+      v-model="order.address"
+      type="text"
+      placeholder="irsz város utca házszám"
+      minlength="10"
+    />
 
     <label>
       Számlát kérek

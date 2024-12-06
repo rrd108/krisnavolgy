@@ -28,3 +28,5 @@ kv.zip
 data/krisnavolgy.sqlite3
 
 data/pagesContent.json
+
+ecosystem.config.js

@@ -1,4 +1,4 @@
-import { checkSignature, generateSignature } from "simplepay-js-sdk"
+import { checkSignature, generateSignature } from 'simplepay-js-sdk'
 
 export default defineEventHandler(async (event) => {
     let ipn = await readRawBody(event) || ''

@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt"
+import bcrypt from 'bcrypt'
 
 export default defineEventHandler(async (event) => {
     const db = useDatabase()
@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     if (!data.password) {
         throw createError({
             statusCode: 400,
-            message: "New password is required",
+            message: 'New password is required',
         })
     }
 
@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
     if (!rows) {
         throw createError({
             statusCode: 401,
-            message: "Unauthorized",
+            message: 'Unauthorized',
         })
     }
 

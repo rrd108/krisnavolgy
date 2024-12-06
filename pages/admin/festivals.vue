@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: "admin",
+  layout: 'admin',
 })
 
 const userStore = useUserStore()
@@ -19,9 +19,9 @@ interface Festival {
 
 const emptyFestival = {
   id: 0,
-  title: "",
-  start_date: "",
-  end_date: "",
+  title: '',
+  start_date: '',
+  end_date: '',
 }
 const selectedFestival = ref<Festival>({} as Festival)
 
@@ -34,8 +34,8 @@ const handleSubmit = () => {
 }
 
 const createFestival = () => {
-  $fetch("/api/festivals", {
-    method: "POST",
+  $fetch('/api/festivals', {
+    method: 'POST',
     body: selectedFestival.value,
     headers: {
       Token: userStore.token,
@@ -50,8 +50,8 @@ const createFestival = () => {
 }
 
 const updateFestival = () => {
-  $fetch("/api/festivals", {
-    method: "PATCH",
+  $fetch('/api/festivals', {
+    method: 'PATCH',
     body: selectedFestival.value,
     headers: {
       Token: userStore.token,

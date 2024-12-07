@@ -42,8 +42,10 @@ export default defineNuxtConfig({
     },
   },
   nuxtTokenAuthentication: {
-    noAuthRoutes: ['GET:/api/festivals',
+    noAuthRoutes: [
       'POST:/api/auth/getToken',
+      'GET:/api/festival',
+      'GET:/api/festivals',
       'POST:/api/subscribe',
       'POST:/api/simplepay/order',
       'POST:/api/simplepay/result',

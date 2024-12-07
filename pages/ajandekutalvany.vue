@@ -93,9 +93,9 @@
     </div>
 
     <label>Neved</label>
-    <input v-model="order.name" type="text" />
+    <input id="name" v-model="order.name" type="text" autocomplete="name" name="name" />
     <label>Email címed</label>
-    <input v-model="order.email" type="email" />
+    <input id="email" v-model="order.email" type="email" autocomplete="email" name="email" />
     <label>Teljes postacím ahová kiküldjük</label>
     <input
       v-model="order.address"
@@ -110,15 +110,45 @@
     </label>
     <div v-if="invoiceNeeded">
       <label>Számlázási név</label>
-      <input v-model="order.invoice.name" type="text" />
+      <input
+        id="billing name"
+        v-model="order.invoice.name"
+        type="text"
+        autocomplete="billing name"
+        name="billing name"
+      />
       <label>Adószám</label>
-      <input v-model="order.invoice.taxNumber" type="text" />
+      <input
+        id="billing tax_number"
+        v-model="order.invoice.taxNumber"
+        type="text"
+        autocomplete="billing tax_number"
+        name="billing tax_number"
+      />
       <label>Irányítószám</label>
-      <input v-model="order.invoice.zip" type="text" />
+      <input
+        id="billing postal_code"
+        v-model="order.invoice.zip"
+        type="text"
+        autocomplete="billing postal_code"
+        name="billing postal_code"
+      />
       <label>Település</label>
-      <input v-model="order.invoice.city" type="text" />
+      <input
+        id="billing city"
+        v-model="order.invoice.city"
+        type="text"
+        autocomplete="billing city"
+        name="billing city"
+      />
       <label>Utca, házszám</label>
-      <input v-model="order.invoice.address" type="text" />
+      <input
+        id="billing address"
+        v-model="order.invoice.address"
+        type="text"
+        autocomplete="billing address"
+        name="billing address"
+      />
     </div>
     <h3>Összesen: {{ total }}</h3>
     <button>

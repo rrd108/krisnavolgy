@@ -32,16 +32,19 @@ body {
   background-color: var(--bh-light);
 }
 
-#app, main {
+#app,
+main {
   margin: 0 auto;
 }
 
 main {
   max-width: 70rem;
 }
+
 body,
 input,
-button {
+button,
+textarea {
   font-family: 'Open sans', sans-serif;
 }
 
@@ -49,7 +52,8 @@ button {
   font-size: 0.9rem;
 }
 
-input {
+input,
+textarea {
   font-size: 1rem;
 }
 
@@ -96,7 +100,9 @@ h6 {
   font-family: 'Playfair Display', serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 1em 0;
 }
 
@@ -180,5 +186,9 @@ td {
   .dg,
   .df {
     gap: 1em;
+  }
+
+  .w80 {
+    width: 80%;
   }
 }

@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     '@nuxtjs/algolia',
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
+    'nuxt-tiptap-editor',
   ],
   algolia: {
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,

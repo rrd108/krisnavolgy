@@ -23,9 +23,11 @@
     start_date: '',
     end_date: ''
   }
-  const selectedFestival = ref<Festival>({ title: '' } as Festival)
+  const selectedFestival = ref<Festival>({ title: '', long_description: '...' } as Festival)
 
+  const isSaving = ref(false)
   const handleSubmit = () => {
+    isSaving.value = true
     if (selectedFestival.value.id === 0) {
       createFestival()
     } else {
@@ -42,7 +44,9 @@
       }
     })
       .then((res) => {
-        console.log(res)
+        if (res.result.success) {
+          isSaving.value = false
+        }
       })
       .catch((err) => {
         console.error(err)
@@ -58,7 +62,9 @@
       }
     })
       .then((res) => {
-        console.log(res)
+        if (res.result.success) {
+          isSaving.value = false
+        }
       })
       .catch((err) => {
         console.error(err)
@@ -108,20 +114,40 @@
     @submit="handleSubmit"
   >
     <h2>{{ selectedFestival.id ? 'Szerkesztés' : 'Létrehozás' }}</h2>
-    <FormKit type="text" name="title" label="Cím" />
-    <FormKit type="date" name="start_date" label="Kezdés" />
-    <FormKit type="date" name="end_date" label="Befejezés" optional />
-    <FormKit type="textarea" name="description" label="Leírás" optional />
-    <FormKit type="textarea" name="long_description" label="Hoszzú leírás" optional />
+    <FormKit type="text" name="title" label="Cím" :classes="{ input: 'w80' }" />
+    <div class="df">
+      <FormKit type="date" name="start_date" label="Kezdés" :classes="{ outer: 'date-input' }" />
+      <FormKit
+        type="date"
+        name="end_date"
+        label="Befejezés"
+        optional
+        :classes="{ outer: 'date-input' }"
+      />
+    </div>
+    <FormKit
+      type="textarea"
+      name="description"
+      label="Leírás"
+      optional
+      :classes="{ input: 'w80' }"
+    />
+    <label>Hosszú leírás</label>
+    <TiptapEditor
+      :key="selectedFestival.id"
+      :content="selectedFestival.long_description || ''"
+      @update="selectedFestival.long_description = $event"
+    />
+
     <FormKit type="text" name="url" :label="`Slug: ${suggestedSlug}`" optional />
     <FormKit type="text" name="thumbnail" label="Kép" optional />
 
     <div class="df">
-      <FormKit type="submit">
+      <FormKit type="submit" :disabled="isSaving">
+        <Icon v-if="isSaving" name="eos-icons:loading" />
         <Icon
-          :name="
-            selectedFestival.id ? 'mdi:fountain-pen-tip' : 'material-symbols-light:add-diamond'
-          "
+          v-if="!isSaving"
+          :name="selectedFestival.id ? 'mdi:fountain-pen-tip' : 'material-symbols-light'"
         />
         {{ selectedFestival.id ? 'Módosítás' : 'Létrehozás' }}
       </FormKit>
@@ -145,7 +171,7 @@
 <style scoped>
   ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1em;
   }
   li {
@@ -157,5 +183,12 @@
   h5 {
     display: flex;
     justify-content: space-between;
+  }
+  .date-inputs {
+    display: flex;
+    gap: 1em;
+  }
+  .date-input {
+    flex: 1;
   }
 </style>

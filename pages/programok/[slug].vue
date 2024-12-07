@@ -6,18 +6,18 @@
 <template>
   <h1>
     <Icon name="material-symbols:tips-and-updates-outline-rounded" />
-    {{ festival.title }}
+    {{ festival?.title }}
   </h1>
-  <h3>{{ festival.start_date }} - {{ festival.end_date }}</h3>
+  <h3>{{ festival?.start_date }} - {{ festival?.end_date }}</h3>
 
-  <p>{{ festival.description }}</p>
+  <p>{{ festival?.description }}</p>
   <NuxtImg
-    :src="`/images/${festival.thumbnail}`"
-    :alt="festival.title"
+    :src="`/images/${festival?.thumbnail}`"
+    :alt="festival?.title"
     sizes="sm:100vw md:100vw lg:100vw"
     :modifiers="{ format: 'webp' }"
   />
-  <p>{{ festival.long_description }}</p>
+  <div v-html="festival?.long_description" />
 </template>
 
 <style scoped></style>

@@ -27,6 +27,7 @@
     "bcrypt": "^5.1.1",
     "better-sqlite3": "^11.5.0",
     "nuxt": "^3.11.2",
+    "nuxt-tiptap-editor": "2.1.4",
     "nuxt-token-authentication": "^1.0.0",
     "pinia": "^2.2.5",
     "simplepay-js-sdk": "^0.6.1",

@@ -9,8 +9,35 @@
   const editor = useEditor({
     content: content.value,
     onBlur: () => emit('update', editor.value.getHTML()),
-    extensions: [TiptapStarterKit]
+    extensions: [
+      TiptapStarterKit,
+      TiptapLink.configure({
+        openOnClick: true,
+        defaultProtocol: 'https',
+        HTMLAttributes: {
+          rel: null,
+          target: null
+        }
+      })
+    ]
   })
+
+  const setLink = () => {
+    const previousUrl = editor.value.getAttributes('link').href
+    const url = window.prompt('URL', previousUrl)
+
+    if (url === null) {
+      return
+    }
+
+    if (url == '') {
+      editor.value.chain().focus().extendMarkRange('link').unsetLink().run()
+
+      return
+    }
+
+    editor.value.chain().focus().extendMarkRange('link').setLink({ href: url }).run()
+  }
 
   watch(content, (value) => {
     if (editor.value.getHTML() !== value) {
@@ -66,6 +93,16 @@
         @click="editor.chain().focus().toggleBulletList().run()"
       >
         <Icon name="mdi:format-list-bulleted" />
+      </button>
+      <button title="Link" :class="{ 'is-active': editor.isActive('link') }" @click="setLink">
+        <Icon name="mdi:link" />
+      </button>
+      <button
+        title="Link törlés"
+        :disabled="!editor.isActive('link')"
+        @click="editor.chain().focus().unsetLink().run()"
+      >
+        <Icon name="mdi:link-off" />
       </button>
       <button
         title="Idézet"

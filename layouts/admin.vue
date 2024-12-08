@@ -2,7 +2,7 @@
   const userStore = useUserStore()
 </script>
 <template>
-  <header>
+  <div>
     <nav v-if="userStore.token">
       <ul>
         <li>
@@ -19,18 +19,20 @@
         </li>
       </ul>
     </nav>
-  </header>
-  <main>
-    <slot />
-  </main>
+    <main>
+      <slot />
+    </main>
+  </div>
 </template>
 
 <style scoped>
-  header {
-    padding: 0.5em;
-  }
-  ul {
+  div {
     display: flex;
     gap: 1em;
+  }
+  nav {
+    background-color: var(--light);
+    padding: 1em;
+    height: 100dvh;
   }
 </style>

@@ -1,17 +1,21 @@
 <script setup>
-  const props = defineProps({
-    content: {
-      type: String,
-      required: true
-    }
+  const content = defineModel({
+    type: String,
+    required: true
   })
 
-  const emit = defineEmits(['update'])
+  const emit = defineEmits(['update', 'generateContent'])
 
   const editor = useEditor({
-    content: props.content,
+    content: content.value,
     onBlur: () => emit('update', editor.value.getHTML()),
     extensions: [TiptapStarterKit]
+  })
+
+  watch(content, (value) => {
+    if (editor.value.getHTML() !== value) {
+      editor.value.commands.setContent(value, false)
+    }
   })
 
   onBeforeUnmount(() => {
@@ -20,9 +24,10 @@
 </script>
 
 <template>
-  <section>
+  <section class="rounded">
     <div v-if="editor">
       <button
+        title="Félkövér"
         :disabled="!editor.can().chain().focus().toggleBold().run()"
         :class="{ 'is-active': editor.isActive('bold') }"
         @click="editor.chain().focus().toggleBold().run()"
@@ -30,6 +35,7 @@
         <Icon name="mdi:format-bold" />
       </button>
       <button
+        title="Dőlt"
         :disabled="!editor.can().chain().focus().toggleItalic().run()"
         :class="{ 'is-active': editor.isActive('italic') }"
         @click="editor.chain().focus().toggleItalic().run()"
@@ -37,6 +43,7 @@
         <Icon name="mdi:format-italic" />
       </button>
       <button
+        title="2. fejléc"
         :class="{
           'is-active': editor.isActive('heading', { level: 2 })
         }"
@@ -45,6 +52,7 @@
         <Icon name="mdi:format-header-2" />
       </button>
       <button
+        title="3. fejléc"
         :class="{
           'is-active': editor.isActive('heading', { level: 3 })
         }"
@@ -53,16 +61,22 @@
         <Icon name="mdi:format-header-3" />
       </button>
       <button
+        title="Lista"
         :class="{ 'is-active': editor.isActive('bulletList') }"
         @click="editor.chain().focus().toggleBulletList().run()"
       >
         <Icon name="mdi:format-list-bulleted" />
       </button>
       <button
+        title="Idézet"
         :class="{ 'is-active': editor.isActive('blockquote') }"
         @click="editor.chain().focus().toggleBlockquote().run()"
       >
         <Icon name="mdi:format-quote-close" />
+      </button>
+      |
+      <button class="ai" title="Leírás" @click="emit('generateContent')">
+        <Icon name="gravity-ui:magic-wand" />
       </button>
     </div>
     <TiptapEditorContent :editor="editor" />
@@ -73,9 +87,16 @@
   section {
     background-color: var(--light);
   }
+  div {
+    border-bottom: 1px solid var(--divider-color);
+  }
   button {
     background-color: var(--link-color);
-    padding: 0.25em;
+    padding: 0.5em;
+    margin: 0.25em;
+  }
+  .ai {
+    background-color: var(--secondary-link-color);
   }
   .is-active {
     background-color: var(--lighter-dark);

@@ -8,6 +8,7 @@
   --divider-color: #d0cfbc;
   --error: #8b4343;
   --link-color: #2d6461;
+  --secondary-link-color: #5a78a0;
 
   --header-dynamic-height: 7dvh;
   --header-height: 7vh;
@@ -52,13 +53,19 @@ button {
   font-size: 0.9rem;
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 input,
 textarea {
   font-size: 1rem;
 }
 
 input,
-button {
+button,
+textarea {
   padding: 0.5em;
   border: none;
   border-radius: 0.5em;
@@ -185,6 +192,15 @@ td {
   background-color: var(--error);
 }
 
+.formkit-help {
+  font-size: 0.8rem;
+  color: var(--lighter-dark);
+}
+
+.formkit-wrapper {
+  margin-top: 1em;
+}
+
 @media screen and (min-width: 41rem) {
 
   .dg,
@@ -195,4 +211,9 @@ td {
   .w80 {
     width: 80%;
   }
+
+  .wideInput {
+    width: 24em;
+  }
+
 }

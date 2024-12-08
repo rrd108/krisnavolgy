@@ -76,6 +76,49 @@
   const suggestedSlug = computed(() => {
     return slugify(selectedFestival.value.title)
   })
+
+  const dialog = useTemplateRef('dialog')
+  const generateContent = async () => {
+    dialog.value?.showModal()
+    const generated = await $fetch('/api/ai/festivalLongDescription', {
+      query: { id: selectedFestival.value.id },
+      headers: {
+        Token: userStore.token
+      }
+    })
+    selectedFestival.value.long_description = generated
+    dialog.value?.close()
+  }
+
+  const generateDescription = async () => {
+    dialog.value?.showModal()
+    const generated = await $fetch('/api/ai/festivalDescription', {
+      query: { id: selectedFestival.value.id },
+      headers: {
+        Token: userStore.token
+      }
+    })
+    selectedFestival.value.description = generated
+    dialog.value?.close()
+  }
+
+  const imageIdeas = ref<string[]>([])
+  const generateImageIdeas = async () => {
+    dialog.value?.showModal()
+    const generated = await $fetch('/api/ai/festivalImageIdeas', {
+      query: { id: selectedFestival.value.id },
+      headers: {
+        Token: userStore.token
+      }
+    })
+    imageIdeas.value = generated
+    dialog.value?.close()
+  }
+
+  const changeFestival = (festival: Festival) => {
+    selectedFestival.value = festival
+    imageIdeas.value = []
+  }
 </script>
 
 <template>
@@ -91,11 +134,12 @@
     />
   </h1>
 
-  <ul>
+  <ul class="dg">
     <li
       v-for="festival in allComingFestivals"
       :key="festival.id"
-      @click="selectedFestival = festival"
+      @click="changeFestival(festival)"
+      :class="{ closed: !festival.url }"
     >
       <h5>
         {{ festival.title }}
@@ -109,14 +153,21 @@
   <FormKit
     v-show="selectedFestival.id >= 0"
     v-model="selectedFestival"
+    :disabled="isSaving"
     type="form"
     :actions="false"
     @submit="handleSubmit"
   >
     <h2>{{ selectedFestival.id ? 'Szerkesztés' : 'Létrehozás' }}</h2>
-    <FormKit type="text" name="title" label="Cím" :classes="{ input: 'w80' }" />
+    <FormKit type="text" required name="title" label="Fesztivál neve" input-class="w80" />
     <div class="df">
-      <FormKit type="date" name="start_date" label="Kezdés" :classes="{ outer: 'date-input' }" />
+      <FormKit
+        type="date"
+        required
+        name="start_date"
+        label="Kezdés"
+        :classes="{ outer: 'date-input' }"
+      />
       <FormKit
         type="date"
         name="end_date"
@@ -125,22 +176,57 @@
         :classes="{ outer: 'date-input' }"
       />
     </div>
-    <FormKit
-      type="textarea"
-      name="description"
-      label="Leírás"
-      optional
-      :classes="{ input: 'w80' }"
-    />
-    <label>Hosszú leírás</label>
+
+    <FormKit type="textarea" name="description" label="Rövid leírás" optional input-class="w80">
+      <template #label>
+        Rövid leírás
+        <button
+          type="button"
+          class="ai"
+          title="Rövid leírás"
+          :disabled="Number(selectedFestival.long_description?.length || 0) < 120"
+          @click="generateDescription"
+        >
+          <Icon name="gravity-ui:magic-wand" />
+        </button>
+      </template>
+    </FormKit>
+
+    <label>Leírás</label>
     <TiptapEditor
       :key="selectedFestival.id"
-      :content="selectedFestival.long_description || ''"
+      v-model="selectedFestival.long_description"
       @update="selectedFestival.long_description = $event"
+      @generate-content="generateContent"
     />
 
-    <FormKit type="text" name="url" :label="`Slug: ${suggestedSlug}`" optional />
-    <FormKit type="text" name="thumbnail" label="Kép" optional />
+    <FormKit
+      type="text"
+      name="url"
+      :label="`Slug: ${suggestedSlug}`"
+      optional
+      help="Az egyházi fesztiválok esetén hagyd üresen"
+    />
+    <FormKit type="text" name="thumbnail" label="Kép ötletek" optional>
+      <template #label>
+        Kép
+        <button
+          type="button"
+          class="ai"
+          title="Kép ötletek"
+          :disabled="Number(selectedFestival.long_description?.length || 0) < 120"
+          @click="generateImageIdeas"
+        >
+          <Icon name="gravity-ui:magic-wand" />
+        </button>
+      </template>
+    </FormKit>
+    <div v-if="imageIdeas.length">
+      <h3>Kép ötletek</h3>
+      <ul class="imageIdeas">
+        <li v-for="idea in imageIdeas" :key="idea">{{ idea }}</li>
+      </ul>
+    </div>
 
     <div class="df">
       <FormKit type="submit" :disabled="isSaving">
@@ -166,12 +252,15 @@
       </FormKit>
     </div>
   </FormKit>
+
+  <dialog ref="dialog">
+    <Icon name="eos-icons:loading" />
+  </dialog>
 </template>
 
 <style scoped>
   ul {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1em;
   }
   li {
@@ -179,6 +268,14 @@
     color: var(--light);
     padding: 0.5em;
     border-radius: 0.25em;
+  }
+  li.closed {
+    background-color: var(--secondary-link-color);
+  }
+  ul.imageIdeas li {
+    background: none;
+    color: var(--dark);
+    margin-left: 1em;
   }
   h5 {
     display: flex;
@@ -190,5 +287,20 @@
   }
   .date-input {
     flex: 1;
+  }
+  dialog {
+    border: none;
+    color: var(--light);
+    background-color: var(--dark);
+    font-size: 5em;
+    margin: 5em auto;
+  }
+  dialog::backdrop {
+    background-color: var(--dark);
+    opacity: 0.75;
+  }
+  .ai {
+    background-color: var(--secondary-link-color);
+    padding: 0.5em;
   }
 </style>

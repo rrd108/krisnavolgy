@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { isMobile } = useDevice()
-const { touristComingFestivals } = await useFestivals()
+  const { isMobile } = useDevice()
+  const { touristComingFestivals } = await useFestivals()
 </script>
 
 <template>
@@ -16,10 +16,7 @@ const { touristComingFestivals } = await useFestivals()
       :pause-autoplay-on-hover="true"
       :wrap-around="true"
     >
-      <Slide
-        v-for="festival in touristComingFestivals"
-        :key="festival.title"
-      >
+      <Slide v-for="festival in touristComingFestivals" :key="festival.title">
         <FestivalBox :festival />
       </Slide>
 
@@ -31,7 +28,8 @@ const { touristComingFestivals } = await useFestivals()
 </template>
 
 <style scoped>
-section {
-  text-align: center;
-}
+  section {
+    text-align: center;
+    margin-bottom: 1em;
+  }
 </style>

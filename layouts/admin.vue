@@ -17,6 +17,18 @@
             Ajándékutalványok
           </NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/admin/upload">
+            <Icon name="material-symbols:upload" />
+            Feltöltés
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/admin/gallery">
+            <Icon name="jam:pictures" />
+            Galéria
+          </NuxtLink>
+        </li>
       </ul>
     </nav>
     <main>
@@ -33,6 +45,12 @@
   nav {
     background-color: var(--light);
     padding: 1em;
-    height: 100dvh;
+    min-height: 100dvh;
+  }
+  li {
+    margin: 1em 0;
+  }
+  main {
+    flex: 1;
   }
 </style>

@@ -78,6 +78,8 @@
   })
 
   const dialog = useTemplateRef('dialog')
+  const galleryDialog = useTemplateRef('galleryDialog')
+
   const generateContent = async () => {
     dialog.value?.showModal()
     const generated = await $fetch('/api/ai/festivalLongDescription', {
@@ -119,6 +121,15 @@
     selectedFestival.value = festival
     imageIdeas.value = []
   }
+
+  const openGallery = async () => {
+    galleryDialog.value?.showModal()
+  }
+
+  const handleImageSelect = (filename: string) => {
+    selectedFestival.value.thumbnail = filename
+    galleryDialog.value?.close()
+  }
 </script>
 
 <template>
@@ -138,8 +149,8 @@
     <li
       v-for="festival in allComingFestivals"
       :key="festival.id"
-      @click="changeFestival(festival)"
       :class="{ closed: !festival.url }"
+      @click="changeFestival(festival)"
     >
       <h5>
         {{ festival.title }}
@@ -210,9 +221,13 @@
     <FormKit type="text" name="thumbnail" label="Kép ötletek" optional>
       <template #label>
         Kép
+        <button type="button" title="Tallózás" class="thin" @click="openGallery">
+          <Icon name="jam:pictures" />
+        </button>
+        |
         <button
           type="button"
-          class="ai"
+          class="ai thin"
           title="Kép ötletek"
           :disabled="Number(selectedFestival.long_description?.length || 0) < 120"
           @click="generateImageIdeas"
@@ -221,6 +236,12 @@
         </button>
       </template>
     </FormKit>
+    <NuxtImg
+      v-if="selectedFestival.thumbnail"
+      :src="`/images/${selectedFestival.thumbnail}`"
+      width="300"
+    />
+
     <div v-if="imageIdeas.length">
       <h3>Kép ötletek</h3>
       <ul class="imageIdeas">
@@ -253,8 +274,12 @@
     </div>
   </FormKit>
 
-  <dialog ref="dialog">
+  <dialog ref="dialog" id="loading">
     <Icon name="eos-icons:loading" />
+  </dialog>
+
+  <dialog ref="galleryDialog" id="gallery">
+    <ImageGallery @select="handleImageSelect" />
   </dialog>
 </template>
 
@@ -292,8 +317,15 @@
     border: none;
     color: var(--light);
     background-color: var(--dark);
+  }
+  #loading {
     font-size: 5em;
     margin: 5em auto;
+  }
+  #gallery {
+    margin: 2em auto;
+    width: 80%;
+    height: 80%;
   }
   dialog::backdrop {
     background-color: var(--dark);
@@ -301,6 +333,8 @@
   }
   .ai {
     background-color: var(--secondary-link-color);
+  }
+  .thin {
     padding: 0.5em;
   }
 </style>

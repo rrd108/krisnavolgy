@@ -14,7 +14,7 @@ export const slugify = (text: string) => {
     return text
         .toLowerCase()
         .replace(/[öüóőúéáűí]/g, (char) => charMap[char as keyof typeof charMap])
-        .replace(/[^a-z0-9-]/g, '-')
+        .replace(/[^a-z0-9-.]/g, '-')
         .replace(/-+/g, '-')
         .replace(/^-|-$/g, '')
 }

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div>
+  <div class="rounded">
     <Icon name="material-symbols:lightbulb" />
     <p>
       <slot />
@@ -10,16 +10,15 @@
 </template>
 
 <style scoped>
-div {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  background-color: var(--divider-color);
-  padding: 0.5em;
-  border-radius: 0.5em;
-}
-span {
-  font-size: 4rem;
-  color: var(--lighter-dark);
-}
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--divider-color);
+    padding: 0.5em;
+  }
+  span {
+    font-size: 4rem;
+    color: var(--lighter-dark);
+  }
 </style>

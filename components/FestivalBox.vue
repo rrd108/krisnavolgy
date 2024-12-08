@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <section>
+  <section class="rounded">
     <h6>
       <span>
         {{ festival.start_date }}
@@ -28,6 +28,7 @@
         :alt="festival.title"
         sizes="sm:100vw md:100vw lg:100vw"
         :modifiers="{ format: 'webp' }"
+        class="rounded"
       />
     </div>
   </section>
@@ -38,7 +39,6 @@
     margin: 1em;
     background-color: var(--light);
     padding: 1em;
-    border-radius: 0.5em;
     height: 10rem;
   }
   h6 {
@@ -58,7 +58,6 @@
   img {
     width: 100%;
     object-fit: cover;
-    border-radius: 0.5em;
   }
   a {
     color: var(--bg-color);

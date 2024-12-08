@@ -177,6 +177,10 @@ td {
   cursor: pointer;
 }
 
+.rounded {
+  border-radius: 0.5em;
+}
+
 .delete {
   background-color: var(--error);
 }

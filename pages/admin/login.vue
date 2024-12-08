@@ -17,15 +17,14 @@
 </script>
 
 <template>
-  <h1>
-    <Icon name="eos-icons:admin-outlined" />
-    Krisna-völgy Admin
-  </h1>
-
-  <h3 v-if="error" class="rounded">{{ error }}</h3>
-
   <section>
-    <FormKit type="form" submit-label="Uccu neki!" @submit="login" class="rounded">
+    <FormKit type="form" submit-label="Uccu neki!" form-class="rounded" @submit="login">
+      <h1>
+        <Icon name="eos-icons:admin-outlined" />
+        Krisna-völgy Admin
+      </h1>
+
+      <h3 v-if="error" class="rounded">{{ error }}</h3>
       <FormKit
         type="email"
         name="email"

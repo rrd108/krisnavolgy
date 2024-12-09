@@ -2,7 +2,7 @@ export default defineEventHandler(async (event) => {
     const db = useDatabase()
     const data = await readBody(event)
 
-    const allowedFields = ['posted']
+    const allowedFields = ['posted', 'used']
     const updates: string[] = []
 
 
@@ -10,6 +10,9 @@ export default defineEventHandler(async (event) => {
         if (field in data && data[field] != undefined && data[field] != null) {
             if (field === 'posted') {
                 updates.push(`posted = '${getSqlDate()}'`)
+            }
+            if (field === 'used') {
+                updates.push(`used = '${getSqlDate()}'`)
             }
             //updates.push(`${field} = '${data[field]}'`)
         }
@@ -21,6 +24,8 @@ export default defineEventHandler(async (event) => {
             message: 'No valid fields to update',
         })
     }
+
+    updates.push(`modified_at = '${getSqlDate()}'`)
 
     const result = await db.sql`
         UPDATE orders 

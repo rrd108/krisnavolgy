@@ -66,7 +66,7 @@
     <tbody>
       <tr v-for="order in data" :key="order.id">
         <td>{{ order.created_at }}</td>
-        <td>{{ order.id }}</td>
+        <td>{{ order.id.slice(0, 6) }} {{ order.id.slice(6) }}</td>
         <td>{{ order.name }}</td>
         <td>{{ order.email }}</td>
         <td>{{ order.address }}</td>

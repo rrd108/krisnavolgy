@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
         UPDATE orders 
         SET status = ${response.event},
             transaction_id = ${String(response.transactionId)},
-            modified_at = ${new Date().toISOString().slice(0, 19).replace('T', ' ')}
+            modified_at = ${getSqlDate()}
         WHERE id = ${response.orderRef}`
 
     return response

@@ -9,6 +9,20 @@
       Token: userStore.token
     }
   })
+
+  const setPosted = async (id: number) => {
+    const result = await useFetch(`/api/orders`, {
+      method: 'PATCH',
+      headers: {
+        Token: userStore.token
+      },
+      body: { id, posted: true }
+    })
+
+    if (result.data.value.success) {
+      data.value = data.value.map((order) => (order.id === id ? { ...order, posted: true } : order))
+    }
+  }
 </script>
 
 <template>
@@ -30,6 +44,7 @@
         <th>Összeg</th>
         <th>Tranzakció</th>
         <th>Státusz</th>
+        <th>Postázva</th>
         <th>Módosítva</th>
       </tr>
     </thead>
@@ -58,6 +73,15 @@
         </td>
         <td>{{ order.transaction_id }}</td>
         <td>{{ order.status }}</td>
+        <td class="center">
+          {{ order.posted }}
+          <FormKit
+            v-if="!order.posted"
+            type="checkbox"
+            :model-value="order.posted"
+            @click="setPosted(order.id)"
+          />
+        </td>
         <td>{{ order.modified_at }}</td>
       </tr>
     </tbody>

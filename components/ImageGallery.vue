@@ -19,7 +19,7 @@
   </h1>
   <ul v-if="images.length > 0">
     <li v-for="image in images" :key="image.name" @click="emit('select', image.name)">
-      <img :src="image.path" />
+      <NuxtImg :src="image.path" sizes="sm:100px md:200px lg:200px" loading="lazy" />
       <small>{{ image.name }}</small>
     </li>
   </ul>

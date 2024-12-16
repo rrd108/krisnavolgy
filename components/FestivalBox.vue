@@ -15,8 +15,6 @@
     </h6>
     <NuxtLink :to="`/programok/${festival.url}`">
       <div>
-        <h3>{{ festival.title }}</h3>
-
         <NuxtImg
           :src="`/images/${festival.thumbnail}`"
           :alt="festival.title"
@@ -25,6 +23,7 @@
           class="rounded"
         />
 
+        <h3>{{ festival.title }}</h3>
         {{ festival.description }}
       </div>
     </NuxtLink>
@@ -56,5 +55,11 @@
   }
   a {
     color: var(--bg-color);
+  }
+
+  @media (min-width: 42rem) {
+    section {
+      height: 20rem;
+    }
   }
 </style>

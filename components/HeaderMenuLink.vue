@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { MenuItem } from '@/types/MenuItem'
+  import type { MenuItem } from '@/types/MenuItem'
 
-defineProps({
-  menu: {
-    type: Object as () => MenuItem,
-    required: true,
-  },
-})
+  defineProps({
+    menu: {
+      type: Object as () => MenuItem,
+      required: true
+    }
+  })
 
-const { isMobile } = useDevice()
+  const { isMobile } = useDevice()
 </script>
 
 <template>
@@ -26,17 +26,17 @@ const { isMobile } = useDevice()
 </template>
 
 <style scoped>
-div,
-a {
-  color: var(--light);
-  display: flex;
-  align-items: center;
-  gap: 0.75em;
-}
-
-@media screen and (min-width: 41rem) {
+  div,
   a {
-    color: var(--link-color);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
   }
-}
+
+  @media screen and (min-width: 42rem) {
+    a {
+      color: var(--link-color);
+    }
+  }
 </style>

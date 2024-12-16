@@ -4,8 +4,8 @@
       on_sale: 1,
       per_page: 3,
       consumer_key: import.meta.env.VITE_WEBSHOP_API_KEY,
-      consumer_secret: import.meta.env.VITE_WEBSHOP_API_SECRET,
-    },
+      consumer_secret: import.meta.env.VITE_WEBSHOP_API_SECRET
+    }
   })
 
   const { isMobile } = useDevice()
@@ -42,6 +42,6 @@
     text-align: center;
   }
 
-  @media screen and (min-width: 41rem) {
+  @media screen and (min-width: 42rem) {
   }
 </style>

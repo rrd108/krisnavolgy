@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const year = new Date().getFullYear()
+  const year = new Date().getFullYear()
 </script>
 
 <template>
@@ -52,45 +52,45 @@ const year = new Date().getFullYear()
 </template>
 
 <style scoped>
-footer {
-  background-color: var(--light);
-  padding: 1em;
-}
-
-:deep(h3) {
-  margin-top: 2em;
-  border-bottom: 0.1em solid var(--bh-light);
-  padding: 0 0 0.5em 0.5em;
-  text-align: left;
-}
-
-:deep(ul) {
-  padding: 0.5em;
-}
-
-aside {
-  margin-top: 2em;
-  border-top: thin solid var(--bh-light);
-  padding: 1em;
-  font-size: 0.75rem;
-}
-.socials ul {
-  font-size: 2rem;
-  padding-top: 0;
-}
-
-.error {
-  color: var(--error, #dc3545);
-}
-
-@media screen and (min-width: 64rem) {
   footer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
+    background-color: var(--light);
+    padding: 1em;
   }
+
+  :deep(h3) {
+    margin-top: 2em;
+    border-bottom: 0.1em solid var(--bh-light);
+    padding: 0 0 0.5em 0.5em;
+    text-align: left;
+  }
+
+  :deep(ul) {
+    padding: 0.5em;
+  }
+
   aside {
-    grid-column: 1 / span 4;
+    margin-top: 2em;
+    border-top: thin solid var(--bh-light);
+    padding: 1em;
+    font-size: 0.75rem;
   }
-}
+  .socials ul {
+    font-size: 2rem;
+    padding-top: 0;
+  }
+
+  .error {
+    color: var(--error, #dc3545);
+  }
+
+  @media screen and (min-width: 42rem) {
+    footer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1em;
+    }
+    aside {
+      grid-column: 1 / span 4;
+    }
+  }
 </style>

@@ -80,7 +80,7 @@
     font-style: italic;
   }
 
-  @media screen and (min-width: 41rem) {
+  @media screen and (min-width: 42rem) {
     #search {
       margin: 16em auto 0;
       width: 30em;

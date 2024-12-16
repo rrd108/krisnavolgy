@@ -40,7 +40,7 @@
   p {
     font-size: 0.8rem;
   }
-  @media screen and (min-width: 41rem) {
+  @media screen and (min-width: 42rem) {
     div {
       width: 20vw;
       margin: 1em;

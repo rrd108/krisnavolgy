@@ -36,7 +36,7 @@
     margin: 1em;
     background-color: var(--light);
     padding: 1em;
-    height: 15rem;
+    height: 17rem;
   }
   h6 {
     text-align: left;

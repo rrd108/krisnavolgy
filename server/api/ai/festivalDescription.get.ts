@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     const prompt = `
         ${festival.long_description}
         
-        Ez alapján generálj egy max 50 karakterből álló rövid, frappáns leírást a fesztiválra.
+        Ez alapján generálj egy max 135 karakterből álló rövid, frappáns leírást a fesztiválra.
         A leírásban ne szerepljen a fesztivál dátuma
     `
     const result = await model.generateContent(prompt)

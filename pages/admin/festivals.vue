@@ -188,7 +188,15 @@
       />
     </div>
 
-    <FormKit type="textarea" name="description" label="Rövid leírás" optional input-class="w80">
+    <FormKit
+      type="textarea"
+      name="description"
+      label="Rövid leírás"
+      optional
+      input-class="w80"
+      maxlength="135"
+      validation="length:0,135"
+    >
       <template #label>
         Rövid leírás
         <button

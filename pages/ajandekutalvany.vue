@@ -70,7 +70,7 @@
           alt="Ajándék belépőjegy"
           sizes="sm:40vw md:40vw lg:40vw"
         />
-        <strong>3.400 Ft/fő</strong>
+        <strong>3.600 Ft/fő</strong>
         <p>
           <input v-model="order.ticket" type="number" min="0" />
           db

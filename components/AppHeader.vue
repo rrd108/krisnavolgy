@@ -34,7 +34,7 @@ const menus = [
   //   ],
   // },
   {
-    label: 'Programok',
+    label: 'Rendezvények',
     path: '/programok',
     icon: 'material-symbols:tips-and-updates-outline-rounded',
   },

@@ -5,18 +5,20 @@
 <template>
   <h1>
     <Icon name="material-symbols:tips-and-updates-outline-rounded" />
-    Programok
+    Rendezvények
   </h1>
 
-  <div v-for="festival in touristComingFestivals" :key="festival.id">
-    <h2>{{ festival.title }}</h2>
-    <h3>
-      {{ festival.start_date }}
-      <span v-if="festival.end_date !== festival.start_date">- {{ festival.end_date }}</span>
-    </h3>
-    <p>{{ festival.description }}</p>
-    <NuxtLink v-if="festival.url" :to="`/programok/${festival.url}`">Részletek</NuxtLink>
-  </div>
+  <section>
+    <div v-for="festival in touristComingFestivals" :key="festival.id">
+      <h2>{{ festival.title }}</h2>
+      <h3>
+        {{ festival.start_date }}
+        <span v-if="festival.end_date !== festival.start_date">- {{ festival.end_date }}</span>
+      </h3>
+      <p>{{ festival.description }}</p>
+      <NuxtLink v-if="festival.url" :to="`/programok/${festival.url}`">Részletek</NuxtLink>
+    </div>
+  </section>
 
   <Divider />
 
@@ -34,4 +36,17 @@
   </ul>
 </template>
 
-<style scoped></style>
+<style scoped>
+  @media screen and (min-width: 42rem) {
+    section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1em;
+    }
+    div:nth-child(odd) {
+      background-color: var(--divider-color);
+      padding: 0 1em 1em 1em;
+      border-radius: 0.5em;
+    }
+  }
+</style>

@@ -1,43 +1,43 @@
 <script setup>
-const services = [
-  {
-    title: 'Belépőjegy árak',
-    content: 'Diák, nyugdíjas, felnőtt jegyek',
-    price: '1.700 Ft - 3.400 Ft',
-    link: '/belepojegy',
-  },
-  {
-    title: 'Csoportok',
-    content: 'Csoport programok',
-    price: '2.300 Ft- 3.300 Ft',
-    link: '/csoportok',
-  },
-  {
-    title: 'Szállás',
-    content: 'Különböző igényekre igazodó szálláshelyek',
-    price: '6.110 Ft - 25.300 Ft',
-    link: 'https://vendeghaz.krisnavolgy.hu',
-  },
-  {
-    title: 'Étterem',
-    content: 'Indiai ételkülönlegességek',
-    price: '9 Ft - 99.9999 Ft',
-    link: '/etterem',
-  },
-  {
-    title: 'Webshop',
-    content: 'India kincsei',
-    price: 'Árak a webshopban',
-    link: 'https://bolt.krisnavolgy.hu',
-  },
-  {
-    title: 'Elvonulások',
-    content: 'Hosszú hétvégék feltöltődésre',
-    price: '9 Ft - 999.999 Ft',
-    link: 'https://elvonulas.krisnavolgy.hu',
-  },
-]
-const { isMobile } = useDevice()
+  const services = [
+    {
+      title: 'Belépőjegy árak',
+      content: 'Diák, nyugdíjas, felnőtt jegyek',
+      price: '2.500 Ft - 3.600 Ft',
+      link: '/belepojegy'
+    },
+    {
+      title: 'Csoportok',
+      content: 'Csoport programok',
+      price: '2.500 Ft- 3.300 Ft',
+      link: '/csoportok'
+    },
+    {
+      title: 'Szállás',
+      content: 'Különböző igényekre igazodó szálláshelyek',
+      price: '6.110 Ft - 25.300 Ft',
+      link: 'https://vendeghaz.krisnavolgy.hu'
+    },
+    {
+      title: 'Étterem',
+      content: 'Indiai ételkülönlegességek',
+      price: '9 Ft - 99.9999 Ft',
+      link: '/etterem'
+    },
+    {
+      title: 'Webshop',
+      content: 'India kincsei',
+      price: 'Árak a webshopban',
+      link: 'https://bolt.krisnavolgy.hu'
+    },
+    {
+      title: 'Elvonulások',
+      content: 'Hosszú hétvégék feltöltődésre',
+      price: '9 Ft - 999.999 Ft',
+      link: 'https://elvonulas.krisnavolgy.hu'
+    }
+  ]
+  const { isMobile } = useDevice()
 </script>
 
 <template>
@@ -61,9 +61,9 @@ const { isMobile } = useDevice()
 </template>
 
 <style scoped>
-@media screen and (max-width: 40rem) {
-  #services {
-    margin: 1em -1em 0 0 ;
+  @media screen and (max-width: 40rem) {
+    #services {
+      margin: 1em -1em 0 0;
+    }
   }
-}
 </style>

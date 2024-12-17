@@ -43,5 +43,8 @@
   }
 
   @media screen and (min-width: 42rem) {
+    section {
+      padding-bottom: 1em;
+    }
   }
 </style>

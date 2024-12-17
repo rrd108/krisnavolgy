@@ -4,7 +4,7 @@
   })
 
   const userStore = useUserStore()
-  const { allComingFestivals } = await useFestivals()
+  const { allComingFestivals, removeFestival } = await useFestivals()
 
   interface Festival {
     id: number
@@ -71,7 +71,26 @@
       })
   }
 
-  const deleteFestival = () => {}
+  const deleteFestival = () => {
+    $fetch('/api/festivals', {
+      method: 'DELETE',
+      query: { id: selectedFestival.value.id },
+      headers: {
+        Token: userStore.token
+      }
+    })
+      .then((res) => {
+        if (res.result.success) {
+          selectedFestival.value = emptyFestival
+          removeFestival(selectedFestival.value.id)
+
+          isSaving.value = false
+        }
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }
 
   const suggestedSlug = computed(() => {
     return slugify(selectedFestival.value.title)
@@ -282,11 +301,11 @@
     </div>
   </FormKit>
 
-  <dialog ref="dialog" id="loading">
+  <dialog id="loading" ref="dialog">
     <Icon name="eos-icons:loading" />
   </dialog>
 
-  <dialog ref="galleryDialog" id="gallery">
+  <dialog id="gallery" ref="galleryDialog">
     <ImageGallery @select="handleImageSelect" />
   </dialog>
 </template>

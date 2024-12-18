@@ -7,7 +7,8 @@
   --bh-light: #d9d8c5;
   --divider-color: #d0cfbc;
   --error: #8b4343;
-  --success: #438b43;
+  --finished: #438b43;
+  --success: #438b7b;
   --link-color: #2d6461;
   --secondary-link-color: #5a78a0;
 
@@ -38,7 +39,7 @@ main {
 }
 
 main {
-  padding: var(--header-height) 1em 1em 1em;
+  padding: 1em;
   max-width: var(--main-max-width);
 }
 
@@ -210,6 +211,9 @@ td {
 }
 
 @media screen and (min-width: 42rem) {
+  main {
+    padding: var(--header-height) 1em 1em 1em;
+  }
 
   .dg,
   .df {

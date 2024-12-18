@@ -122,7 +122,7 @@
     header {
       position: fixed;
       background-color: var(--bh-light);
-      z-index: 1;
+      z-index: 3;
     }
   }
 

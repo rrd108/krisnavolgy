@@ -21,7 +21,7 @@
 
 <style scoped>
   div {
-    margin: -1em;
+    margin: 0 -1em;
   }
   .subscribe {
     text-align: center;

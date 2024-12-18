@@ -11,12 +11,10 @@
   --link-color: #2d6461;
   --secondary-link-color: #5a78a0;
 
-  --header-dynamic-height: 7dvh;
-  --header-height: 7vh;
-  --main-dynamic-height: calc(100dvh - var(--header-dynamic-height));
+  --header-height: 4rem;
   --main-height: calc(100vh - var(--header-height));
-
   --main-padding: 1em;
+  --main-max-width: 70rem;
   --horizontal-scroll-padding-right: 1em;
 }
 
@@ -40,7 +38,8 @@ main {
 }
 
 main {
-  max-width: 70rem;
+  padding: var(--header-height) 1em 1em 1em;
+  max-width: var(--main-max-width);
 }
 
 body,
@@ -117,6 +116,10 @@ h3 {
 a {
   text-decoration: none;
   color: var(--link-color);
+}
+
+img {
+  max-width: var(--main-max-width);
 }
 
 .carousel__pagination-button::after {

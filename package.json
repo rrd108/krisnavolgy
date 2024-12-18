@@ -1,7 +1,7 @@
 {
   "name": "krisnavolgy",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -32,7 +32,7 @@
     "nuxt-tiptap-editor": "2.1.4",
     "nuxt-token-authentication": "^1.0.0",
     "pinia": "^2.2.5",
-    "simplepay-js-sdk": "^0.6.1",
+    "simplepay-js-sdk": "^0.7.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vue3-carousel-nuxt": "^1.1.1"

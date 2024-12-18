@@ -99,7 +99,7 @@
           <small>{{ order.transaction_id }}</small>
         </td>
         <td>
-          <span :class="order.status" class="rounded">{{ order.status }}</span>
+          <span :class="order.status" class="rounded center">{{ order.status }}</span>
         </td>
         <td class="tc">
           <small>
@@ -130,7 +130,8 @@
 
 <style scoped>
   .FAIL,
-  .SUCCESS {
+  .SUCCESS,
+  .FINISHED {
     background-color: var(--error);
     color: var(--light);
     padding: 0.5em 1em;
@@ -138,6 +139,10 @@
   }
   .SUCCESS {
     background-color: var(--success);
+    color: var(--light);
+  }
+  .FINISHED {
+    background-color: var(--finished);
     color: var(--light);
   }
 </style>

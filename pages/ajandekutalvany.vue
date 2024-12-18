@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  const simplePayActivated = false
   const invoiceNeeded = ref(false)
   const order = reactive({
     ticket: 0,
@@ -61,7 +62,16 @@
     különleges helyen - ajándékozd meg szeretteidet egy valódi kikapcsolódással.
   </p>
 
-  <form @submit.prevent="sendOrder">
+  <NuxtLink
+    v-if="!simplePayActivated"
+    to="https://forms.gle/fJy3u5zBC9u2VQrJ8"
+    external
+    class="button"
+  >
+    Ajándék utalvány rendelés
+  </NuxtLink>
+
+  <form v-if="simplePayActivated" @submit.prevent="sendOrder">
     <div class="dg">
       <section>
         <h3>Ajándék belépő</h3>
@@ -201,6 +211,9 @@
     background-color: var(--light);
     padding: 0.5em;
   }
+  form img {
+    width: 100%;
+  }
   label {
     text-align: left;
   }
@@ -222,10 +235,14 @@
     width: 90%;
   }
   input[type='number'] {
-    width: 2em;
+    width: 4em;
     margin-left: 0.5em;
   }
-  button {
-    width: 100%;
+  button,
+  .button {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 1em 2em;
   }
 </style>

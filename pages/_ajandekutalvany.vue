@@ -2,10 +2,8 @@
   useHead({
     title: 'Ajándékutalványok'
   })
-
-  const simplePayActivated = false
-  const gdpr = ref(false)
   const invoiceNeeded = ref(false)
+  const gdpr = ref(false)
   const order = reactive({
     ticket: 0,
     lunch: 0,
@@ -67,16 +65,7 @@
     különleges helyen - ajándékozd meg szeretteidet egy valódi kikapcsolódással.
   </p>
 
-  <NuxtLink
-    v-if="!simplePayActivated"
-    to="https://forms.gle/fJy3u5zBC9u2VQrJ8"
-    external
-    class="button"
-  >
-    Ajándék utalvány rendelés
-  </NuxtLink>
-
-  <form v-if="simplePayActivated" @submit.prevent="sendOrder">
+  <form @submit.prevent="sendOrder">
     <div class="dg">
       <section>
         <h3>Ajándék belépő</h3>

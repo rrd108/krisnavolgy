@@ -72,6 +72,7 @@
   }
 
   const deleteFestival = () => {
+    isSaving.value = true
     $fetch('/api/festivals', {
       method: 'DELETE',
       query: { id: selectedFestival.value.id },
@@ -81,9 +82,8 @@
     })
       .then((res) => {
         if (res.result.success) {
-          selectedFestival.value = emptyFestival
           removeFestival(selectedFestival.value.id)
-
+          selectedFestival.value.id = -1
           isSaving.value = false
         }
       })

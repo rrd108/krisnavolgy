@@ -16,3 +16,16 @@ As user sravanam from /var/www/jaccoter.1108.cc
 pm2 ls
 pm2 start ecosystem.config.js
 ```
+
+## Move to 1108 server
+
+1. Download from sravanam - database, images
+2. Database
+   - purge orders
+   - generate secure user passes
+3. Create ssh key for nvd user
+4. Update ecosystem.config.js PORT 3005
+5. Make database dump, on server file backup, off server dump, and files
+6. Set up krisnavolgy.hu for reverse proxy
+7. Change deploy script to deploy to 1108 server and to auto restart pm2
+8. Deploy

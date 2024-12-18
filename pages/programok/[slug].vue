@@ -1,5 +1,9 @@
 <script setup lang="ts">
   const route = useRoute()
+  useHead({
+    title: route.params.slug as string
+  })
+
   const festival = await $fetch(`/api/festival?slug=${route.params.slug}`)
 </script>
 

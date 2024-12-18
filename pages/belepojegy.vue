@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+  useHead({
+    title: 'Egyéni jegyárak'
+  })
+</script>
 
 <template>
   <h1>

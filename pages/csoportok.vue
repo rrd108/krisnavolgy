@@ -1,4 +1,8 @@
 <script setup>
+  useHead({
+    title: 'Csoportok'
+  })
+
   const { allComingFestivals } = await useFestivals()
 </script>
 

@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+  useHead({
+    title: 'Házirend'
+  })
+</script>
 
 <template>
   <h1>

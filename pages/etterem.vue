@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+  useHead({
+    title: 'Govinda Étterem'
+  })
+</script>
 
 <template>
   <h1>

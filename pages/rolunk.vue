@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+  useHead({
+    title: 'Rólunk'
+  })
+</script>
 
 <template>
   <h1>

@@ -36,7 +36,7 @@ if [ $PREV_STEP -eq 1 ];then
 	fi
 
 	if [ $PREV_STEP -eq 1 ];then
-		echo $'\n' "Copy .output/public folder to server" $'\n'
+		echo $'\n' "Copy .output folder to server" $'\n'
 		rsync --progress -azh \
 			--delete --exclude='data' --exclude='robots.txt' --exclude='ecosystem.config.js' ./.output/ \
 			-e "ssh -i /home/rrd/.ssh/sravanamGCI" \

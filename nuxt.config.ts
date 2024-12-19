@@ -56,6 +56,13 @@ export default defineNuxtConfig({
       options: defaultDatabase.options,
     },
   },
+  scripts: {
+    registry: {
+      googleAnalytics: {
+        id: 'G-DB14L4VX62',
+      },
+    },
+  },
   compatibilityDate: '2024-04-03',
   app: {
     head: {

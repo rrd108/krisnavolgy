@@ -80,6 +80,8 @@
       </table>
     </div>
 
+    <InfoBlock>Az árváltoztatás jogát fenntartjuk!</InfoBlock>
+
     <Divider />
 
     <div class="block">
@@ -104,7 +106,7 @@
       <div>
         <h3>Kedvezmények</h3>
         <ul>
-          <li>Kerékpárral érkező vendégeinknek részére: 10% kedvezmény</li>
+          <li>Kerékpárral érkező vendégeink részére: 10% kedvezmény</li>
         </ul>
       </div>
     </div>
@@ -144,7 +146,6 @@
     </p>
 
     <p>Szeretettel várunk Krisna-völgyben!</p>
-    <p>(Az árváltoztatás jogát fenntartjuk!)</p>
 
     <Divider />
 

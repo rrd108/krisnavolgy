@@ -19,7 +19,9 @@
     Jelentkezési lap leadási határideje: érkezési dátum előtt minimum
     <strong>10 nappal</strong>
     .
-    <br />
+  </InfoBlock>
+  <br />
+  <InfoBlock>
     Csoport program
     <strong>15 főtől</strong>
     rendelhető!
@@ -28,13 +30,34 @@
   <Divider />
 
   <h2>Választható plusz csoport programok</h2>
-  <p>
-    Minden választott program feláras,
-    <strong>1.200 - 1.500 Ft / fő</strong>
-    A programok hossza kb 30-40 perc Maximum
-    <strong>2 program választható</strong>
-    az alap belépőjegyzhez, mely a szentély látogatást is tartalmazza.
-  </p>
+  <ul>
+    <li>
+      <Icon name="mdi:hand-pointing-right" />
+      Minden választott program feláras
+      <strong>1.200 - 1.500 Ft / fő</strong>
+    </li>
+    <li>
+      <Icon name="mdi:hand-pointing-right" />
+      A programok hossza kb 30-40 perc
+    </li>
+    <li>
+      <Icon name="mdi:hand-pointing-right" />
+      Csoportok esetén az
+      <strong>alap belépőjegyet</strong>
+      is meg kell váltani - ami tartalmazza a szentély megtekintést idegenvezetéssel, illetve a
+      birtok egyéni bejárását.
+    </li>
+    <li>
+      <Icon name="mdi:hand-pointing-right" />
+      A belépőjegy mellé maximum
+      <strong>2 program választható</strong>
+    </li>
+    <li>
+      <Icon name="mdi:hand-pointing-right" />
+      Egyedi igény esetén vegye fel velünk a kapcsolatot
+      <a href="mailto:csoport@krisnavolgy.hu">csoport@krisnavolgy.hu</a>
+    </li>
+  </ul>
 
   <h3>Szentély látogatás</h3>
   <p>

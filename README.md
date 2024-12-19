@@ -19,13 +19,14 @@ pm2 start ecosystem.config.js
 
 ## Move to 1108 server
 
-1. Download from sravanam - database, images
-2. Database
+1. Google analytics
+2. Download from sravanam - database, images
+3. Database
    - purge orders
    - generate secure user passes
-3. Create ssh key for nvd user
-4. Update ecosystem.config.js PORT 3005
-5. Make database dump, on server file backup, off server dump, and files
-6. Set up krisnavolgy.hu for reverse proxy
-7. Change deploy script to deploy to 1108 server and to auto restart pm2
-8. Deploy
+4. Create ssh key for nvd user
+5. Update ecosystem.config.js PORT 3005
+6. Make database dump, on server file backup, off server dump, and files
+7. Set up krisnavolgy.hu for reverse proxy
+8. Change deploy script to deploy to 1108 server and to auto restart pm2
+9. Deploy

@@ -69,7 +69,7 @@
 <template>
   <header>
     <NuxtLink to="/">
-      <img src="/images/logo.png" alt="logo" />
+      <NuxtImg src="/images/logo.png" alt="logo" :modifiers="{ format: 'webp' }" />
     </NuxtLink>
     <nav @click="isMobileMenuOpen = !isMobileMenuOpen">
       <Icon
@@ -111,7 +111,7 @@
     border-bottom: 0.1em solid var(--divider-color);
   }
   img {
-    height: 2rem;
+    height: calc(var(--header-height) - 1em);
   }
   ul {
     display: flex;

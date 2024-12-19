@@ -6,8 +6,10 @@
 
 <template>
   <section id="hero">
-    <h1>Felejthetetlen élmény</h1>
-    <p>Vegyél részt egyik elvonulásunkon egy teljes, spirituális témákkal teli hétvégén!</p>
+    <h1>Élmények szeretettel</h1>
+    <p>
+      Vegyél részt rendezvényeinken, elvonulásunkon egy teljes, spirituális témákkal teli hétvégén!
+    </p>
     <span id="cloudBig" />
     <span id="cloudSmall" />
 

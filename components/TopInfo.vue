@@ -4,6 +4,7 @@
 
 <template>
   <section v-if="hasContent">
+    <h6>Aktuális</h6>
     <h3>
       <Icon name="material-symbols:lightbulb" />
       Ünnepi nyitvatartás
@@ -19,6 +20,7 @@
   section {
     background-color: var(--lighter-dark);
     color: var(--light);
+    margin: 0 1em;
     padding: 1em;
     border-radius: 0.5em;
   }
@@ -31,5 +33,8 @@
   }
   div {
     text-align: center;
+  }
+  h6 {
+    margin-bottom: 0.5em;
   }
 </style>

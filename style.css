@@ -201,6 +201,11 @@ td {
   background-color: var(--error);
 }
 
+.list li:nth-last-child(odd) {
+  background-color: var(--divider-color);
+}
+
+
 .formkit-help {
   font-size: 0.8rem;
   color: var(--lighter-dark);

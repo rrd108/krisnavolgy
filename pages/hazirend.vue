@@ -18,7 +18,7 @@
 
     <p>Íme Krisna-völgy házirendjének pár fontos eleme:</p>
 
-    <ul>
+    <ul class="list">
       <li>
         <Icon name="icon-park-outline:shorts" />
         <p>
@@ -104,6 +104,9 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
     margin: 0.5em 0;
+    align-items: center;
+    border-radius: 0.5em;
+    padding: 0.5em;
   }
   p {
     margin: 0;

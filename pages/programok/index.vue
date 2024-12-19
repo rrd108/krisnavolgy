@@ -15,6 +15,14 @@
   <section>
     <div v-for="festival in touristComingFestivals" :key="festival.id">
       <h2>{{ festival.title }}</h2>
+
+      <NuxtImg
+        :src="`/images/${festival?.thumbnail}`"
+        :alt="festival?.title"
+        sizes="sm:90vw md:20vw lg:20vw"
+        :modifiers="{ format: 'webp' }"
+      />
+
       <h3>
         {{ festival.start_date }}
         <span v-if="festival.end_date !== festival.start_date">- {{ festival.end_date }}</span>

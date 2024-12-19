@@ -14,6 +14,10 @@
 
   <Divider />
 
+  <GeneralInfo />
+
+  <Divider />
+
   <h3>Érdekelhet még</h3>
   <ul>
     <li>

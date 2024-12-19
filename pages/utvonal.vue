@@ -25,7 +25,7 @@
   <InfoBlock>
     Több útvonal tervező javaslata ellenére
     <strong>Polányon keresztül nem</strong>
-    vagyunk személyautóval megközelíthetőek!
+    lehet Krisna-völgyet megközelíteni személyautóval!
   </InfoBlock>
 
   <Divider />

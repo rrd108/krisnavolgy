@@ -85,6 +85,22 @@
     </li>
   </ul>
 
+  <Divider />
+
+  <NuxtLink
+    to="https://www.canva.com/design/DAGZQlz5jCc/f7-pvVHX1JKJfiAjPgiTFA/view?utm_content=DAGZQlz5jCc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hef0bddb97f"
+    target="_blank"
+  >
+    <NuxtImg
+      src="/images/csoport_lapozhato_2025.jpg"
+      alt="Lapozható csoport katalógus"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
+    />
+  </NuxtLink>
+
+  <Divider />
+
   <h3>Választható csoport programok</h3>
   <ul>
     <li>

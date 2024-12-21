@@ -163,6 +163,12 @@
         Ökrös malom
       </NuxtLink>
     </li>
+    <li>
+      <NuxtLink :to="{ hash: '#okros-szeker' }">
+        <Icon name="ph:cow" />
+        Ökrös szekér túra
+      </NuxtLink>
+    </li>
   </ul>
 
   <section>
@@ -501,6 +507,37 @@
       <li>
         <Icon name="hugeicons:coins-euro" />
         1.500 Ft/fő
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <Divider />
+    <h3 id="okros-szeker">
+      <Icon name="ph:cow" />
+      Ökrös szekér túra (max 10 fő)
+    </h3>
+
+    <NuxtImg
+      src="/images/okros-szeker-tura.jpg"
+      alt="Ökrös szekér túra"
+      sizes="sm:90vw md:90vw lg:50vw"
+      class="center"
+    />
+
+    <p>Családi ökrös kalandtúra Krisna-völgyben.</p>
+    <p>
+      Megrendelhető: Kósa Antal Anthardi Dász 30/213-9831
+      <a href="mailto:antardhi@krisna.hu">antardhi@krisna.hu</a>
+    </p>
+    <ul>
+      <li>
+        <Icon name="material-symbols:schedule" />
+        45 perc
+      </li>
+      <li>
+        <Icon name="hugeicons:coins-euro" />
+        18.000 Ft/szekér
       </li>
     </ul>
   </section>

@@ -21,7 +21,7 @@
     {
       title: 'Étterem',
       content: 'Indiai ételkülönlegességek',
-      price: '9 Ft - 99.9999 Ft',
+      price: '2.990 Ft - 5.890 Ft',
       link: '/etterem'
     },
     {
@@ -33,7 +33,7 @@
     {
       title: 'Elvonulások',
       content: 'Hosszú hétvégék feltöltődésre',
-      price: '9 Ft - 999.999 Ft',
+      price: '57.600 Ft - 287.500 Ft',
       link: 'https://elvonulas.krisnavolgy.hu'
     }
   ]

@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     // Get the token from the headers
     const token = getHeader(event, 'Token')
     // Find the user by token
-    const {rows} = await db.sql`SELECT * FROM {${options.authTable}} WHERE token = ${token as string} LIMIT 1`
+    const { rows } = await db.sql`SELECT * FROM {${options.authTable}} WHERE token = ${token as string} LIMIT 1`
 
     if (!rows) {
         throw createError({
@@ -32,5 +32,5 @@ export default defineEventHandler(async (event) => {
     // Update the user's password
     const result = await db.sql`UPDATE {${options.authTable}} SET password = ${hashedPassword} WHERE email = ${user.email as string}`
 
-    return { result }
+    return result
 })

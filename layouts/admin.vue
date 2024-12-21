@@ -37,6 +37,12 @@
             <span class="navText">Galéria</span>
           </NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/admin/user" title="Jelszó">
+            <Icon name="material-symbols:account-circle" />
+            <span class="navText">Jelszó</span>
+          </NuxtLink>
+        </li>
       </ul>
     </nav>
     <main>

@@ -39,6 +39,8 @@
     .
   </p>
 
+  <Divider />
+
   <h3>Szentély / Mandír</h3>
   <p>
     Évente közel 30 ezer vendég érkezik Krisna-völgybe, hogy megismerje ezt az egyedülálló kis
@@ -69,6 +71,8 @@
     festmények láthatóak.
   </p>
 
+  <Divider />
+
   <h3>Tehénvédelmi Központ</h3>
   <p>
     A Tehénvédelmi Központ, vagy más néven Gosala 1994-ben jött létre és ad otthont Krisna-völgy
@@ -98,6 +102,8 @@
     itt.
   </p>
 
+  <Divider />
+
   <h3>Járgányház</h3>
   <p>
     A járgányház Krisna-völgy fennállásának 30. évfordulóján épült fel, ezzel is segítve az
@@ -111,6 +117,8 @@
     gépeket. Lehet például fát vágni, fűrészelni, gabonát csépelni, lisztet őrölni és akár olajat
     ütni is a segítségével.
   </p>
+
+  <Divider />
 
   <h3>Öko gazdaság</h3>
   <p>
@@ -137,6 +145,8 @@
     is, mely a tavasztól őszig biztosítja a templom főoltárának díszítését.
   </p>
 
+  <Divider />
+
   <h3>Govinda Étterem</h3>
   <p>
     Ha megéheztél, ne hagyd ki a vegetáriánus és vegán Govinda éttermet, ahol ízletes és egészséges
@@ -146,12 +156,16 @@
     amarant,…) készülnek a sós és édes finomságok.
   </p>
 
+  <Divider />
+
   <h3>Ajándékbolt</h3>
   <p>
     A templom épületében található a Krisna-völgyi ajándékbolt, ahol többek között helyi termékeket,
     bio kozmetikumokat, Indiából származó gyönyörű ruhákat, keleti ajándéktárgyakat, füstölőket is
     találhatsz.
   </p>
+
+  <Divider />
 
   <h3>Rendezvények</h3>
   <p>
@@ -164,6 +178,8 @@
     <strong>Krisna-völgyi Búcsú</strong>
     , melyre az egész országból érkeznek kicsik és nagyok.
   </p>
+
+  <Divider />
 
   <h3>Lelki töltődés</h3>
   <p>
@@ -188,6 +204,8 @@
     teljesebb életet élhess.
   </p>
 
+  <Divider />
+
   <h3>Mindennapjaink</h3>
   <p>
     A Krisna-völgyben élő hívők hétköznapjai annyiban más a megszokottól, hogy a napot egy közös
@@ -204,6 +222,8 @@
     szennyvíztisztító telepünkön oldjuk meg.
   </p>
 
+  <Divider />
+
   <h3>Iskola</h3>
   <p>
     A
@@ -215,6 +235,8 @@
     védikus filozófiával, jógával és a mantra meditációval. Jelenleg több, mint 50 óvodás és iskolás
     gyermek jár az intézménybe.
   </p>
+
+  <Divider />
 
   <h3>Lelki központ</h3>
   <p>Krisna-völgy a béke és a lelki fejlődés színhelye.</p>

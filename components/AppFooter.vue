@@ -46,7 +46,8 @@
     </SubscribeForm>
 
     <aside>
-      <span>© {{ year }} Minden jog fenntartva</span>
+      <span>© 1996-{{ year }} Minden jog fenntartva</span>
+      <p>ISKCON alapító ācārya: Ő Isteni Kegyelme A. C. Bhaktivedanta Swāmi Prabhupāda</p>
     </aside>
   </footer>
 </template>

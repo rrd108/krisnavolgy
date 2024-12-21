@@ -52,5 +52,18 @@ if [ $PREV_STEP -eq 1 ];then
 fi
 
 if [ $PREV_STEP -eq 1 ];then
+	# Restart PM2 process
+	echo $'\n' "Restarting PM2 process" $'\n'
+	ssh -i /home/rrd/.ssh/nvd_adomany $SSH_USER@$SSH_HOST "cd $SSH_PATH && pm2 stop 0 && pm2 start ecosystem.config.js"
+	
+	if [ $? -eq 0 ]; then
+		echo -e $'\n' "${GREEN} \u2714 PM2 process restarted successfully ${NC}" $'\n'
+	else
+		echo -e $'\n' "${RED} \u2a2f PM2 restart failed ${NC}" $'\n'
+		PREV_STEP=0
+	fi
+fi
+
+if [ $PREV_STEP -eq 1 ];then
 	echo -e $'\n' "${GREEN} \u2714 All is fine ${NC}" $'\n'
 fi
